@@ -30,7 +30,7 @@ title: Daily Bird Photos
     .slide {
         display: none;
         width: 100%;
-        min-height: 500px;
+        min-height: 580px;
         position: relative;
     }
 
@@ -40,7 +40,7 @@ title: Daily Bird Photos
 
     .slide iframe {
         width: 100%;
-        height: 500px;
+        height: 580px;
         border: none;
         display: block;
     }
@@ -117,25 +117,40 @@ title: Daily Bird Photos
         border-radius: 15px;
         font-size: 14px;
         z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slideshow-container:hover .slide-counter {
+        opacity: 1;
+    }
+
+    .fullscreen-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slideshow-container:hover .fullscreen-btn {
+        opacity: 1;
+    }
+
+    .fullscreen-btn:hover {
+        background: rgba(0,0,0,0.9);
     }
 
     .asset-link {
-        position: absolute;
-        bottom: 10px;
-        left: 200px;
-        background: transparent;
-        color: #333;
-        padding: 0;
-        font-size: 13px;
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-        font-family: Helvetica, Arial, sans-serif;
-        z-index: 10;
-    }
-
-    .asset-link:hover {
-        opacity: 0.7;
-        text-decoration: underline;
+        display: none;
     }
 
     .timer-display {
@@ -171,6 +186,78 @@ title: Daily Bird Photos
         font-size: 1.1em;
     }
 
+    .filters {
+        max-width: 900px;
+        margin: 0 auto 20px;
+        padding: 20px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+    }
+
+    .filter-row {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    .filter-group {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .filter-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    .filter-group input {
+        width: 100%;
+        padding: 8px 12px;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        color: var(--text-primary);
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .filter-group input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+
+    .filter-group input::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.6;
+    }
+
+    .apply-filters-btn {
+        padding: 8px 20px;
+        background: var(--accent-color);
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .apply-filters-btn:hover {
+        opacity: 0.8;
+    }
+
+    .apply-filters-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
     .error {
         text-align: center;
         padding: 40px 20px;
@@ -193,7 +280,27 @@ title: Daily Bird Photos
     <p>Top-rated bird photography from the past week</p>
 </div>
 
+<div class="filters">
+    <div class="filter-row">
+        <div class="filter-group">
+            <label for="timerInput">Slide Duration (seconds)</label>
+            <input type="number" id="timerInput" min="5" max="300" value="30" placeholder="30">
+        </div>
+        <div class="filter-group">
+            <label for="regionInput">Region Code</label>
+            <input type="text" id="regionInput" placeholder="e.g., US-NY, CA-ON" maxlength="10">
+        </div>
+        <div class="filter-group">
+            <label for="userInput">User ID</label>
+            <input type="text" id="userInput" placeholder="e.g., USER551717" maxlength="20">
+        </div>
+        <button class="apply-filters-btn" id="applyFiltersBtn">Apply Filters</button>
+    </div>
+</div>
+
 <div class="slideshow-container">
+    <button class="fullscreen-btn" id="fullscreenBtn">⛶ Fullscreen</button>
+    
     <div id="slides-container">
         <div class="loading">
             <div class="loading-spinner"></div>
@@ -207,7 +314,6 @@ title: Daily Bird Photos
         <button class="control-btn" id="nextBtn">›</button>
     </div>
     
-    <div class="progress-bar" id="progressBar"></div>
     <div class="slide-counter" id="slideCounter" style="display: none;"></div>
     <div class="timer-display" id="timerDisplay" style="display: none;">30s</div>
 </div>
@@ -219,16 +325,19 @@ title: Daily Bird Photos
             this.currentSlide = 0;
             this.isPlaying = true;
             this.interval = null;
-            this.slideDuration = 30000; // 30 seconds per slide
+            this.slideDuration = 30000; // 30 seconds per slide (default)
             this.progressInterval = null;
             this.countdownInterval = null;
             this.timeRemaining = 30;
+            this.regionCode = '';
+            this.userId = '';
             
             this.init();
         }
 
         async init() {
             console.log('Initializing slideshow...'); // Debug
+            this.setupFilterControls();
             await this.loadAssets();
             console.log('Assets loaded, slides count:', this.slides.length); // Debug
             this.setupControls();
@@ -240,24 +349,84 @@ title: Daily Bird Photos
             }
         }
 
+        setupFilterControls() {
+            const applyBtn = document.getElementById('applyFiltersBtn');
+            const timerInput = document.getElementById('timerInput');
+            const regionInput = document.getElementById('regionInput');
+            const userInput = document.getElementById('userInput');
+
+            applyBtn.addEventListener('click', async () => {
+                applyBtn.disabled = true;
+                applyBtn.textContent = 'Loading...';
+                
+                // Update timer duration
+                const newDuration = parseInt(timerInput.value) || 30;
+                this.slideDuration = newDuration * 1000;
+                this.timeRemaining = newDuration;
+                
+                // Update region and user filters
+                this.regionCode = regionInput.value.trim();
+                this.userId = userInput.value.trim();
+                
+                console.log('Applying filters:', { 
+                    duration: this.slideDuration, 
+                    region: this.regionCode, 
+                    user: this.userId 
+                });
+                
+                // Reload assets with new filters
+                await this.loadAssets();
+                
+                // Restart slideshow if it was playing
+                if (this.isPlaying) {
+                    clearInterval(this.interval);
+                    this.startSlideshow();
+                }
+                
+                applyBtn.disabled = false;
+                applyBtn.textContent = 'Apply Filters';
+            });
+        }
+
         async loadAssets() {
             try {
                 console.log('Fetching assets.json...'); // Debug
-                // In a real GitHub setup, this would fetch from your repository
-                // For demo, using sample asset numbers
+                
+                // Build URL with filters
+                let url = 'https://media.ebird.org/catalog?birdOnly=true&mediaType=photo&sort=rating_rank_desc';
+                
+                if (this.userId) {
+                    // If user ID is specified, use it and don't use daysSinceUp
+                    url += `&userId=${this.userId}`;
+                    console.log('Using user filter:', this.userId);
+                } else {
+                    // Default: use daysSinceUp=7
+                    url += '&daysSinceUp=7';
+                }
+                
+                if (this.regionCode) {
+                    url += `&regionCode=${this.regionCode}`;
+                    console.log('Using region filter:', this.regionCode);
+                }
+                
+                console.log('Filter URL:', url);
+                
+                // Try to fetch from assets.json first (pre-scraped data)
                 const response = await fetch('assets.json').catch((err) => {
-                    console.log('Fetch failed:', err); // Debug
+                    console.log('Fetch failed:', err);
                     return null;
                 });
                 
                 let assetNumbers;
-                if (response && response.ok) {
+                if (response && response.ok && !this.regionCode && !this.userId) {
+                    // Only use cached data if no filters applied
                     const data = await response.json();
                     assetNumbers = data.assets;
-                    console.log('Loaded assets from JSON:', assetNumbers); // Debug
+                    console.log('Loaded assets from JSON:', assetNumbers);
                 } else {
-                    console.log('Using fallback data'); // Debug
-                    // Fallback sample data for demo
+                    console.log('Filters applied or no cached data - using fallback');
+                    // TODO: When we implement live scraping/API, fetch from URL here
+                    // For now, use fallback data
                     assetNumbers = [
                         '629849023',
                         '629848993', 
@@ -267,10 +436,10 @@ title: Daily Bird Photos
                     ];
                 }
 
-                console.log('Creating slides for', assetNumbers.length, 'assets'); // Debug
+                console.log('Creating slides for', assetNumbers.length, 'assets');
                 this.createSlides(assetNumbers);
             } catch (error) {
-                console.error('Error in loadAssets:', error); // Debug
+                console.error('Error in loadAssets:', error);
                 this.showError('Failed to load bird photos. Please try again later.');
             }
         }
@@ -330,10 +499,34 @@ title: Daily Bird Photos
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const playPauseBtn = document.getElementById('playPauseBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
 
             prevBtn.addEventListener('click', () => this.previousSlide());
             nextBtn.addEventListener('click', () => this.nextSlide());
             playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+            fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
+        }
+
+        toggleFullscreen() {
+            const container = document.querySelector('.slideshow-container');
+            
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
         }
 
         startSlideshow() {
