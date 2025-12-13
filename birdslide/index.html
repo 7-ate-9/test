@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Bird Photo Slideshow</title>
     <style>
+        :root {
+            /* These will inherit from GitHub Pages theme if set, otherwise use defaults */
+            --bg-primary: var(--color-canvas-default, #0d1117);
+            --bg-secondary: var(--color-canvas-subtle, #161b22);
+            --text-primary: var(--color-fg-default, #c9d1d9);
+            --text-secondary: var(--color-fg-muted, #8b949e);
+            --accent-color: var(--color-accent-emphasis, #58a6ff);
+            --border-color: var(--color-border-default, #30363d);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--bg-primary);
+            color: var(--text-primary);
             margin: 0;
             padding: 20px;
             min-height: 100vh;
@@ -21,10 +32,12 @@
             max-width: 900px;
             width: 100%;
             position: relative;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
             overflow: hidden;
+            padding: 20px;
         }
 
         .slide {
@@ -42,6 +55,12 @@
             width: 100%;
             height: 500px;
             border: none;
+            display: block;
+        }
+        
+        .slide {
+            padding: 20px;
+            background: white;
         }
 
         .loading {
@@ -56,8 +75,8 @@
         .loading-spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--accent-color);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin-bottom: 20px;
@@ -102,7 +121,7 @@
             bottom: 0;
             left: 0;
             height: 4px;
-            background: #667eea;
+            background: var(--accent-color);
             transition: width 0.1s linear;
             z-index: 10;
         }
@@ -119,21 +138,53 @@
             z-index: 10;
         }
 
+        .asset-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            text-decoration: none;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
+
+        .asset-link:hover {
+            background: rgba(0,0,0,0.9);
+        }
+
+        .timer-display {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            z-index: 10;
+            min-width: 40px;
+            text-align: center;
+        }
+
         .title {
             text-align: center;
-            color: white;
+            color: var(--text-primary);
             margin-bottom: 30px;
         }
 
         .title h1 {
             margin: 0 0 10px 0;
             font-size: 2.5em;
-            font-weight: 300;
+            font-weight: 600;
         }
 
         .title p {
             margin: 0;
-            opacity: 0.9;
+            color: var(--text-secondary);
             font-size: 1.1em;
         }
 
@@ -180,6 +231,7 @@
         
         <div class="progress-bar" id="progressBar"></div>
         <div class="slide-counter" id="slideCounter" style="display: none;"></div>
+        <div class="timer-display" id="timerDisplay" style="display: none;">8s</div>
     </div>
 
     <script>
@@ -191,6 +243,8 @@
                 this.interval = null;
                 this.slideDuration = 8000; // 8 seconds per slide
                 this.progressInterval = null;
+                this.countdownInterval = null;
+                this.timeRemaining = 8;
                 
                 this.init();
             }
@@ -238,6 +292,14 @@
                     const slide = document.createElement('div');
                     slide.className = `slide ${index === 0 ? 'active' : ''}`;
                     
+                    // Add asset link
+                    const assetLink = document.createElement('a');
+                    assetLink.href = `https://macaulaylibrary.org/asset/${assetNumber}`;
+                    assetLink.target = '_blank';
+                    assetLink.className = 'asset-link';
+                    assetLink.textContent = `ML${assetNumber}`;
+                    slide.appendChild(assetLink);
+                    
                     const iframe = document.createElement('iframe');
                     iframe.src = `https://macaulaylibrary.org/asset/${assetNumber}/embed/640`;
                     iframe.width = '100%';
@@ -250,9 +312,10 @@
                     this.slides.push(slide);
                 });
 
-                // Show controls and counter
+                // Show controls, counter, and timer
                 document.getElementById('controls').style.display = 'flex';
                 document.getElementById('slideCounter').style.display = 'block';
+                document.getElementById('timerDisplay').style.display = 'block';
                 this.updateCounter();
             }
 
@@ -294,6 +357,7 @@
                 this.showSlide(0);
                 if (this.isPlaying) {
                     this.startProgress();
+                    this.startCountdown();
                     this.interval = setInterval(() => {
                         this.nextSlide();
                     }, this.slideDuration);
@@ -352,20 +416,43 @@
                     clearInterval(this.progressInterval);
                     this.progressInterval = null;
                 }
+                if (this.countdownInterval) {
+                    clearInterval(this.countdownInterval);
+                    this.countdownInterval = null;
+                }
             }
 
             resumeProgress() {
                 if (this.isPlaying && !this.progressInterval) {
                     this.startProgress();
+                    this.startCountdown();
                 }
             }
 
             resetProgress() {
                 this.pauseProgress();
                 document.getElementById('progressBar').style.width = '0%';
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
                 if (this.isPlaying) {
                     this.startProgress();
+                    this.startCountdown();
                 }
+            }
+
+            startCountdown() {
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
+                this.countdownInterval = setInterval(() => {
+                    this.timeRemaining -= 1;
+                    if (this.timeRemaining < 0) this.timeRemaining = 0;
+                    this.updateTimerDisplay();
+                }, 1000);
+            }
+
+            updateTimerDisplay() {
+                const timerDisplay = document.getElementById('timerDisplay');
+                timerDisplay.textContent = `${Math.ceil(this.timeRemaining)}s`;
             }
 
             updateCounter() {
