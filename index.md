@@ -4,4 +4,4 @@ title: Home
 ---
 
 # Hello
-[About](/about)
+[About](test/about)
