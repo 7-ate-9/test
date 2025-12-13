@@ -1,0 +1,68 @@
+name: Manual Scrape with Filters
+
+on:
+  workflow_dispatch:
+    inputs:
+      region_code:
+        description: 'Region Code (e.g., US-NY, CA-ON)'
+        required: false
+        default: ''
+      user_id:
+        description: 'User ID (e.g., USER551717)'
+        required: false
+        default: ''
+  repository_dispatch:
+    types: [scrape-with-filters]
+
+jobs:
+  scrape-filtered:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install playwright
+        
+    - name: Install Playwright browsers
+      run: |
+        playwright install chromium
+        playwright install-deps chromium
+        
+    - name: Scrape eBird with filters
+      run: |
+        REGION="${{ github.event.inputs.region_code || github.event.client_payload.region_code }}"
+        USER="${{ github.event.inputs.user_id || github.event.client_payload.user_id }}"
+        
+        CMD="python scripts/scrape_ebird.py"
+        
+        if [ -n "$REGION" ]; then
+          CMD="$CMD --region=$REGION"
+        fi
+        
+        if [ -n "$USER" ]; then
+          CMD="$CMD --user=$USER"
+        fi
+        
+        echo "Running: $CMD"
+        $CMD
+      
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add birdslide/assets.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update bird photos with filters - $(date '+%Y-%m-%d')"
+          git push
+        fi
