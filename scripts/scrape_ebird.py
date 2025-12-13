@@ -165,7 +165,7 @@ def save_assets(asset_numbers):
     }
     
     # Save to assets.json in the birds directory
-    with open('birds/assets.json', 'w') as f:
+    with open('birdslide/assets.json', 'w') as f:
         json.dump(data, f, indent=2)
     
     print(f"Saved {len(asset_numbers)} asset numbers to birds/assets.json")
