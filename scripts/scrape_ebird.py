@@ -168,7 +168,7 @@ def save_assets(asset_numbers):
     with open('birdslide/assets.json', 'w') as f:
         json.dump(data, f, indent=2)
     
-    print(f"Saved {len(asset_numbers)} asset numbers to birds/assets.json")
+    print(f"Saved {len(asset_numbers)} asset numbers to birdslide/assets.json")
     print("Asset numbers:", asset_numbers)
 
 def main():
