@@ -187,7 +187,7 @@ title: Daily Bird Photos
     }
 
     .filters {
-        max-width: 900px;
+        max-width: 500px;
         margin: 0 auto 20px;
         padding: 20px;
         background: var(--bg-secondary);
@@ -198,13 +198,12 @@ title: Daily Bird Photos
     .filter-row {
         display: flex;
         gap: 15px;
-        flex-wrap: wrap;
         align-items: flex-end;
+        justify-content: center;
     }
 
     .filter-group {
-        flex: 1;
-        min-width: 150px;
+        flex: 0 1 200px;
     }
 
     .filter-group label {
@@ -286,15 +285,7 @@ title: Daily Bird Photos
             <label for="timerInput">Slide Duration (seconds)</label>
             <input type="number" id="timerInput" min="5" max="300" value="30" placeholder="30">
         </div>
-        <div class="filter-group">
-            <label for="regionInput">Region Code</label>
-            <input type="text" id="regionInput" placeholder="e.g., US-NY, CA-ON" maxlength="10">
-        </div>
-        <div class="filter-group">
-            <label for="userInput">User ID</label>
-            <input type="text" id="userInput" placeholder="e.g., USER551717" maxlength="20">
-        </div>
-        <button class="apply-filters-btn" id="applyFiltersBtn">Apply Filters</button>
+        <button class="apply-filters-btn" id="applyFiltersBtn">Apply Timer</button>
     </div>
 </div>
 
@@ -329,8 +320,6 @@ title: Daily Bird Photos
             this.progressInterval = null;
             this.countdownInterval = null;
             this.timeRemaining = 30;
-            this.regionCode = '';
-            this.userId = '';
             
             this.init();
         }
@@ -349,42 +338,61 @@ title: Daily Bird Photos
             }
         }
 
+        showFilterMessage(regionCode, userId) {
+            const container = document.getElementById('slides-container');
+            let filterText = '';
+            if (regionCode && userId) {
+                filterText = `Region: ${regionCode}, User: ${userId}`;
+            } else if (regionCode) {
+                filterText = `Region: ${regionCode}`;
+            } else if (userId) {
+                filterText = `User: ${userId}`;
+            }
+            
+            container.innerHTML = `
+                <div style="padding: 60px 20px; text-align: center; color: var(--text-primary);">
+                    <h3 style="margin-bottom: 20px;">🔍 Filters Applied: ${filterText}</h3>
+                    <p style="margin-bottom: 15px; color: var(--text-secondary);">To view filtered results:</p>
+                    <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8; color: var(--text-secondary);">
+                        <li>Go to your repository's <strong>Actions</strong> tab</li>
+                        <li>Click <strong>"Manual Scrape with Filters"</strong></li>
+                        <li>Click <strong>"Run workflow"</strong></li>
+                        <li>Enter: <code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 3px;">${regionCode ? `Region: ${regionCode}` : ''}</code> ${userId ? `<code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 3px;">User: ${userId}</code>` : ''}</li>
+                        <li>Wait ~30 seconds for it to complete</li>
+                        <li>Reload this page to see the filtered results!</li>
+                    </ol>
+                    <p style="margin-top: 30px; color: var(--text-secondary); font-size: 14px;">
+                        Or run locally: <code style="background: var(--bg-primary); padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 10px;">python scripts/scrape_ebird.py${regionCode ? ` --region=${regionCode}` : ''}${userId ? ` --user=${userId}` : ''}</code>
+                    </p>
+                </div>
+            `;
+        }
+
         setupFilterControls() {
             const applyBtn = document.getElementById('applyFiltersBtn');
             const timerInput = document.getElementById('timerInput');
-            const regionInput = document.getElementById('regionInput');
-            const userInput = document.getElementById('userInput');
 
-            applyBtn.addEventListener('click', async () => {
-                applyBtn.disabled = true;
-                applyBtn.textContent = 'Loading...';
-                
+            applyBtn.addEventListener('click', () => {
                 // Update timer duration
                 const newDuration = parseInt(timerInput.value) || 30;
                 this.slideDuration = newDuration * 1000;
                 this.timeRemaining = newDuration;
                 
-                // Update region and user filters
-                this.regionCode = regionInput.value.trim();
-                this.userId = userInput.value.trim();
+                console.log('Timer updated to:', newDuration, 'seconds');
                 
-                console.log('Applying filters:', { 
-                    duration: this.slideDuration, 
-                    region: this.regionCode, 
-                    user: this.userId 
-                });
-                
-                // Reload assets with new filters
-                await this.loadAssets();
-                
-                // Restart slideshow if it was playing
-                if (this.isPlaying) {
+                // Restart slideshow with new timing if playing
+                if (this.isPlaying && this.slides.length > 0) {
                     clearInterval(this.interval);
-                    this.startSlideshow();
+                    this.pauseProgress();
+                    this.resetProgressBar();
+                    this.timeRemaining = newDuration;
+                    this.updateTimerDisplay();
+                    this.startProgress();
+                    this.startCountdown();
+                    this.interval = setInterval(() => {
+                        this.nextSlide();
+                    }, this.slideDuration);
                 }
-                
-                applyBtn.disabled = false;
-                applyBtn.textContent = 'Apply Filters';
             });
         }
 
@@ -411,29 +419,46 @@ title: Daily Bird Photos
                 
                 console.log('Filter URL:', url);
                 
-                // Try to fetch from assets.json first (pre-scraped data)
-                const response = await fetch('assets.json').catch((err) => {
-                    console.log('Fetch failed:', err);
-                    return null;
-                });
-                
                 let assetNumbers;
-                if (response && response.ok && !this.regionCode && !this.userId) {
-                    // Only use cached data if no filters applied
-                    const data = await response.json();
-                    assetNumbers = data.assets;
-                    console.log('Loaded assets from JSON:', assetNumbers);
+                
+                // Check if filters are applied
+                if (this.regionCode || this.userId) {
+                    // Filters applied
+                    console.log('⚠️ Filters applied! To get filtered images:');
+                    console.log('1. Go to your repository Actions tab');
+                    console.log('2. Run "Manual Scrape with Filters" workflow');
+                    console.log('3. Enter your region/user filters');
+                    console.log('4. Wait for it to complete and reload this page');
+                    console.log('');
+                    console.log('Or run locally: python scripts/scrape_ebird.py --region=' + this.regionCode + ' --user=' + this.userId);
+                    
+                    // Show a user-friendly message
+                    this.showFilterMessage(this.regionCode, this.userId);
+                    return;
                 } else {
-                    console.log('Filters applied or no cached data - using fallback');
-                    // TODO: When we implement live scraping/API, fetch from URL here
-                    // For now, use fallback data
-                    assetNumbers = [
-                        '629849023',
-                        '629848993', 
-                        '629848963',
-                        '629848933',
-                        '629848903'
-                    ];
+                    // No filters - use cached data
+                    const response = await fetch('assets.json').catch((err) => {
+                        console.log('Fetch failed:', err);
+                        return null;
+                    });
+                    
+                    if (response && response.ok) {
+                        const data = await response.json();
+                        assetNumbers = data.assets;
+                        console.log('Loaded assets from JSON:', assetNumbers);
+                    } else {
+                        console.log('Using fallback data');
+                        assetNumbers = [
+                            '121689041',
+                            '642398752',
+                            '638399431',
+                            '644382546',
+                            '265530851',
+                            '644309560',
+                            '621907936',
+                            '646501597'
+                        ];
+                    }
                 }
 
                 console.log('Creating slides for', assetNumbers.length, 'assets');
@@ -447,6 +472,9 @@ title: Daily Bird Photos
         createSlides(assetNumbers) {
             const container = document.getElementById('slides-container');
             container.innerHTML = '';
+            
+            // Clear existing slides array
+            this.slides = [];
 
             assetNumbers.forEach((assetNumber, index) => {
                 const slide = document.createElement('div');
