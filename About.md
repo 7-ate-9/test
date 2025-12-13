@@ -4,4 +4,4 @@ title: About
 permalink: /about
 ---
 
-# If you are trying to understand,
+# Sorry I'm no help with this. 𓅪 
