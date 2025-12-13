@@ -118,8 +118,8 @@ def save_assets(asset_numbers):
         "assets": asset_numbers
     }
     
-    # Save to assets.json in the root directory
-    with open('assets.json', 'w') as f:
+    # Save to assets.json in the subfolder
+    with open('birdslide/assets.json', 'w') as f:
         json.dump(data, f, indent=2)
     
     print(f"Saved {len(asset_numbers)} asset numbers to assets.json")
