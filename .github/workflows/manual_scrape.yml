@@ -46,13 +46,15 @@ jobs:
         
         if [ -n "$REGION" ]; then
           CMD="$CMD --region=$REGION"
+          echo "Adding region filter: $REGION"
         fi
         
         if [ -n "$USER" ]; then
           CMD="$CMD --user=$USER"
+          echo "Adding user filter: $USER"
         fi
         
-        echo "Running: $CMD"
+        echo "Running command: $CMD"
         $CMD
       
     - name: Commit and push changes
