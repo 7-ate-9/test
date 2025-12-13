@@ -133,7 +133,7 @@ def scrape_ebird_photos():
                 print("\nUsing fallback sample data")
                 return get_fallback_assets()
             
-            return unique_assets[:12]  # Return max 12 for good slideshow timing
+            return unique_assets[:30]  # Return max 30 for slideshow
             
         except Exception as e:
             print(f"Error during scraping: {e}")
