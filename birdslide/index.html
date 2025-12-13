@@ -22,10 +22,6 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .slideshow-container {
@@ -38,6 +34,7 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
             overflow: hidden;
             padding: 20px;
+            margin: 20px auto;
         }
 
         .slide {
@@ -140,17 +137,17 @@
 
         .asset-link {
             position: absolute;
-            bottom: 25px;
-            right: 25px;
+            bottom: 10px;
+            left: 220px;
             background: transparent;
-            color: inherit;
+            color: #333;
             padding: 0;
             border-radius: 0;
-            font-size: inherit;
+            font-size: 13px;
             text-decoration: none;
             z-index: 10;
             transition: opacity 0.3s ease;
-            font-family: inherit;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
         .asset-link:hover {
@@ -175,7 +172,8 @@
         .title {
             text-align: center;
             color: var(--text-primary);
-            margin-bottom: 30px;
+            margin: 20px auto 30px;
+            max-width: 900px;
         }
 
         .title h1 {
@@ -233,7 +231,7 @@
         
         <div class="progress-bar" id="progressBar"></div>
         <div class="slide-counter" id="slideCounter" style="display: none;"></div>
-        <div class="timer-display" id="timerDisplay" style="display: none;">8s</div>
+        <div class="timer-display" id="timerDisplay" style="display: none;">30s</div>
     </div>
 
     <script>
@@ -243,10 +241,10 @@
                 this.currentSlide = 0;
                 this.isPlaying = true;
                 this.interval = null;
-                this.slideDuration = 8000; // 8 seconds per slide
+                this.slideDuration = 30000; // 30 seconds per slide
                 this.progressInterval = null;
                 this.countdownInterval = null;
-                this.timeRemaining = 8;
+                this.timeRemaining = 30;
                 
                 this.init();
             }
