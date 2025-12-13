@@ -140,20 +140,22 @@
 
         .asset-link {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 15px;
-            font-size: 14px;
+            bottom: 25px;
+            right: 25px;
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+            font-size: inherit;
             text-decoration: none;
             z-index: 10;
-            transition: background 0.3s ease;
+            transition: opacity 0.3s ease;
+            font-family: inherit;
         }
 
         .asset-link:hover {
-            background: rgba(0,0,0,0.9);
+            opacity: 0.7;
+            text-decoration: underline;
         }
 
         .timer-display {
@@ -250,24 +252,35 @@
             }
 
             async init() {
+                console.log('Initializing slideshow...'); // Debug
                 await this.loadAssets();
+                console.log('Assets loaded, slides count:', this.slides.length); // Debug
                 this.setupControls();
                 if (this.slides.length > 0) {
+                    console.log('Starting slideshow with', this.slides.length, 'slides'); // Debug
                     this.startSlideshow();
+                } else {
+                    console.error('No slides to show!'); // Debug
                 }
             }
 
             async loadAssets() {
                 try {
+                    console.log('Fetching assets.json...'); // Debug
                     // In a real GitHub setup, this would fetch from your repository
                     // For demo, using sample asset numbers
-                    const response = await fetch('assets.json').catch(() => null);
+                    const response = await fetch('assets.json').catch((err) => {
+                        console.log('Fetch failed:', err); // Debug
+                        return null;
+                    });
                     
                     let assetNumbers;
                     if (response && response.ok) {
                         const data = await response.json();
                         assetNumbers = data.assets;
+                        console.log('Loaded assets from JSON:', assetNumbers); // Debug
                     } else {
+                        console.log('Using fallback data'); // Debug
                         // Fallback sample data for demo
                         assetNumbers = [
                             '629849023',
@@ -278,8 +291,10 @@
                         ];
                     }
 
+                    console.log('Creating slides for', assetNumbers.length, 'assets'); // Debug
                     this.createSlides(assetNumbers);
                 } catch (error) {
+                    console.error('Error in loadAssets:', error); // Debug
                     this.showError('Failed to load bird photos. Please try again later.');
                 }
             }
@@ -352,15 +367,22 @@
             }
 
             startSlideshow() {
-                if (this.slides.length === 0) return;
+                if (this.slides.length === 0) {
+                    console.error('Cannot start slideshow - no slides!'); // Debug
+                    return;
+                }
                 
+                console.log('startSlideshow called, isPlaying:', this.isPlaying); // Debug
                 this.showSlide(0);
                 if (this.isPlaying) {
+                    console.log('Starting auto-advance with', this.slideDuration, 'ms interval'); // Debug
                     this.startProgress();
                     this.startCountdown();
                     this.interval = setInterval(() => {
+                        console.log('Interval fired - advancing slide'); // Debug
                         this.nextSlide();
                     }, this.slideDuration);
+                    console.log('Interval ID:', this.interval); // Debug
                 }
             }
 
@@ -375,13 +397,30 @@
             nextSlide() {
                 const nextIndex = (this.currentSlide + 1) % this.slides.length;
                 this.showSlide(nextIndex);
-                this.resetProgress();
+                // Reset progress bar and timer
+                this.pauseProgress();
+                this.resetProgressBar();
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
+                if (this.isPlaying) {
+                    this.startProgress();
+                    this.startCountdown();
+                }
+                console.log('Advanced to slide', nextIndex + 1); // Debug log
             }
 
             previousSlide() {
                 const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
                 this.showSlide(prevIndex);
-                this.resetProgress();
+                // Reset progress bar and timer
+                this.pauseProgress();
+                this.resetProgressBar();
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
+                if (this.isPlaying) {
+                    this.startProgress();
+                    this.startCountdown();
+                }
             }
 
             togglePlayPause() {
@@ -392,23 +431,38 @@
                     clearInterval(this.interval);
                     this.pauseProgress();
                     playPauseBtn.textContent = '▶️';
+                    console.log('Paused slideshow'); // Debug log
                 } else {
                     this.isPlaying = true;
-                    this.resumeProgress();
+                    // Reset and restart progress/countdown
+                    this.pauseProgress();
+                    this.resetProgressBar();
+                    this.timeRemaining = this.slideDuration / 1000;
+                    this.updateTimerDisplay();
+                    this.startProgress();
+                    this.startCountdown();
                     this.interval = setInterval(() => {
                         this.nextSlide();
                     }, this.slideDuration);
                     playPauseBtn.textContent = '⏸️';
+                    console.log('Resumed slideshow'); // Debug log
                 }
             }
 
             startProgress() {
-                this.resetProgress();
+                this.resetProgressBar();
                 let progress = 0;
                 this.progressInterval = setInterval(() => {
                     progress += 100 / (this.slideDuration / 100);
                     document.getElementById('progressBar').style.width = `${Math.min(progress, 100)}%`;
                 }, 100);
+            }
+
+            resetProgressBar() {
+                const progressBar = document.getElementById('progressBar');
+                if (progressBar) {
+                    progressBar.style.width = '0%';
+                }
             }
 
             pauseProgress() {
@@ -431,28 +485,32 @@
 
             resetProgress() {
                 this.pauseProgress();
-                document.getElementById('progressBar').style.width = '0%';
+                this.resetProgressBar();
                 this.timeRemaining = this.slideDuration / 1000;
                 this.updateTimerDisplay();
                 if (this.isPlaying) {
-                    this.startProgress();
-                    this.startCountdown();
+                    // Don't call startProgress/startCountdown here to avoid recursion
+                    // They'll be called from the appropriate place
                 }
             }
 
             startCountdown() {
                 this.timeRemaining = this.slideDuration / 1000;
                 this.updateTimerDisplay();
+                console.log('Starting countdown from', this.timeRemaining); // Debug log
                 this.countdownInterval = setInterval(() => {
                     this.timeRemaining -= 1;
                     if (this.timeRemaining < 0) this.timeRemaining = 0;
                     this.updateTimerDisplay();
+                    console.log('Countdown:', this.timeRemaining); // Debug log
                 }, 1000);
             }
 
             updateTimerDisplay() {
                 const timerDisplay = document.getElementById('timerDisplay');
-                timerDisplay.textContent = `${Math.ceil(this.timeRemaining)}s`;
+                if (timerDisplay) {
+                    timerDisplay.textContent = `${Math.ceil(this.timeRemaining)}s`;
+                }
             }
 
             updateCounter() {
