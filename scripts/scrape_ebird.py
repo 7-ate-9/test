@@ -11,10 +11,26 @@ from datetime import datetime
 from playwright.sync_api import sync_playwright
 import time
 
-def scrape_ebird_photos():
-    """Scrape eBird for recent top-rated bird photos and extract asset numbers"""
+def scrape_ebird_photos(region_code='', user_id=''):
+    """Scrape eBird for recent top-rated bird photos and extract asset numbers
     
-    url = "https://media.ebird.org/catalog?birdOnly=true&mediaType=photo&daysSinceUp=7&sort=rating_rank_desc"
+    Args:
+        region_code: Optional region code (e.g., 'US-NY', 'CA-ON')
+        user_id: Optional user ID (e.g., 'USER551717')
+    """
+    
+    # Build URL with filters
+    url = "https://media.ebird.org/catalog?birdOnly=true&mediaType=photo&sort=rating_rank_desc"
+    
+    if user_id:
+        # If user ID specified, don't use daysSinceUp
+        url += f"&userId={user_id}"
+    else:
+        # Default: last 7 days
+        url += "&daysSinceUp=7"
+    
+    if region_code:
+        url += f"&regionCode={region_code}"
     
     print(f"Fetching eBird photos from: {url}")
     
@@ -33,7 +49,7 @@ def scrape_ebird_photos():
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             })
             
-            print("Navigating to eBird...")
+            print(f"Navigating to: {url}")
             page.goto(url, wait_until="networkidle", timeout=60000)
             
             print("Waiting for content to load...")
@@ -144,23 +160,33 @@ def scrape_ebird_photos():
 def get_fallback_assets():
     """Return fallback asset numbers if scraping fails"""
     return [
-        '629849023',
-        '629848993', 
-        '629848963',
-        '629848933',
-        '629848903',
-        '629848873',
-        '629848843',
-        '629848813'
+        '121689041',
+        '642398752',
+        '638399431',
+        '644382546',
+        '265530851',
+        '644309560',
+        '621907936',
+        '646501597'
     ]
 
-def save_assets(asset_numbers):
+def save_assets(asset_numbers, region_code='', user_id=''):
     """Save asset numbers to JSON file for the slideshow to consume"""
+    
+    source_desc = "eBird Top Photos"
+    if user_id:
+        source_desc += f" (User: {user_id})"
+    elif region_code:
+        source_desc += f" (Region: {region_code}, Last 7 Days)"
+    else:
+        source_desc += " (Last 7 Days)"
     
     data = {
         "last_updated": datetime.now().isoformat(),
-        "source": "eBird Top Photos (Last 7 Days)",
+        "source": source_desc,
         "count": len(asset_numbers),
+        "region_code": region_code,
+        "user_id": user_id,
         "assets": asset_numbers
     }
     
@@ -173,13 +199,27 @@ def save_assets(asset_numbers):
 
 def main():
     """Main function to run the scraper"""
+    import sys
+    
     print("=" * 50)
     print("eBird Daily Photo Scraper (Playwright)")
     print(f"Run time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print("=" * 50)
     
-    asset_numbers = scrape_ebird_photos()
-    save_assets(asset_numbers)
+    # Parse command line arguments
+    region_code = ''
+    user_id = ''
+    
+    for arg in sys.argv[1:]:
+        if arg.startswith('--region='):
+            region_code = arg.split('=', 1)[1]
+            print(f"Region filter: {region_code}")
+        elif arg.startswith('--user='):
+            user_id = arg.split('=', 1)[1]
+            print(f"User filter: {user_id}")
+    
+    asset_numbers = scrape_ebird_photos(region_code, user_id)
+    save_assets(asset_numbers, region_code, user_id)
     
     print("=" * 50)
     print("Scraping completed successfully!")
