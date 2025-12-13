@@ -2,13 +2,13 @@
 """
 eBird Photo Scraper for Daily Bird Slideshow
 Scrapes the top-rated bird photos from the past 7 days and extracts Macaulay Library asset numbers
+Uses Playwright with headless Chromium to handle JavaScript-loaded content
 """
 
-import requests
 import json
 import re
 from datetime import datetime
-from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 import time
 
 def scrape_ebird_photos():
@@ -18,82 +18,128 @@ def scrape_ebird_photos():
     
     print(f"Fetching eBird photos from: {url}")
     
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
+    asset_numbers = []
     
-    try:
-        # Give the page time to load
-        response = requests.get(url, headers=headers, timeout=30)
-        response.raise_for_status()
-        
-        print(f"Successfully fetched page (status: {response.status_code})")
-        
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Look for various possible selectors for Macaulay Library links/images
-        asset_numbers = []
-        
-        # Pattern 1: Look for links containing macaulaylibrary.org/asset/
-        ml_links = soup.find_all('a', href=re.compile(r'macaulaylibrary\.org/asset/(\d+)'))
-        for link in ml_links:
-            match = re.search(r'/asset/(\d+)', link['href'])
-            if match:
-                asset_numbers.append(match.group(1))
-        
-        # Pattern 2: Look for image sources with ML asset numbers
-        ml_images = soup.find_all('img', src=re.compile(r'(\d{8,12})'))
-        for img in ml_images:
-            # Look for long numeric strings that could be asset numbers
-            matches = re.findall(r'\b(\d{8,12})\b', img.get('src', ''))
-            asset_numbers.extend(matches)
-        
-        # Pattern 3: Look in data attributes
-        elements_with_data = soup.find_all(attrs={"data-asset-id": True})
-        for element in elements_with_data:
-            asset_id = element.get('data-asset-id')
-            if asset_id and asset_id.isdigit():
-                asset_numbers.append(asset_id)
-        
-        # Pattern 4: Search all text content for ML asset patterns
-        page_text = soup.get_text()
-        text_matches = re.findall(r'ML(\d{8,12})', page_text)
-        asset_numbers.extend(text_matches)
-        
-        # Remove duplicates while preserving order
-        unique_assets = []
-        seen = set()
-        for asset in asset_numbers:
-            if asset not in seen and len(asset) >= 8:  # Asset numbers are typically 8+ digits
-                unique_assets.append(asset)
-                seen.add(asset)
-                if len(unique_assets) >= 15:  # Limit to 15 photos max
-                    break
-        
-        print(f"Found {len(unique_assets)} unique asset numbers")
-        
-        if not unique_assets:
-            print("No asset numbers found, using fallback sample data")
-            # Fallback to some known good asset numbers if scraping fails
-            unique_assets = [
-                '629849023',
-                '629848993', 
-                '629848963',
-                '629848933',
-                '629848903',
-                '629848873',
-                '629848843',
-                '629848813'
-            ]
-        
-        return unique_assets[:12]  # Return max 12 for good slideshow timing
-        
-    except requests.RequestException as e:
-        print(f"Error fetching eBird page: {e}")
-        return get_fallback_assets()
-    except Exception as e:
-        print(f"Error parsing page content: {e}")
-        return get_fallback_assets()
+    with sync_playwright() as p:
+        try:
+            print("Launching browser...")
+            browser = p.chromium.launch(headless=True)
+            
+            print("Creating new page...")
+            page = browser.new_page()
+            
+            # Set a realistic user agent
+            page.set_extra_http_headers({
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            })
+            
+            print("Navigating to eBird...")
+            page.goto(url, wait_until="networkidle", timeout=60000)
+            
+            print("Waiting for content to load...")
+            # Wait a bit for images to appear
+            time.sleep(5)
+            
+            # Try to wait for image elements
+            try:
+                page.wait_for_selector("img", timeout=10000)
+                print("Images detected!")
+            except:
+                print("Timeout waiting for images, proceeding anyway...")
+            
+            # Get the page content
+            page_content = page.content()
+            print(f"Page content length: {len(page_content)} characters")
+            
+            # Also get all image sources directly
+            try:
+                img_elements = page.query_selector_all("img")
+                print(f"Found {len(img_elements)} img elements")
+                for img in img_elements[:20]:  # Check first 20 images
+                    src = img.get_attribute("src")
+                    if src:
+                        # Look for asset numbers in image URLs
+                        matches = re.findall(r'(\d{8,12})', src)
+                        asset_numbers.extend(matches)
+            except Exception as e:
+                print(f"Error extracting from img elements: {e}")
+            
+            # Also get all links
+            try:
+                link_elements = page.query_selector_all("a")
+                print(f"Found {len(link_elements)} link elements")
+                for link in link_elements[:50]:  # Check first 50 links
+                    href = link.get_attribute("href")
+                    if href and "macaulaylibrary.org/asset" in href:
+                        matches = re.findall(r'/asset/(\d{8,12})', href)
+                        asset_numbers.extend(matches)
+            except Exception as e:
+                print(f"Error extracting from links: {e}")
+            
+            # Extract asset numbers from page content using multiple patterns
+            
+            # Pattern 1: macaulaylibrary.org/asset/ URLs
+            pattern1 = re.findall(r'macaulaylibrary\.org/asset/(\d{8,12})', page_content)
+            asset_numbers.extend(pattern1)
+            print(f"Pattern 1 (asset URLs): Found {len(pattern1)} matches")
+            
+            # Pattern 2: ML catalog numbers
+            pattern2 = re.findall(r'ML(\d{8,12})', page_content)
+            asset_numbers.extend(pattern2)
+            print(f"Pattern 2 (ML numbers): Found {len(pattern2)} matches")
+            
+            # Pattern 3: catalogId in JSON
+            pattern3 = re.findall(r'"catalogId"\s*:\s*"?(\d{8,12})"?', page_content)
+            asset_numbers.extend(pattern3)
+            print(f"Pattern 3 (catalog IDs): Found {len(pattern3)} matches")
+            
+            # Pattern 4: assetId in JSON
+            pattern4 = re.findall(r'"assetId"\s*:\s*"?(\d{8,12})"?', page_content)
+            asset_numbers.extend(pattern4)
+            print(f"Pattern 4 (asset IDs): Found {len(pattern4)} matches")
+            
+            # Pattern 5: Any 9-12 digit numbers in image paths
+            pattern5 = re.findall(r'/(\d{9,12})\.(jpg|jpeg|png|webp)', page_content, re.IGNORECASE)
+            asset_numbers.extend([match[0] for match in pattern5])
+            print(f"Pattern 5 (image URLs): Found {len(pattern5)} matches")
+            
+            # Pattern 6: Look for common eBird/ML data attributes or IDs
+            pattern6 = re.findall(r'(?:data-asset-id|assetId|catalogId)["\']?\s*[:=]\s*["\']?(\d{8,12})', page_content, re.IGNORECASE)
+            asset_numbers.extend(pattern6)
+            print(f"Pattern 6 (data attributes): Found {len(pattern6)} matches")
+            
+            # Take a screenshot for debugging if needed
+            # page.screenshot(path="debug_screenshot.png")
+            
+            print("Closing browser...")
+            browser.close()
+            
+            # Remove duplicates while preserving order
+            unique_assets = []
+            seen = set()
+            for asset in asset_numbers:
+                if asset not in seen and len(asset) >= 8:  # Asset numbers are typically 8+ digits
+                    unique_assets.append(asset)
+                    seen.add(asset)
+                    if len(unique_assets) >= 50:  # Get up to 50 photos
+                        break
+            
+            print(f"Total unique asset numbers found: {len(unique_assets)}")
+            
+            if not unique_assets:
+                print("WARNING: No asset numbers found!")
+                print("Saving first 1000 chars of page content for debugging:")
+                print(page_content[:1000])
+                print("\nUsing fallback sample data")
+                return get_fallback_assets()
+            
+            return unique_assets[:12]  # Return max 12 for good slideshow timing
+            
+        except Exception as e:
+            print(f"Error during scraping: {e}")
+            import traceback
+            traceback.print_exc()
+            return get_fallback_assets()
 
 def get_fallback_assets():
     """Return fallback asset numbers if scraping fails"""
@@ -118,17 +164,17 @@ def save_assets(asset_numbers):
         "assets": asset_numbers
     }
     
-    # Save to assets.json in the subfolder
-    with open('birdslide/assets.json', 'w') as f:
+    # Save to assets.json in the birds directory
+    with open('birds/assets.json', 'w') as f:
         json.dump(data, f, indent=2)
     
-    print(f"Saved {len(asset_numbers)} asset numbers to assets.json")
+    print(f"Saved {len(asset_numbers)} asset numbers to birds/assets.json")
     print("Asset numbers:", asset_numbers)
 
 def main():
     """Main function to run the scraper"""
     print("=" * 50)
-    print("eBird Daily Photo Scraper")
+    print("eBird Daily Photo Scraper (Playwright)")
     print(f"Run time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print("=" * 50)
     
