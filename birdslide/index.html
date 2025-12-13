@@ -104,13 +104,7 @@ title: Daily Bird Photos
     }
 
     .progress-bar {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 4px;
-        background: var(--accent-color);
-        transition: width 0.1s linear;
-        z-index: 10;
+        display: none;
     }
 
     .slide-counter {
@@ -126,18 +120,17 @@ title: Daily Bird Photos
     }
 
     .asset-link {
-        display: block;
-        text-align: left;
-        background: white;
+        position: absolute;
+        bottom: 10px;
+        left: 200px;
+        background: transparent;
         color: #333;
-        padding: 8px 20px;
-        margin-top: -4px;
-        border-radius: 0 0 6px 6px;
+        padding: 0;
         font-size: 13px;
         text-decoration: none;
         transition: opacity 0.3s ease;
         font-family: Helvetica, Arial, sans-serif;
-        border-top: 1px solid #e0e0e0;
+        z-index: 10;
     }
 
     .asset-link:hover {
@@ -299,7 +292,7 @@ title: Daily Bird Photos
                 
                 slide.appendChild(iframe);
                 
-                // Add asset link below the iframe
+                // Add asset link positioned over the embed
                 const assetLink = document.createElement('a');
                 assetLink.href = `https://macaulaylibrary.org/asset/${assetNumber}`;
                 assetLink.target = '_blank';
@@ -341,13 +334,6 @@ title: Daily Bird Photos
             prevBtn.addEventListener('click', () => this.previousSlide());
             nextBtn.addEventListener('click', () => this.nextSlide());
             playPauseBtn.addEventListener('click', () => this.togglePlayPause());
-
-            // Pause on hover, resume on leave
-            const container = document.querySelector('.slideshow-container');
-            container.addEventListener('mouseenter', () => this.pauseProgress());
-            container.addEventListener('mouseleave', () => {
-                if (this.isPlaying) this.resumeProgress();
-            });
         }
 
         startSlideshow() {
