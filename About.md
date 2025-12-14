@@ -6,4 +6,4 @@ permalink: /about
 
 # About
 
-# Sorry, I'm no help with this. 𓅪 
+Sorry, I'm no help with this. 𓅪 
