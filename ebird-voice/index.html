@@ -96,8 +96,69 @@ const EBirdVoiceInput = () => {
   const [coords, setCoords] = useState(null);
   const [recognitionInstance, setRecognitionInstance] = useState(null);
 
+  const wordsToNumbers = (text) => {
+    const ones = {
+      'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+      'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+      'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15,
+      'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19
+    };
+    
+    const tens = {
+      'twenty': 20, 'thirty': 30, 'forty': 40, 'fifty': 50,
+      'sixty': 60, 'seventy': 70, 'eighty': 80, 'ninety': 90
+    };
+    
+    const scales = {
+      'hundred': 100,
+      'thousand': 1000,
+      'million': 1000000
+    };
+    
+    let result = text.toLowerCase();
+    
+    // Handle compound numbers like "twenty-three" or "twenty three"
+    for (const [tenWord, tenVal] of Object.entries(tens)) {
+      for (const [oneWord, oneVal] of Object.entries(ones)) {
+        if (oneVal < 10) {
+          result = result.replace(new RegExp(tenWord + '[-\\s]' + oneWord, 'g'), (tenVal + oneVal).toString());
+        }
+      }
+    }
+    
+    // Handle "X hundred Y" or "X thousand Y" patterns
+    // e.g., "two thousand three hundred" or "five hundred fifty"
+    const complexPattern = /(\w+)\s+(hundred|thousand)\s+(?:and\s+)?(\w+)?/g;
+    result = result.replace(complexPattern, (match, num1, scale, num2) => {
+      const n1 = ones[num1] || tens[num1] || parseInt(num1) || 1;
+      const scaleVal = scales[scale];
+      const n2 = ones[num2] || tens[num2] || parseInt(num2) || 0;
+      return (n1 * scaleVal + n2).toString();
+    });
+    
+    // Handle simple scales "X hundred" or "X thousand"
+    for (const [scaleWord, scaleVal] of Object.entries(scales)) {
+      for (const [numWord, numVal] of Object.entries({...ones, ...tens})) {
+        result = result.replace(new RegExp('\\b' + numWord + '\\s+' + scaleWord + '\\b', 'g'), 
+                                (numVal * scaleVal).toString());
+      }
+    }
+    
+    // Handle standalone scale words (assume "a hundred" = 100)
+    result = result.replace(/\ba\s+hundred\b/g, '100');
+    result = result.replace(/\ba\s+thousand\b/g, '1000');
+    
+    // Replace simple number words
+    for (const [word, num] of Object.entries({...ones, ...tens})) {
+      result = result.replace(new RegExp('\\b' + word + '\\b', 'g'), num.toString());
+    }
+    
+    return result;
+  };
+
   const processCommand = (command) => {
-    const lower = command.toLowerCase();
+    const converted = wordsToNumbers(command);
+    const lower = converted.toLowerCase();
     
     if (lower.includes('done') || lower.includes('stop') || lower.includes('finish')) {
       stopListening();
@@ -326,12 +387,12 @@ const EBirdVoiceInput = () => {
         <CardTitle>eBird Voice Input</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
-          <h3 className="font-bold text-base mb-2">📋 Voice Commands:</h3>
-          <div className="text-sm space-y-1">
-            <div><strong>Add birds:</strong> "3 American Robin" or "Blue Jay" (assumes 1)</div>
-            <div><strong>Modify count:</strong> "Add 2 American Robin" or "Subtract 1 Blue Jay"</div>
-            <div><strong>Natural speech:</strong> "I saw 5 Cardinals"</div>
+        <div className="bg-blue-50 border-2 border-blue-900 rounded-lg p-4">
+          <h3 className="font-bold text-lg mb-2 text-gray-900">📋 Voice Commands:</h3>
+          <div className="text-base space-y-1 text-gray-900">
+            <div><strong>Add birds:</strong> "3 American Robin" or "two thousand Mallard"</div>
+            <div><strong>Modify count:</strong> "Add 50 Snow Goose" or "Subtract 10 Mallard"</div>
+            <div><strong>Natural speech:</strong> "I saw five hundred Cardinals"</div>
             <div><strong>Finish:</strong> "Done" or "Stop"</div>
           </div>
           {!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window) && (
@@ -372,44 +433,44 @@ const EBirdVoiceInput = () => {
 
         {error && (
           <Alert variant="destructive">
-            <AlertDescription>{error}</AlertDescription>
+            <AlertDescription className="text-gray-900 font-medium">{error}</AlertDescription>
           </Alert>
         )}
 
         {isListening && (
           <Alert>
-            <AlertDescription className="text-lg">
+            <AlertDescription className="text-lg text-gray-900 font-medium">
               🎤 Listening... Say bird name and count (e.g., "3 American Robin"). Say "Done" to finish.
             </AlertDescription>
           </Alert>
         )}
 
         {transcript && (
-          <div className="text-lg text-gray-700 font-medium">
+          <div className="text-lg text-gray-900 font-medium">
             Last heard: {transcript}
           </div>
         )}
 
-        <div className="border-2 rounded-lg p-4">
-          <h3 className="font-bold text-lg mb-3">Recorded Sightings ({birds.length}):</h3>
+        <div className="border-2 border-gray-900 rounded-lg p-4 bg-white">
+          <h3 className="font-bold text-xl mb-3 text-gray-900">Recorded Sightings ({birds.length}):</h3>
           {birds.length === 0 ? (
-            <p className="text-base text-gray-500">No birds recorded yet.</p>
+            <p className="text-lg text-gray-700">No birds recorded yet.</p>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b-2">
-                    <th className="pb-2 pr-4">Count</th>
-                    <th className="pb-2 pr-4">Species</th>
-                    <th className="pb-2">Time</th>
+                  <tr className="border-b-2 border-gray-900">
+                    <th className="pb-2 pr-4 text-gray-900">Count</th>
+                    <th className="pb-2 pr-4 text-gray-900">Species</th>
+                    <th className="pb-2 text-gray-900">Time</th>
                   </tr>
                 </thead>
                 <tbody>
                   {birds.map((bird, index) => (
-                    <tr key={index} className="border-b">
-                      <td className="py-2 pr-4 text-lg font-bold">{bird.count}</td>
-                      <td className="py-2 pr-4 text-base">{bird.species}</td>
-                      <td className="py-2 text-sm text-gray-600">{bird.time}</td>
+                    <tr key={index} className="border-b border-gray-300">
+                      <td className="py-2 pr-4 text-lg font-bold text-gray-900">{bird.count}</td>
+                      <td className="py-2 pr-4 text-base text-gray-900">{bird.species}</td>
+                      <td className="py-2 text-sm text-gray-700">{bird.time}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -419,12 +480,12 @@ const EBirdVoiceInput = () => {
         </div>
 
         {coords && (
-          <div className="text-sm text-gray-500">
+          <div className="text-base text-gray-900 font-medium">
             📍 Location: {coords.latitude.toFixed(4)}, {coords.longitude.toFixed(4)}
           </div>
         )}
 
-        <div className="text-xs text-gray-400 whitespace-pre-wrap">
+        <div className="text-sm text-gray-700 whitespace-pre-wrap">
           {debugInfo}
         </div>
       </CardContent>
