@@ -14,10 +14,10 @@ title: eBird Voice Input
 const { useState } = React;
 
 const Button = ({ children, onClick, disabled, variant = 'default', className = '' }) => {
-  const baseStyles = 'px-4 py-2 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center';
+  const baseStyles = 'px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center';
   const variants = {
-    default: 'bg-blue-600 text-white hover:bg-blue-700',
-    outline: 'border-2 border-gray-300 hover:bg-gray-100'
+    default: 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed',
+    outline: 'border-2 border-gray-900 bg-white text-gray-900 hover:bg-gray-100 disabled:border-gray-400 disabled:text-gray-400 disabled:cursor-not-allowed'
   };
   return (
     <button 
@@ -165,11 +165,12 @@ const EBirdVoiceInput = () => {
       return true;
     }
     
+    // Check for modification commands (add/subtract/plus/minus)
     const modifyMatch = lower.match(/(add|plus|subtract|minus|remove)\s+(\d+)\s+(.+)/);
     if (modifyMatch) {
       const [_, action, countStr, species] = modifyMatch;
       const count = parseInt(countStr);
-      const cleanSpecies = species.trim();
+      const cleanSpecies = cleanSpeciesName(species.trim());
       
       if (action === 'subtract' || action === 'minus' || action === 'remove') {
         modifyBirdCount(cleanSpecies, -count);
@@ -179,33 +180,59 @@ const EBirdVoiceInput = () => {
       return true;
     }
     
+    // Pattern 1: "5 American Robin" or "5 American Robins"
     let match = lower.match(/^(\d+)\s+(.+)/);
     if (match) {
       const [_, count, species] = match;
-      addBird(parseInt(count), species.trim());
+      addBird(parseInt(count), cleanSpeciesName(species.trim()));
       return true;
     }
     
-    match = lower.match(/(.+?)[,\s]+(\d+)$/);
+    // Pattern 2: "American Robin, 5" or "American Robin 5"
+    match = lower.match(/^([a-z\s'-]+?)[,\s]+(\d+)$/);
     if (match) {
       const [_, species, count] = match;
-      addBird(parseInt(count), species.trim());
+      addBird(parseInt(count), cleanSpeciesName(species.trim()));
       return true;
     }
     
-    match = lower.match(/saw\s+(\d+)\s+(.+)/);
+    // Pattern 3: "I saw/had/spotted 3 Blue Jays"
+    match = lower.match(/(?:i\s+)?(?:saw|had|spotted|observed|heard)\s+(\d+)\s+(.+)/);
     if (match) {
       const [_, count, species] = match;
-      addBird(parseInt(count), species.trim());
+      addBird(parseInt(count), cleanSpeciesName(species.trim()));
       return true;
     }
     
-    if (lower.length > 2 && !lower.match(/^\d/) && !lower.includes('add') && !lower.includes('subtract')) {
-      addBird(1, lower.trim());
-      return true;
+    // Pattern 4: Just species name (assume count of 1)
+    // But exclude common filler words
+    const fillerWords = ['the', 'a', 'an', 'some', 'add', 'subtract', 'i', 'saw', 'had', 'spotted'];
+    const words = lower.trim().split(/\s+/);
+    const hasOnlyFillers = words.every(w => fillerWords.includes(w) || /^\d+$/.test(w));
+    
+    if (lower.length > 2 && !lower.match(/^\d/) && !hasOnlyFillers) {
+      const cleaned = cleanSpeciesName(lower.trim());
+      if (cleaned.length > 0) {
+        addBird(1, cleaned);
+        return true;
+      }
     }
     
     return false;
+  };
+  
+  const cleanSpeciesName = (name) => {
+    // Remove common filler words from the beginning/end
+    let cleaned = name.toLowerCase();
+    cleaned = cleaned.replace(/^(i\s+)?(saw|had|spotted|observed|heard|the|a|an|some)\s+/gi, '');
+    cleaned = cleaned.replace(/\s+(bird|birds)$/gi, '');
+    
+    // Capitalize each word (eBird format)
+    cleaned = cleaned.split(' ').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+    
+    return cleaned.trim();
   };
   
   const addBird = (count, species) => {
@@ -326,12 +353,16 @@ const EBirdVoiceInput = () => {
 
       recognition.onend = () => {
         setDebugInfo(prev => prev + '\nRecognition ended');
-        if (isListening) {
-          try {
-            recognition.start();
-          } catch (e) {
-            setIsListening(false);
-          }
+        // Restart recognition if we're still supposed to be listening
+        if (recognitionInstance && isListening) {
+          setTimeout(() => {
+            try {
+              recognition.start();
+            } catch (e) {
+              console.log('Failed to restart:', e);
+              setIsListening(false);
+            }
+          }, 100);
         }
       };
 
@@ -358,7 +389,7 @@ const EBirdVoiceInput = () => {
   const generateCSV = () => {
     const headers = ['Common Name', 'Count', 'Latitude', 'Longitude', 'Date', 'Time', 'Protocol'];
     const rows = birds.map(bird => [
-      bird.species,
+      `"${bird.species}"`,
       bird.count,
       bird.lat || '',
       bird.lng || '',
