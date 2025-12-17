@@ -95,6 +95,7 @@ const EBirdVoiceInput = () => {
   const [debugInfo, setDebugInfo] = useState('');
   const [coords, setCoords] = useState(null);
   const [recognitionInstance, setRecognitionInstance] = useState(null);
+  const listeningRef = React.useRef(false);
 
   const wordsToNumbers = (text) => {
     const ones = {
@@ -306,6 +307,7 @@ const EBirdVoiceInput = () => {
       
       recognition.onstart = () => {
         setIsListening(true);
+        listeningRef.current = true;
         setError('');
         setDebugInfo('Recognition started successfully');
       };
@@ -314,53 +316,65 @@ const EBirdVoiceInput = () => {
         const lastResult = event.results[event.results.length - 1];
         const command = lastResult[0].transcript;
         setTranscript(command);
-        setDebugInfo('Received speech result');
+        setDebugInfo(prev => prev + `\nReceived: ${command}`);
         
         if (!processCommand(command)) {
           setError('Not recognized. Try: "3 American Robin" or say "Done" to finish');
+        } else {
+          setError(''); // Clear error on success
         }
       };
 
       recognition.onerror = (event) => {
-        setDebugInfo(`Error type: ${event.error}, Error message: ${event.message || 'No message'}`);
+        setDebugInfo(prev => prev + `\nError: ${event.error}`);
         
         switch (event.error) {
           case 'no-speech':
+            // Don't stop on no-speech in continuous mode
             break;
           case 'aborted':
+            // Normal stop
             break;
           case 'audio-capture':
             setError('No microphone was found. Please check your microphone settings.');
             setIsListening(false);
+            listeningRef.current = false;
             break;
           case 'network':
             setError('Network error occurred. Please check your connection.');
             setIsListening(false);
+            listeningRef.current = false;
             break;
           case 'not-allowed':
             setError('Microphone access was denied. Please check your permissions.');
             setIsListening(false);
+            listeningRef.current = false;
             break;
           case 'service-not-allowed':
             setError('Speech service is not allowed. Please try again.');
             setIsListening(false);
+            listeningRef.current = false;
             break;
           default:
             setError(`Recognition error: ${event.error}`);
             setIsListening(false);
+            listeningRef.current = false;
         }
       };
 
       recognition.onend = () => {
         setDebugInfo(prev => prev + '\nRecognition ended');
-        // Restart recognition if we're still supposed to be listening
-        if (recognitionInstance && isListening) {
+        // Check the ref instead of state to avoid stale closure
+        if (listeningRef.current) {
+          setDebugInfo(prev => prev + '\nRestarting...');
           setTimeout(() => {
             try {
               recognition.start();
             } catch (e) {
               console.log('Failed to restart:', e);
+              setDebugInfo(prev => prev + `\nRestart failed: ${e.message}`);
               setIsListening(false);
+              listeningRef.current = false;
             }
           }, 100);
         }
@@ -375,12 +389,14 @@ const EBirdVoiceInput = () => {
       setError(`Failed to start speech recognition: ${err.message}`);
       setDebugInfo(`Error detail: ${err.toString()}`);
       setIsListening(false);
+      listeningRef.current = false;
     }
   };
   
   const stopListening = () => {
+    listeningRef.current = false;
+    setIsListening(false);
     if (recognitionInstance) {
-      setIsListening(false);
       recognitionInstance.stop();
       setRecognitionInstance(null);
     }
