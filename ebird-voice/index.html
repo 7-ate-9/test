@@ -251,24 +251,66 @@ const EBirdVoiceInput = () => {
   
   const modifyBirdCount = (species, delta) => {
     setBirds(prev => {
-      const existing = prev.find(b => b.species.toLowerCase() === species.toLowerCase());
+      // Try to find existing entry with fuzzy matching
+      let existing = null;
+      let existingIndex = -1;
+      
+      for (let i = 0; i < prev.length; i++) {
+        if (speciesMatch(prev[i].species, species)) {
+          existing = prev[i];
+          existingIndex = i;
+          break;
+        }
+      }
+      
       if (existing) {
-        return prev.map(b => {
-          if (b.species.toLowerCase() === species.toLowerCase()) {
-            const newCount = Math.max(0, b.count + delta);
-            if (newCount === 0) {
-              return null;
-            }
-            return { ...b, count: newCount };
-          }
-          return b;
-        }).filter(b => b !== null);
+        // Modify existing entry
+        const newCount = Math.max(0, existing.count + delta);
+        if (newCount === 0) {
+          // Remove entry if count becomes 0
+          return prev.filter((_, i) => i !== existingIndex);
+        }
+        return prev.map((b, i) => 
+          i === existingIndex ? { ...b, count: newCount } : b
+        );
       } else if (delta > 0) {
-        addBird(delta, species);
-        return prev;
+        // Add new entry if it doesn't exist and delta is positive
+        const now = new Date();
+        return [...prev, {
+          species: species,
+          count: delta,
+          date: now.toISOString().split('T')[0],
+          time: now.toTimeString().split(' ')[0],
+          lat: coords?.latitude || null,
+          lng: coords?.longitude || null
+        }];
       }
       return prev;
     });
+  };
+  
+  // Fuzzy matching for species names (handles plurals, minor typos)
+  const speciesMatch = (name1, name2) => {
+    const normalize = (name) => {
+      return name.toLowerCase()
+        .replace(/s$/, '') // Remove trailing 's' for plurals
+        .replace(/es$/, '') // Remove 'es' plurals (geese -> gees)
+        .replace(/[^a-z]/g, ''); // Remove non-letters
+    };
+    
+    const n1 = normalize(name1);
+    const n2 = normalize(name2);
+    
+    // Exact match after normalization
+    if (n1 === n2) return true;
+    
+    // Check if one is a substring of the other (handles "Canada Goose" vs "Canadian Goose")
+    if (n1.includes(n2) || n2.includes(n1)) {
+      const ratio = Math.min(n1.length, n2.length) / Math.max(n1.length, n2.length);
+      return ratio > 0.7; // At least 70% similar
+    }
+    
+    return false;
   };
 
   const startListening = () => {
@@ -403,12 +445,14 @@ const EBirdVoiceInput = () => {
   };
 
   const generateCSV = () => {
+    if (birds.length === 0) return;
+    
     const headers = ['Common Name', 'Count', 'Latitude', 'Longitude', 'Date', 'Time', 'Protocol'];
     const rows = birds.map(bird => [
       `"${bird.species}"`,
       bird.count,
-      bird.lat || '',
-      bird.lng || '',
+      bird.lat !== null ? bird.lat.toFixed(6) : '',
+      bird.lng !== null ? bird.lng.toFixed(6) : '',
       bird.date,
       bird.time,
       'Incidental'
