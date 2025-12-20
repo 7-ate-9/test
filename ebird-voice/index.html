@@ -96,6 +96,7 @@ const EBirdVoiceInput = () => {
   const [coords, setCoords] = useState(null);
   const [recognitionInstance, setRecognitionInstance] = useState(null);
   const listeningRef = React.useRef(false);
+  const lastEntryTimeRef = React.useRef(null);
 
   const wordsToNumbers = (text) => {
     const ones = {
@@ -237,25 +238,42 @@ const EBirdVoiceInput = () => {
   };
   
   const addBird = (count, species) => {
+    // Use the last entry time if within 3 minutes, otherwise use current time
     const now = new Date();
+    let entryTime = now;
+    
+    if (lastEntryTimeRef.current) {
+      const diffMinutes = (now - lastEntryTimeRef.current) / (1000 * 60);
+      if (diffMinutes <= 3) {
+        entryTime = lastEntryTimeRef.current; // Use same time for grouping
+      } else {
+        lastEntryTimeRef.current = now;
+      }
+    } else {
+      lastEntryTimeRef.current = now;
+    }
+    
     const newBird = {
       species: species,
       count: count,
-      date: now.toISOString().split('T')[0],
-      time: now.toTimeString().split(' ')[0],
-      lat: coords?.latitude || null,
-      lng: coords?.longitude || null
+      date: entryTime.toISOString().split('T')[0],
+      time: entryTime.toTimeString().split(' ')[0],
+      lat: coords?.latitude ?? null,
+      lng: coords?.longitude ?? null
     };
     setBirds(prev => [...prev, newBird]);
+    setDebugInfo(prev => prev + `\nAdded: ${count} ${species}, coords: ${newBird.lat}, ${newBird.lng}`);
   };
   
   const modifyBirdCount = (species, delta) => {
+    setDebugInfo(prev => prev + `\nTrying to modify: ${species}`);
     setBirds(prev => {
       // Try to find existing entry with fuzzy matching
       let existing = null;
       let existingIndex = -1;
       
       for (let i = 0; i < prev.length; i++) {
+        setDebugInfo(p => p + `\nComparing "${prev[i].species}" with "${species}": ${speciesMatch(prev[i].species, species)}`);
         if (speciesMatch(prev[i].species, species)) {
           existing = prev[i];
           existingIndex = i;
@@ -264,6 +282,7 @@ const EBirdVoiceInput = () => {
       }
       
       if (existing) {
+        setDebugInfo(p => p + `\nFound match at index ${existingIndex}, current count: ${existing.count}, delta: ${delta}`);
         // Modify existing entry
         const newCount = Math.max(0, existing.count + delta);
         if (newCount === 0) {
@@ -273,17 +292,20 @@ const EBirdVoiceInput = () => {
         return prev.map((b, i) => 
           i === existingIndex ? { ...b, count: newCount } : b
         );
-      } else if (delta > 0) {
-        // Add new entry if it doesn't exist and delta is positive
-        const now = new Date();
-        return [...prev, {
-          species: species,
-          count: delta,
-          date: now.toISOString().split('T')[0],
-          time: now.toTimeString().split(' ')[0],
-          lat: coords?.latitude || null,
-          lng: coords?.longitude || null
-        }];
+      } else {
+        setDebugInfo(p => p + `\nNo match found for "${species}"`);
+        if (delta > 0) {
+          // Add new entry if it doesn't exist and delta is positive
+          const now = new Date();
+          return [...prev, {
+            species: species,
+            count: delta,
+            date: now.toISOString().split('T')[0],
+            time: now.toTimeString().split(' ')[0],
+            lat: coords?.latitude ?? null,
+            lng: coords?.longitude ?? null
+          }];
+        }
       }
       return prev;
     });
@@ -293,9 +315,12 @@ const EBirdVoiceInput = () => {
   const speciesMatch = (name1, name2) => {
     const normalize = (name) => {
       return name.toLowerCase()
-        .replace(/s$/, '') // Remove trailing 's' for plurals
-        .replace(/es$/, '') // Remove 'es' plurals (geese -> gees)
-        .replace(/[^a-z]/g, ''); // Remove non-letters
+        .replace(/geese$/i, 'goose') // Handle geese -> goose specifically
+        .replace(/ies$/i, 'y') // berries -> berry
+        .replace(/ves$/i, 'f') // wolves -> wolf
+        .replace(/s$/, '') // Remove trailing 's' for most plurals
+        .replace(/[^a-z\s]/g, '') // Remove non-letters except spaces
+        .trim();
     };
     
     const n1 = normalize(name1);
@@ -304,10 +329,23 @@ const EBirdVoiceInput = () => {
     // Exact match after normalization
     if (n1 === n2) return true;
     
-    // Check if one is a substring of the other (handles "Canada Goose" vs "Canadian Goose")
-    if (n1.includes(n2) || n2.includes(n1)) {
-      const ratio = Math.min(n1.length, n2.length) / Math.max(n1.length, n2.length);
-      return ratio > 0.7; // At least 70% similar
+    // Also check if the words are similar enough
+    const words1 = n1.split(/\s+/);
+    const words2 = n2.split(/\s+/);
+    
+    // If same number of words, check word-by-word similarity
+    if (words1.length === words2.length) {
+      let matches = 0;
+      for (let i = 0; i < words1.length; i++) {
+        if (words1[i] === words2[i]) {
+          matches++;
+        } else if (words1[i].includes(words2[i]) || words2[i].includes(words1[i])) {
+          if (Math.min(words1[i].length, words2[i].length) / Math.max(words1[i].length, words2[i].length) > 0.7) {
+            matches++;
+          }
+        }
+      }
+      return matches === words1.length;
     }
     
     return false;
@@ -321,13 +359,16 @@ const EBirdVoiceInput = () => {
     if (navigator.geolocation && !coords) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setCoords({
+          const newCoords = {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
-          });
+          };
+          setCoords(newCoords);
+          setDebugInfo(prev => prev + `\nGPS: ${newCoords.latitude}, ${newCoords.longitude}`);
         },
         (error) => {
           console.log('Geolocation error:', error);
+          setDebugInfo(prev => prev + `\nGPS error: ${error.message}`);
         }
       );
     }
