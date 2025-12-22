@@ -253,7 +253,7 @@ title: Daily Nature Photos
     }
 
     .filters {
-        max-width: 450px;
+        max-width: 900px;
         margin: 0 auto 20px;
         padding: 20px;
         background: var(--bg-secondary);
@@ -265,12 +265,12 @@ title: Daily Nature Photos
         display: flex;
         gap: 15px;
         align-items: flex-end;
+        flex-wrap: wrap;
     }
 
     .filter-group {
         flex: 1 1 auto;
         min-width: 150px;
-        max-width: 250px;
     }
 
     .filter-group label {
@@ -281,7 +281,8 @@ title: Daily Nature Photos
         font-weight: 500;
     }
 
-    .filter-group input {
+    .filter-group input,
+    .filter-group select {
         width: 100%;
         padding: 8px 12px;
         background: var(--bg-primary);
@@ -292,7 +293,8 @@ title: Daily Nature Photos
         box-sizing: border-box;
     }
 
-    .filter-group input:focus {
+    .filter-group input:focus,
+    .filter-group select:focus {
         outline: none;
         border-color: var(--accent-color);
     }
@@ -300,6 +302,11 @@ title: Daily Nature Photos
     .filter-group input::placeholder {
         color: var(--text-secondary);
         opacity: 0.6;
+    }
+
+    .filter-note {
+        margin-top: 10px;
+        text-align: center;
     }
 
     .apply-filters-btn {
@@ -363,8 +370,8 @@ title: Daily Nature Photos
 </style>
 
 <div class="title">
-    <h1>🌿 Daily Nature Photos</h1>
-    <p>Observations from iNaturalist</p>
+    <h1>🌿 iNaturalist Photo Slideshow</h1>
+    <p>Explore observations from around the world</p>
 </div>
 
 <div class="filters">
@@ -373,7 +380,24 @@ title: Daily Nature Photos
             <label for="timerInput">Slide Duration (seconds)</label>
             <input type="number" id="timerInput" min="5" max="300" value="30" placeholder="30">
         </div>
-        <button class="apply-filters-btn" id="applyFiltersBtn">Apply Timer</button>
+        <div class="filter-group">
+            <label for="taxonInput">Taxon ID</label>
+            <input type="text" id="taxonInput" placeholder="e.g., 551307 (sharks)" value="551307">
+        </div>
+        <div class="filter-group">
+            <label for="qualityInput">Quality</label>
+            <select id="qualityInput">
+                <option value="">Any</option>
+                <option value="research">Research</option>
+                <option value="needs_id">Needs ID</option>
+            </select>
+        </div>
+        <button class="apply-filters-btn" id="applyFiltersBtn">Apply Filters</button>
+    </div>
+    <div class="filter-note">
+        <small style="color: var(--text-secondary); font-size: 12px;">
+            Common taxon IDs: Sharks (551307), Birds (3), Butterflies (20978), Mammals (47126), Plants (47170)
+        </small>
     </div>
 </div>
 
@@ -407,6 +431,8 @@ title: Daily Nature Photos
             this.slideDuration = 30000;
             this.countdownInterval = null;
             this.timeRemaining = 30;
+            this.taxonId = '551307';
+            this.qualityGrade = '';
             
             this.init();
         }
@@ -428,24 +454,40 @@ title: Daily Nature Photos
         setupFilterControls() {
             const applyBtn = document.getElementById('applyFiltersBtn');
             const timerInput = document.getElementById('timerInput');
+            const taxonInput = document.getElementById('taxonInput');
+            const qualityInput = document.getElementById('qualityInput');
 
-            applyBtn.addEventListener('click', () => {
+            applyBtn.addEventListener('click', async () => {
+                applyBtn.disabled = true;
+                applyBtn.textContent = 'Loading...';
+                
+                // Update timer duration
                 const newDuration = parseInt(timerInput.value) || 30;
                 this.slideDuration = newDuration * 1000;
                 this.timeRemaining = newDuration;
                 
-                console.log('Timer updated to:', newDuration, 'seconds');
+                // Update filters
+                this.taxonId = taxonInput.value.trim();
+                this.qualityGrade = qualityInput.value;
                 
-                if (this.isPlaying && this.slides.length > 0) {
+                console.log('Applying filters:', { 
+                    duration: this.slideDuration, 
+                    taxon: this.taxonId, 
+                    quality: this.qualityGrade 
+                });
+                
+                // Reload observations with new filters
+                await this.loadObservationsFromAPI();
+                
+                // Restart slideshow if it was playing
+                if (this.isPlaying) {
                     clearInterval(this.interval);
                     clearInterval(this.countdownInterval);
-                    this.timeRemaining = newDuration;
-                    this.updateTimerDisplay();
-                    this.startCountdown();
-                    this.interval = setInterval(() => {
-                        this.nextSlide();
-                    }, this.slideDuration);
+                    this.startSlideshow();
                 }
+                
+                applyBtn.disabled = false;
+                applyBtn.textContent = 'Apply Filters';
             });
         }
 
@@ -454,7 +496,7 @@ title: Daily Nature Photos
                 console.log('Fetching observations.json...');
                 
                 const response = await fetch('observations.json').catch((err) => {
-                    console.log('Fetch failed:', err);
+                    console.log('Fetch failed, will try API:', err);
                     return null;
                 });
                 
@@ -464,8 +506,8 @@ title: Daily Nature Photos
                     observations = data.observations;
                     console.log('Loaded observations from JSON:', observations.length);
                 } else {
-                    console.log('Using fallback data');
-                    observations = this.getFallbackObservations();
+                    console.log('Fetching from API instead...');
+                    observations = await this.fetchFromAPI();
                 }
 
                 console.log('Creating slides for', observations.length, 'observations');
@@ -474,6 +516,103 @@ title: Daily Nature Photos
                 console.error('Error in loadObservations:', error);
                 this.showError('Failed to load observations. Please try again later.');
             }
+        }
+
+        async loadObservationsFromAPI() {
+            try {
+                console.log('Fetching from iNaturalist API with filters...');
+                const observations = await this.fetchFromAPI();
+                console.log('Creating slides for', observations.length, 'observations');
+                this.createSlides(observations);
+                
+                // Reset to first slide
+                this.currentSlide = 0;
+                this.showSlide(0);
+            } catch (error) {
+                console.error('Error loading from API:', error);
+                this.showError('Failed to load observations. Please try again later.');
+            }
+        }
+
+        async fetchFromAPI() {
+            const params = new URLSearchParams({
+                per_page: 30,
+                order: 'desc',
+                order_by: 'created_at',
+                photos: 'true',
+                photo_licensed: 'true',
+                term_id: '17',
+                term_value_id: '18'
+            });
+
+            if (this.taxonId) {
+                params.append('taxon_id', this.taxonId);
+            }
+
+            if (this.qualityGrade) {
+                params.append('quality_grade', this.qualityGrade);
+            }
+
+            const url = `https://api.inaturalist.org/v1/observations?${params.toString()}`;
+            console.log('API URL:', url);
+
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`API returned ${response.status}`);
+            }
+
+            const data = await response.json();
+            const results = data.results || [];
+            
+            const observations = results.map(obs => {
+                const photo = obs.photos?.[0];
+                if (!photo) return null;
+
+                const taxon = obs.taxon || {};
+                const user = obs.user || {};
+                const licenseCode = photo.license_code;
+                
+                if (!licenseCode) return null;
+
+                return {
+                    id: obs.id,
+                    image_url: photo.url.replace('square', 'large'),
+                    species_common: taxon.preferred_common_name || '',
+                    species_scientific: taxon.name || 'Unknown species',
+                    observer: user.name || user.login || 'Unknown',
+                    date: obs.observed_on_string || obs.created_at || '',
+                    location: obs.place_guess || 'Location obscured',
+                    license_code: licenseCode,
+                    license_name: this.getLicenseName(licenseCode),
+                    license_url: this.getLicenseUrl(licenseCode),
+                    obs_url: `https://www.inaturalist.org/observations/${obs.id}`,
+                    quality_grade: obs.quality_grade || ''
+                };
+            }).filter(obs => obs !== null);
+
+            console.log(`Fetched ${observations.length} observations from API`);
+            return observations;
+        }
+
+        getLicenseName(licenseCode) {
+            const licenses = {
+                'cc-by': 'CC BY',
+                'cc-by-nc': 'CC BY-NC',
+                'cc-by-sa': 'CC BY-SA',
+                'cc-by-nd': 'CC BY-ND',
+                'cc-by-nc-sa': 'CC BY-NC-SA',
+                'cc-by-nc-nd': 'CC BY-NC-ND',
+                'cc0': 'CC0'
+            };
+            return licenses[licenseCode?.toLowerCase()] || licenseCode?.toUpperCase();
+        }
+
+        getLicenseUrl(licenseCode) {
+            if (licenseCode?.toLowerCase() === 'cc0') {
+                return 'https://creativecommons.org/publicdomain/zero/1.0/';
+            }
+            const type = licenseCode?.toLowerCase().replace('cc-', '');
+            return `https://creativecommons.org/licenses/${type}/4.0/`;
         }
 
         getFallbackObservations() {
