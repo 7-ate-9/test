@@ -97,6 +97,15 @@ const EBirdVoiceInput = () => {
   const [recognitionInstance, setRecognitionInstance] = useState(null);
   const listeningRef = React.useRef(false);
   const lastEntryTimeRef = React.useRef(null);
+  const historyRef = React.useRef([]);
+
+  const undoLastEntry = () => {
+    if (birds.length > 0) {
+      historyRef.current.push([...birds]);
+      setBirds(prev => prev.slice(0, -1));
+      setDebugInfo(prev => prev + '\nUndid last entry');
+    }
+  };
 
   const wordsToNumbers = (text) => {
     const ones = {
@@ -237,14 +246,14 @@ const EBirdVoiceInput = () => {
     return cleaned.trim();
   };
   
-  const addBird = (count, species) => {
-    // Use the last entry time if within 3 minutes, otherwise use current time
+  const addBird = (count, species, location = '') => {
+    // Use the last entry time if within 5 minutes, otherwise use current time
     const now = new Date();
     let entryTime = now;
     
     if (lastEntryTimeRef.current) {
       const diffMinutes = (now - lastEntryTimeRef.current) / (1000 * 60);
-      if (diffMinutes <= 3) {
+      if (diffMinutes <= 5) {
         entryTime = lastEntryTimeRef.current; // Use same time for grouping
       } else {
         lastEntryTimeRef.current = now;
@@ -253,16 +262,35 @@ const EBirdVoiceInput = () => {
       lastEntryTimeRef.current = now;
     }
     
-    const newBird = {
-      species: species,
-      count: count,
-      date: entryTime.toISOString().split('T')[0],
-      time: entryTime.toTimeString().split(' ')[0],
-      lat: coords?.latitude ?? null,
-      lng: coords?.longitude ?? null
-    };
-    setBirds(prev => [...prev, newBird]);
-    setDebugInfo(prev => prev + `\nAdded: ${count} ${species}, coords: ${newBird.lat}, ${newBird.lng}`);
+    setBirds(prev => {
+      // Check if this species already exists in the current time window (within 5 min)
+      const recentMatch = prev.find(b => {
+        const birdTime = new Date(`${b.date}T${b.time}`);
+        const timeDiff = (now - birdTime) / (1000 * 60);
+        return timeDiff <= 5 && speciesMatch(b.species, species);
+      });
+      
+      if (recentMatch) {
+        // Add to existing count
+        setDebugInfo(p => p + `\nAdding ${count} to existing ${recentMatch.species} (was ${recentMatch.count})`);
+        return prev.map(b => 
+          b === recentMatch ? { ...b, count: b.count + count } : b
+        );
+      } else {
+        // Create new entry
+        const newBird = {
+          species: species,
+          count: count,
+          location: location,
+          date: entryTime.toISOString().split('T')[0],
+          time: entryTime.toTimeString().split(' ')[0],
+          lat: coords?.latitude ?? null,
+          lng: coords?.longitude ?? null
+        };
+        setDebugInfo(p => p + `\nAdded: ${count} ${species} at ${location || 'GPS location'}, coords: ${newBird.lat}, ${newBird.lng}`);
+        return [...prev, newBird];
+      }
+    });
   };
   
   const modifyBirdCount = (species, delta) => {
@@ -488,15 +516,49 @@ const EBirdVoiceInput = () => {
   const generateCSV = () => {
     if (birds.length === 0) return;
     
-    const headers = ['Common Name', 'Count', 'Latitude', 'Longitude', 'Date', 'Time', 'Protocol'];
+    // eBird Record Format columns (based on the image)
+    const headers = [
+      'Common Name',
+      'Genus',
+      'Species',
+      'Number',
+      'Species Comments',
+      'Location Name',
+      'Latitude',
+      'Longitude',
+      'Date',
+      'Start Time',
+      'State/Province',
+      'Country Code',
+      'Protocol',
+      'Number of Observers',
+      'Duration',
+      'All observations reported?',
+      'Distance Traveled',
+      'Area Covered',
+      'Submission Comments'
+    ];
+    
     const rows = birds.map(bird => [
-      `"${bird.species}"`,
-      bird.count,
-      bird.lat !== null ? bird.lat.toFixed(6) : '',
-      bird.lng !== null ? bird.lng.toFixed(6) : '',
-      bird.date,
-      bird.time,
-      'Incidental'
+      `"${bird.species}"`,  // Common Name
+      '',  // Genus (empty)
+      '',  // Species (empty)
+      bird.count,  // Number
+      '',  // Species Comments
+      bird.location ? `"${bird.location}"` : '',  // Location Name
+      bird.lat !== null ? bird.lat.toFixed(6) : '',  // Latitude
+      bird.lng !== null ? bird.lng.toFixed(6) : '',  // Longitude
+      bird.date,  // Date (YYYY-MM-DD format)
+      bird.time,  // Start Time (HH:MM:SS format)
+      '',  // State/Province (empty)
+      '',  // Country Code (empty - eBird will determine from coordinates)
+      'Incidental',  // Protocol
+      '1',  // Number of Observers
+      '',  // Duration
+      'N',  // All observations reported (N for Incidental protocol)
+      '',  // Distance Traveled
+      '',  // Area Covered
+      ''   // Submission Comments
     ]);
     
     const csvContent = [
@@ -522,9 +584,10 @@ const EBirdVoiceInput = () => {
         <div className="bg-blue-50 border-2 border-blue-900 rounded-lg p-4">
           <h3 className="font-bold text-lg mb-2 text-gray-900">📋 Voice Commands:</h3>
           <div className="text-base space-y-1 text-gray-900">
-            <div><strong>Add birds:</strong> "3 American Robin" or "two thousand Mallard"</div>
+            <div><strong>Add birds:</strong> "3 American Robin" or "500 Canada Geese at Central Park"</div>
             <div><strong>Modify count:</strong> "Add 50 Snow Goose" or "Subtract 10 Mallard"</div>
-            <div><strong>Natural speech:</strong> "I saw five hundred Cardinals"</div>
+            <div><strong>Natural speech:</strong> "I saw five hundred Cardinals at the lake"</div>
+            <div><strong>Undo:</strong> "Undo" (removes last entry)</div>
             <div><strong>Finish:</strong> "Done" or "Stop"</div>
           </div>
           {!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window) && (
