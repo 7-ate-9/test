@@ -18,10 +18,14 @@ on:
         description: 'Number of observations (max 200)'
         required: false
         default: '30'
-      additional_params:
-        description: 'Additional params (e.g., term_id=17 term_value_id=18)'
+      term_id:
+        description: 'Annotation term ID (e.g., 17 for Life Stage)'
         required: false
-        default: ''
+        default: '17'
+      term_value_id:
+        description: 'Annotation value ID (e.g., 18 for Adult)'
+        required: false
+        default: '18'
 
 jobs:
   update-inat:
