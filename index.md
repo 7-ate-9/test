@@ -6,4 +6,8 @@ title: Home
 # Hello
 [About](/test/about)
 
-[Slideshow](/test/birdslide)
+[eBird voice-to-checklist](/test/ebird-voice)
+
+[eBird Slideshow](/test/birdslide)
+
+[iNat Slideshow](/test/inatslide)
