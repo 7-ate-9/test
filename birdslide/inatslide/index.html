@@ -1,0 +1,718 @@
+---
+layout: default
+title: Daily Nature Photos
+---
+
+<style>
+    :root {
+        --bg-primary: var(--color-canvas-default, #0d1117);
+        --bg-secondary: var(--color-canvas-subtle, #161b22);
+        --text-primary: var(--color-fg-default, #c9d1d9);
+        --text-secondary: var(--color-fg-muted, #8b949e);
+        --accent-color: var(--color-accent-emphasis, #58a6ff);
+        --border-color: var(--color-border-default, #30363d);
+    }
+
+    .slideshow-container {
+        max-width: 900px;
+        width: 100%;
+        position: relative;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        overflow: hidden;
+        margin: 20px auto;
+    }
+
+    .slide {
+        display: none;
+        width: 100%;
+        position: relative;
+        background: white;
+    }
+
+    .slide.active {
+        display: block;
+    }
+
+    .slide-image {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: contain;
+        background: #000;
+        display: block;
+    }
+
+    .slide-info {
+        padding: 20px;
+        background: white;
+        color: #333;
+    }
+
+    .species-name {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 0 0 5px 0;
+    }
+
+    .scientific-name {
+        font-size: 18px;
+        font-style: italic;
+        color: #666;
+        margin: 0 0 15px 0;
+    }
+
+    .metadata {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .metadata-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .metadata-icon {
+        font-size: 16px;
+        width: 20px;
+        text-align: center;
+    }
+
+    .license-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 15px;
+        border-top: 1px solid #e0e0e0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .license-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .license-badge {
+        background: #f0f0f0;
+        padding: 4px 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+
+    .license-badge:hover {
+        background: #e0e0e0;
+    }
+
+    .obs-link {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .obs-link:hover {
+        text-decoration: underline;
+    }
+
+    .loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        color: #666;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--border-color);
+        border-top: 3px solid var(--accent-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .control-btn {
+        background: rgba(255,255,255,0.9);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+
+    .control-btn:hover {
+        background: white;
+        transform: scale(1.1);
+    }
+
+    .timer-display {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        z-index: 10;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .slide-counter {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        z-index: 10;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .fullscreen-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slideshow-container:hover .fullscreen-btn {
+        opacity: 1;
+    }
+
+    .fullscreen-btn:hover {
+        background: rgba(0,0,0,0.9);
+    }
+
+    .title {
+        text-align: center;
+        color: var(--text-primary);
+        margin: 20px auto 30px;
+        max-width: 900px;
+    }
+
+    .title h1 {
+        margin: 0 0 10px 0;
+        font-size: 2.5em;
+        font-weight: 600;
+    }
+
+    .title p {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 1.1em;
+    }
+
+    .filters {
+        max-width: 450px;
+        margin: 0 auto 20px;
+        padding: 20px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+    }
+
+    .filter-row {
+        display: flex;
+        gap: 15px;
+        align-items: flex-end;
+    }
+
+    .filter-group {
+        flex: 1 1 auto;
+        min-width: 150px;
+        max-width: 250px;
+    }
+
+    .filter-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    .filter-group input {
+        width: 100%;
+        padding: 8px 12px;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        color: var(--text-primary);
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .filter-group input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+
+    .filter-group input::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.6;
+    }
+
+    .apply-filters-btn {
+        padding: 8px 20px;
+        background: var(--accent-color);
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .apply-filters-btn:hover {
+        opacity: 0.8;
+    }
+
+    .apply-filters-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .error {
+        text-align: center;
+        padding: 40px 20px;
+        color: #e74c3c;
+    }
+
+    @media (max-width: 768px) {
+        .title h1 {
+            font-size: 2em;
+        }
+        
+        .slide-image {
+            max-height: 400px;
+        }
+        
+        .filters {
+            max-width: 100%;
+        }
+        
+        .filter-row {
+            flex-direction: column;
+        }
+        
+        .filter-group {
+            width: 100%;
+        }
+        
+        .species-name {
+            font-size: 20px;
+        }
+        
+        .scientific-name {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<div class="title">
+    <h1>🌿 Daily Nature Photos</h1>
+    <p>Observations from iNaturalist</p>
+</div>
+
+<div class="filters">
+    <div class="filter-row">
+        <div class="filter-group">
+            <label for="timerInput">Slide Duration (seconds)</label>
+            <input type="number" id="timerInput" min="5" max="300" value="30" placeholder="30">
+        </div>
+        <button class="apply-filters-btn" id="applyFiltersBtn">Apply Timer</button>
+    </div>
+</div>
+
+<div class="slideshow-container">
+    <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+    
+    <div id="slides-container">
+        <div class="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading observations from iNaturalist...</p>
+        </div>
+    </div>
+    
+    <div class="controls" id="controls" style="display: none;">
+        <button class="control-btn" id="prevBtn">‹</button>
+        <button class="control-btn" id="playPauseBtn">⏸️</button>
+        <button class="control-btn" id="nextBtn">›</button>
+    </div>
+    
+    <div class="timer-display" id="timerDisplay" style="display: none;">30s</div>
+    <div class="slide-counter" id="slideCounter" style="display: none;"></div>
+</div>
+
+<script>
+    class iNatSlideshow {
+        constructor() {
+            this.slides = [];
+            this.currentSlide = 0;
+            this.isPlaying = true;
+            this.interval = null;
+            this.slideDuration = 30000;
+            this.countdownInterval = null;
+            this.timeRemaining = 30;
+            
+            this.init();
+        }
+
+        async init() {
+            console.log('Initializing slideshow...');
+            this.setupFilterControls();
+            await this.loadObservations();
+            console.log('Observations loaded, slides count:', this.slides.length);
+            this.setupControls();
+            if (this.slides.length > 0) {
+                console.log('Starting slideshow with', this.slides.length, 'slides');
+                this.startSlideshow();
+            } else {
+                console.error('No slides to show!');
+            }
+        }
+
+        setupFilterControls() {
+            const applyBtn = document.getElementById('applyFiltersBtn');
+            const timerInput = document.getElementById('timerInput');
+
+            applyBtn.addEventListener('click', () => {
+                const newDuration = parseInt(timerInput.value) || 30;
+                this.slideDuration = newDuration * 1000;
+                this.timeRemaining = newDuration;
+                
+                console.log('Timer updated to:', newDuration, 'seconds');
+                
+                if (this.isPlaying && this.slides.length > 0) {
+                    clearInterval(this.interval);
+                    clearInterval(this.countdownInterval);
+                    this.timeRemaining = newDuration;
+                    this.updateTimerDisplay();
+                    this.startCountdown();
+                    this.interval = setInterval(() => {
+                        this.nextSlide();
+                    }, this.slideDuration);
+                }
+            });
+        }
+
+        async loadObservations() {
+            try {
+                console.log('Fetching observations.json...');
+                
+                const response = await fetch('observations.json').catch((err) => {
+                    console.log('Fetch failed:', err);
+                    return null;
+                });
+                
+                let observations;
+                if (response && response.ok) {
+                    const data = await response.json();
+                    observations = data.observations;
+                    console.log('Loaded observations from JSON:', observations.length);
+                } else {
+                    console.log('Using fallback data');
+                    observations = this.getFallbackObservations();
+                }
+
+                console.log('Creating slides for', observations.length, 'observations');
+                this.createSlides(observations);
+            } catch (error) {
+                console.error('Error in loadObservations:', error);
+                this.showError('Failed to load observations. Please try again later.');
+            }
+        }
+
+        getFallbackObservations() {
+            return [{
+                id: 123456789,
+                image_url: 'https://via.placeholder.com/1024x768?text=iNaturalist+observation',
+                species_common: 'Sample Species',
+                species_scientific: 'Genus species',
+                observer: 'Sample Observer',
+                date: 'Dec 15, 2025',
+                location: 'Sample Location',
+                license_name: 'CC BY',
+                license_url: 'https://creativecommons.org/licenses/by/4.0/',
+                obs_url: 'https://www.inaturalist.org'
+            }];
+        }
+
+        createSlides(observations) {
+            const container = document.getElementById('slides-container');
+            container.innerHTML = '';
+            this.slides = [];
+
+            observations.forEach((obs, index) => {
+                const slide = document.createElement('div');
+                slide.className = `slide ${index === 0 ? 'active' : ''}`;
+                
+                // Create image
+                const img = document.createElement('img');
+                img.src = obs.image_url;
+                img.alt = obs.species_common || obs.species_scientific;
+                img.className = 'slide-image';
+                slide.appendChild(img);
+                
+                // Create info section
+                const info = document.createElement('div');
+                info.className = 'slide-info';
+                
+                // Species names
+                if (obs.species_common) {
+                    const commonName = document.createElement('h2');
+                    commonName.className = 'species-name';
+                    commonName.textContent = obs.species_common;
+                    info.appendChild(commonName);
+                }
+                
+                const scientificName = document.createElement('p');
+                scientificName.className = 'scientific-name';
+                scientificName.textContent = obs.species_scientific;
+                info.appendChild(scientificName);
+                
+                // Metadata
+                const metadata = document.createElement('div');
+                metadata.className = 'metadata';
+                
+                const observer = document.createElement('div');
+                observer.className = 'metadata-item';
+                observer.innerHTML = `<span class="metadata-icon">📷</span> <span>${obs.observer}</span>`;
+                metadata.appendChild(observer);
+                
+                const date = document.createElement('div');
+                date.className = 'metadata-item';
+                date.innerHTML = `<span class="metadata-icon">📅</span> <span>${obs.date}</span>`;
+                metadata.appendChild(date);
+                
+                const location = document.createElement('div');
+                location.className = 'metadata-item';
+                location.innerHTML = `<span class="metadata-icon">📍</span> <span>${obs.location}</span>`;
+                metadata.appendChild(location);
+                
+                info.appendChild(metadata);
+                
+                // License section
+                const licenseSection = document.createElement('div');
+                licenseSection.className = 'license-section';
+                
+                const licenseInfo = document.createElement('div');
+                licenseInfo.className = 'license-info';
+                
+                const licenseBadge = document.createElement('a');
+                licenseBadge.href = obs.license_url;
+                licenseBadge.target = '_blank';
+                licenseBadge.className = 'license-badge';
+                licenseBadge.textContent = obs.license_name;
+                licenseInfo.appendChild(licenseBadge);
+                
+                licenseSection.appendChild(licenseInfo);
+                
+                const obsLink = document.createElement('a');
+                obsLink.href = obs.obs_url;
+                obsLink.target = '_blank';
+                obsLink.className = 'obs-link';
+                obsLink.textContent = 'View on iNaturalist →';
+                licenseSection.appendChild(obsLink);
+                
+                info.appendChild(licenseSection);
+                slide.appendChild(info);
+                
+                container.appendChild(slide);
+                this.slides.push(slide);
+            });
+
+            document.getElementById('controls').style.display = 'flex';
+            document.getElementById('slideCounter').style.display = 'block';
+            document.getElementById('timerDisplay').style.display = 'block';
+            this.updateCounter();
+        }
+
+        showError(message) {
+            const container = document.getElementById('slides-container');
+            container.innerHTML = `
+                <div class="error">
+                    <h3>⚠️ ${message}</h3>
+                </div>
+            `;
+        }
+
+        setupControls() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+            prevBtn.addEventListener('click', () => this.previousSlide());
+            nextBtn.addEventListener('click', () => this.nextSlide());
+            playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+            fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
+        }
+
+        toggleFullscreen() {
+            const container = document.querySelector('.slideshow-container');
+            
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        startSlideshow() {
+            if (this.slides.length === 0) {
+                console.error('Cannot start slideshow - no slides!');
+                return;
+            }
+            
+            this.showSlide(0);
+            if (this.isPlaying) {
+                this.startCountdown();
+                this.interval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
+            }
+        }
+
+        showSlide(index) {
+            this.slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            this.currentSlide = index;
+            this.updateCounter();
+        }
+
+        nextSlide() {
+            const nextIndex = (this.currentSlide + 1) % this.slides.length;
+            this.showSlide(nextIndex);
+            this.timeRemaining = this.slideDuration / 1000;
+            this.updateTimerDisplay();
+            if (this.isPlaying) {
+                clearInterval(this.countdownInterval);
+                this.startCountdown();
+            }
+        }
+
+        previousSlide() {
+            const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+            this.showSlide(prevIndex);
+            this.timeRemaining = this.slideDuration / 1000;
+            this.updateTimerDisplay();
+            if (this.isPlaying) {
+                clearInterval(this.countdownInterval);
+                this.startCountdown();
+            }
+        }
+
+        togglePlayPause() {
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            
+            if (this.isPlaying) {
+                this.isPlaying = false;
+                clearInterval(this.interval);
+                clearInterval(this.countdownInterval);
+                playPauseBtn.textContent = '▶️';
+            } else {
+                this.isPlaying = true;
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
+                this.startCountdown();
+                this.interval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
+                playPauseBtn.textContent = '⏸️';
+            }
+        }
+
+        startCountdown() {
+            this.timeRemaining = this.slideDuration / 1000;
+            this.updateTimerDisplay();
+            this.countdownInterval = setInterval(() => {
+                this.timeRemaining -= 1;
+                if (this.timeRemaining < 0) this.timeRemaining = 0;
+                this.updateTimerDisplay();
+            }, 1000);
+        }
+
+        updateTimerDisplay() {
+            const timerDisplay = document.getElementById('timerDisplay');
+            if (timerDisplay) {
+                timerDisplay.textContent = `${Math.ceil(this.timeRemaining)}s`;
+            }
+        }
+
+        updateCounter() {
+            const counter = document.getElementById('slideCounter');
+            counter.textContent = `${this.currentSlide + 1} / ${this.slides.length}`;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new iNatSlideshow();
+    });
+</script>
