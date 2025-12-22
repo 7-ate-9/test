@@ -103,6 +103,58 @@ title: Daily Bird Photos
         transform: scale(1.1);
     }
 
+    .timer-display {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        z-index: 10;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .slide-counter {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        z-index: 10;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .fullscreen-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slideshow-container:hover .fullscreen-btn {
+        opacity: 1;
+    }
+
+    .fullscreen-btn:hover {
+        background: rgba(0,0,0,0.9);
+    }
+
     .progress-bar {
         display: none;
     }
@@ -123,6 +175,30 @@ title: Daily Bird Photos
 
     .slideshow-container:hover .slide-counter {
         opacity: 1;
+    }
+
+    .fullscreen-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 15px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slideshow-container:hover .fullscreen-btn {
+        opacity: 1;
+    }
+
+    .fullscreen-btn:hover {
+        background: rgba(0,0,0,0.9);
     }
 
     .fullscreen-btn {
@@ -187,7 +263,7 @@ title: Daily Bird Photos
     }
 
     .filters {
-        max-width: 500px;
+        max-width: 450px;
         margin: 0 auto 20px;
         padding: 20px;
         background: var(--bg-secondary);
@@ -199,11 +275,11 @@ title: Daily Bird Photos
         display: flex;
         gap: 15px;
         align-items: flex-end;
-        justify-content: center;
     }
 
     .filter-group {
-        flex: 0 1 200px;
+        flex: 0 1 auto;
+        min-width: 200px;
     }
 
     .filter-group label {
@@ -269,7 +345,23 @@ title: Daily Bird Photos
         }
         
         .slide iframe {
-            height: 400px;
+            height: 450px;
+        }
+        
+        .slide {
+            min-height: 450px;
+        }
+        
+        .filters {
+            max-width: 100%;
+        }
+        
+        .filter-row {
+            flex-direction: column;
+        }
+        
+        .filter-group {
+            width: 100%;
         }
     }
 </style>
@@ -290,7 +382,7 @@ title: Daily Bird Photos
 </div>
 
 <div class="slideshow-container">
-    <button class="fullscreen-btn" id="fullscreenBtn">⛶ Fullscreen</button>
+    <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
     
     <div id="slides-container">
         <div class="loading">
