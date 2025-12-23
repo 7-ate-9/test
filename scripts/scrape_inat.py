@@ -186,11 +186,11 @@ def save_observations(observations, taxon_id=''):
         "observations": observations
     }
     
-    # Save to observations.json in the birds directory (reusing same directory)
-    with open('birds/observations.json', 'w') as f:
+    # Save to observations.json in the inatslide directory 
+    with open('inatslide/observations.json', 'w') as f:
         json.dump(data, f, indent=2)
     
-    print(f"\nSaved {len(observations)} observations to birds/observations.json")
+    print(f"\nSaved {len(observations)} observations to inatslide/observations.json")
     print(f"First observation: {observations[0]['species_scientific'] if observations else 'None'}")
 
 def main():
