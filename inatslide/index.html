@@ -30,6 +30,7 @@ title: Daily Nature Photos
         width: 100%;
         position: relative;
         background: white;
+        padding-bottom: 70px;
     }
 
     .slide.active {
@@ -55,14 +56,29 @@ title: Daily Nature Photos
         font-size: 24px;
         font-weight: 600;
         color: #1a1a1a;
-        margin: 0 0 5px 0;
+        margin: 0 0 15px 0;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .species-common {
+        color: #2563eb;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .species-common:hover {
+        color: #1d4ed8;
+        text-decoration: underline;
     }
 
     .scientific-name {
         font-size: 18px;
         font-style: italic;
         color: #666;
-        margin: 0 0 15px 0;
+        font-weight: normal;
     }
 
     .metadata {
@@ -160,11 +176,14 @@ title: Daily Nature Photos
         display: flex;
         gap: 10px;
         z-index: 10;
+        background: white;
+        padding: 10px;
+        border-radius: 25px;
     }
 
     .control-btn {
         background: rgba(255,255,255,0.9);
-        border: none;
+        border: 1px solid #e0e0e0;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -174,11 +193,13 @@ title: Daily Nature Photos
         justify-content: center;
         transition: all 0.3s ease;
         font-size: 16px;
+        color: #333;
     }
 
     .control-btn:hover {
         background: white;
         transform: scale(1.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .timer-display {
@@ -207,6 +228,12 @@ title: Daily Nature Photos
         z-index: 10;
         min-width: 40px;
         text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .slideshow-container:hover .slide-counter {
+        opacity: 1;
     }
 
     .fullscreen-btn {
@@ -579,6 +606,7 @@ title: Daily Nature Photos
                     image_url: photo.url.replace('square', 'large'),
                     species_common: taxon.preferred_common_name || '',
                     species_scientific: taxon.name || 'Unknown species',
+                    taxon_id: taxon.id || '',
                     observer: user.name || user.login || 'Unknown',
                     date: obs.observed_on_string || obs.created_at || '',
                     location: obs.place_guess || 'Location obscured',
@@ -650,18 +678,25 @@ title: Daily Nature Photos
                 const info = document.createElement('div');
                 info.className = 'slide-info';
                 
-                // Species names
+                // Species names (common name is link, scientific name beside it)
+                const speciesContainer = document.createElement('div');
+                speciesContainer.className = 'species-name';
+                
                 if (obs.species_common) {
-                    const commonName = document.createElement('h2');
-                    commonName.className = 'species-name';
-                    commonName.textContent = obs.species_common;
-                    info.appendChild(commonName);
+                    const commonLink = document.createElement('a');
+                    commonLink.href = `https://www.inaturalist.org/taxa/${obs.taxon_id || ''}`;
+                    commonLink.target = '_blank';
+                    commonLink.className = 'species-common';
+                    commonLink.textContent = obs.species_common;
+                    speciesContainer.appendChild(commonLink);
                 }
                 
-                const scientificName = document.createElement('p');
+                const scientificName = document.createElement('span');
                 scientificName.className = 'scientific-name';
                 scientificName.textContent = obs.species_scientific;
-                info.appendChild(scientificName);
+                speciesContainer.appendChild(scientificName);
+                
+                info.appendChild(speciesContainer);
                 
                 // Metadata
                 const metadata = document.createElement('div');
@@ -789,22 +824,36 @@ title: Daily Nature Photos
         nextSlide() {
             const nextIndex = (this.currentSlide + 1) % this.slides.length;
             this.showSlide(nextIndex);
-            this.timeRemaining = this.slideDuration / 1000;
-            this.updateTimerDisplay();
+            
+            // Fully reset timers
             if (this.isPlaying) {
+                clearInterval(this.interval);
                 clearInterval(this.countdownInterval);
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
                 this.startCountdown();
+                // Restart main interval
+                this.interval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
             }
         }
 
         previousSlide() {
             const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
             this.showSlide(prevIndex);
-            this.timeRemaining = this.slideDuration / 1000;
-            this.updateTimerDisplay();
+            
+            // Fully reset timers
             if (this.isPlaying) {
+                clearInterval(this.interval);
                 clearInterval(this.countdownInterval);
+                this.timeRemaining = this.slideDuration / 1000;
+                this.updateTimerDisplay();
                 this.startCountdown();
+                // Restart main interval
+                this.interval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
             }
         }
 
