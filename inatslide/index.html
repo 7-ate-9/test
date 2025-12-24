@@ -53,11 +53,19 @@ title: Daily Nature Photos
 
     .controls-inline {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
         gap: 10px;
-        padding: 15px 0;
+        padding: 12px 0;
         border-bottom: 1px solid #e0e0e0;
         margin-bottom: 15px;
+    }
+
+    .nav-controls {
+        display: flex;
+        gap: 10px;
+        flex: 1;
+        justify-content: center;
     }
 
     .species-name {
@@ -113,11 +121,8 @@ title: Daily Nature Photos
     .license-section {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding-top: 15px;
-        border-top: 1px solid #e0e0e0;
+        gap: 15px;
         flex-wrap: wrap;
-        gap: 10px;
     }
 
     .license-info {
@@ -677,14 +682,41 @@ title: Daily Nature Photos
                 const info = document.createElement('div');
                 info.className = 'slide-info';
                 
-                // Add inline controls at the top
+                // Add inline controls at the top with license
                 const controlsInline = document.createElement('div');
                 controlsInline.className = 'controls-inline';
-                controlsInline.innerHTML = `
+                
+                // License on left
+                const licenseInfo = document.createElement('div');
+                licenseInfo.className = 'license-section';
+                
+                const licenseBadge = document.createElement('a');
+                licenseBadge.href = obs.license_url;
+                licenseBadge.target = '_blank';
+                licenseBadge.className = 'license-badge';
+                licenseBadge.textContent = obs.license_name;
+                licenseInfo.appendChild(licenseBadge);
+                
+                controlsInline.appendChild(licenseInfo);
+                
+                // Nav controls in center
+                const navControls = document.createElement('div');
+                navControls.className = 'nav-controls';
+                navControls.innerHTML = `
                     <button class="control-btn prev-btn">‹</button>
                     <button class="control-btn play-pause-btn">⏸️</button>
                     <button class="control-btn next-btn">›</button>
                 `;
+                controlsInline.appendChild(navControls);
+                
+                // iNat link on right
+                const obsLink = document.createElement('a');
+                obsLink.href = obs.obs_url;
+                obsLink.target = '_blank';
+                obsLink.className = 'obs-link';
+                obsLink.textContent = 'View on iNaturalist →';
+                controlsInline.appendChild(obsLink);
+                
                 info.appendChild(controlsInline);
                 
                 // Species names (common name is link, scientific name beside it)
@@ -728,39 +760,15 @@ title: Daily Nature Photos
                 
                 info.appendChild(metadata);
                 
-                // License section
-                const licenseSection = document.createElement('div');
-                licenseSection.className = 'license-section';
-                
-                const licenseInfo = document.createElement('div');
-                licenseInfo.className = 'license-info';
-                
-                const licenseBadge = document.createElement('a');
-                licenseBadge.href = obs.license_url;
-                licenseBadge.target = '_blank';
-                licenseBadge.className = 'license-badge';
-                licenseBadge.textContent = obs.license_name;
-                licenseInfo.appendChild(licenseBadge);
-                
-                licenseSection.appendChild(licenseInfo);
-                
-                const obsLink = document.createElement('a');
-                obsLink.href = obs.obs_url;
-                obsLink.target = '_blank';
-                obsLink.className = 'obs-link';
-                obsLink.textContent = 'View on iNaturalist →';
-                licenseSection.appendChild(obsLink);
-                
-                info.appendChild(licenseSection);
                 slide.appendChild(info);
                 
                 container.appendChild(slide);
                 this.slides.push(slide);
                 
                 // Attach event listeners to this slide's controls
-                const prevBtn = controlsInline.querySelector('.prev-btn');
-                const nextBtn = controlsInline.querySelector('.next-btn');
-                const playPauseBtn = controlsInline.querySelector('.play-pause-btn');
+                const prevBtn = navControls.querySelector('.prev-btn');
+                const nextBtn = navControls.querySelector('.next-btn');
+                const playPauseBtn = navControls.querySelector('.play-pause-btn');
                 
                 prevBtn.addEventListener('click', () => this.previousSlide());
                 nextBtn.addEventListener('click', () => this.nextSlide());
