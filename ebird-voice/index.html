@@ -3,59 +3,34 @@ layout: default
 title: eBird Voice Input
 ---
 
-<style>
-  /* Prevent Tailwind from affecting the page layout */
-  #ebird-app-container * {
-    all: revert;
-  }
-  #ebird-app-container {
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-</style>
-
 <div id="root"></div>
 
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-<script type="text/babel">
+<script>
+  window.tailwindConfig = {
+    corePlugins: {
+      preflight: false,
+    }
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <script type="text/babel">
 const { useState } = React;
 
 const Button = ({ children, onClick, disabled, variant = 'default', className = '' }) => {
-  const baseStyles = {
-    padding: '8px 16px',
-    borderRadius: '8px',
-    fontWeight: '500',
-    transition: 'all 0.2s',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    cursor: disabled ? 'not-allowed' : 'pointer'
+  const baseStyles = 'px-4 py-2 rounded-lg font-medium transition-colors flex items-center justify-center';
+  const variants = {
+    default: 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-300 disabled:cursor-not-allowed',
+    outline: 'border-2 border-gray-900 bg-white text-gray-900 hover:bg-gray-100 disabled:border-gray-400 disabled:text-gray-400 disabled:cursor-not-allowed'
   };
-  
-  const variantStyles = {
-    default: {
-      backgroundColor: disabled ? '#93c5fd' : '#2563eb',
-      color: 'white',
-      ':hover': { backgroundColor: '#1d4ed8' }
-    },
-    outline: {
-      backgroundColor: 'white',
-      color: disabled ? '#9ca3af' : '#111827',
-      border: disabled ? '2px solid #9ca3af' : '2px solid #111827'
-    }
-  };
-  
   return (
     <button 
       onClick={onClick} 
       disabled={disabled}
-      style={{...baseStyles, ...variantStyles[variant]}}
-      className={className}
+      className={`${baseStyles} ${variants[variant]} ${className}`}
     >
       {children}
     </button>
@@ -63,85 +38,58 @@ const Button = ({ children, onClick, disabled, variant = 'default', className = 
 };
 
 const Card = ({ children, className = '' }) => (
-  <div style={{
-    backgroundColor: 'white',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-    maxWidth: '48rem',
-    margin: '2rem auto',
-    width: '100%'
-  }}>{children}</div>
+  <div className={`bg-white rounded-lg shadow-lg ${className}`}>{children}</div>
 );
 
 const CardHeader = ({ children }) => (
-  <div style={{
-    padding: '1.5rem',
-    borderBottom: '1px solid #e5e7eb'
-  }}>{children}</div>
+  <div className="px-6 py-4 border-b">{children}</div>
 );
 
 const CardTitle = ({ children }) => (
-  <h2 style={{
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    margin: 0
-  }}>{children}</h2>
+  <h2 className="text-2xl font-bold">{children}</h2>
 );
 
 const CardContent = ({ children, className = '' }) => (
-  <div style={{
-    padding: '1.5rem'
-  }} className={className}>{children}</div>
+  <div className={`px-6 py-4 ${className}`}>{children}</div>
 );
 
 const Alert = ({ children, variant = 'default' }) => {
-  const styles = {
-    default: {
-      backgroundColor: '#eff6ff',
-      borderColor: '#1e3a8a'
-    },
-    destructive: {
-      backgroundColor: '#fef2f2',
-      borderColor: '#b91c1c'
-    }
+  const variants = {
+    default: 'bg-blue-50 border-blue-200',
+    destructive: 'bg-red-50 border-red-200'
   };
   return (
-    <div style={{
-      border: '2px solid',
-      borderRadius: '8px',
-      padding: '1rem',
-      ...styles[variant]
-    }}>
+    <div className={`border-2 rounded-lg p-4 ${variants[variant]}`}>
       {children}
     </div>
   );
 };
 
 const AlertDescription = ({ children, className = '' }) => (
-  <div className={className} style={{margin: 0}}>{children}</div>
+  <div className={className}>{children}</div>
 );
 
-const Mic = ({ style }) => (
-  <svg style={style} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const Mic = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
   </svg>
 );
 
-const MicOff = ({ style }) => (
-  <svg style={style} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const MicOff = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
   </svg>
 );
 
-const Download = ({ style }) => (
-  <svg style={style} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const Download = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
   </svg>
 );
 
-const Trash = ({ style }) => (
-  <svg style={style} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+const Trash = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
   </svg>
 );
@@ -187,7 +135,6 @@ const EBirdVoiceInput = () => {
     
     let result = text.toLowerCase();
     
-    // Handle compound numbers like "twenty-three" or "twenty three"
     for (const [tenWord, tenVal] of Object.entries(tens)) {
       for (const [oneWord, oneVal] of Object.entries(ones)) {
         if (oneVal < 10) {
@@ -196,8 +143,6 @@ const EBirdVoiceInput = () => {
       }
     }
     
-    // Handle "X hundred Y" or "X thousand Y" patterns
-    // e.g., "two thousand three hundred" or "five hundred fifty"
     const complexPattern = /(\w+)\s+(hundred|thousand)\s+(?:and\s+)?(\w+)?/g;
     result = result.replace(complexPattern, (match, num1, scale, num2) => {
       const n1 = ones[num1] || tens[num1] || parseInt(num1) || 1;
@@ -206,7 +151,6 @@ const EBirdVoiceInput = () => {
       return (n1 * scaleVal + n2).toString();
     });
     
-    // Handle simple scales "X hundred" or "X thousand"
     for (const [scaleWord, scaleVal] of Object.entries(scales)) {
       for (const [numWord, numVal] of Object.entries({...ones, ...tens})) {
         result = result.replace(new RegExp('\\b' + numWord + '\\s+' + scaleWord + '\\b', 'g'), 
@@ -214,11 +158,9 @@ const EBirdVoiceInput = () => {
       }
     }
     
-    // Handle standalone scale words (assume "a hundred" = 100)
     result = result.replace(/\ba\s+hundred\b/g, '100');
     result = result.replace(/\ba\s+thousand\b/g, '1000');
     
-    // Replace simple number words
     for (const [word, num] of Object.entries({...ones, ...tens})) {
       result = result.replace(new RegExp('\\b' + word + '\\b', 'g'), num.toString());
     }
@@ -226,94 +168,62 @@ const EBirdVoiceInput = () => {
     return result;
   };
 
-  const processCommand = (command) => {
-    const converted = wordsToNumbers(command);
-    const lower = converted.toLowerCase();
-    
-    if (lower.includes('done') || lower.includes('stop') || lower.includes('finish')) {
-      stopListening();
-      return true;
-    }
-    
-    // Check for modification commands (add/subtract/plus/minus)
-    const modifyMatch = lower.match(/(add|plus|subtract|minus|remove)\s+(\d+)\s+(.+)/);
-    if (modifyMatch) {
-      const [_, action, countStr, species] = modifyMatch;
-      const count = parseInt(countStr);
-      const cleanSpecies = cleanSpeciesName(species.trim());
-      
-      if (action === 'subtract' || action === 'minus' || action === 'remove') {
-        modifyBirdCount(cleanSpecies, -count);
-      } else {
-        modifyBirdCount(cleanSpecies, count);
-      }
-      return true;
-    }
-    
-    // Pattern 1: "5 American Robin" or "5 American Robins"
-    let match = lower.match(/^(\d+)\s+(.+)/);
-    if (match) {
-      const [_, count, species] = match;
-      addBird(parseInt(count), cleanSpeciesName(species.trim()));
-      return true;
-    }
-    
-    // Pattern 2: "American Robin, 5" or "American Robin 5"
-    match = lower.match(/^([a-z\s'-]+?)[,\s]+(\d+)$/);
-    if (match) {
-      const [_, species, count] = match;
-      addBird(parseInt(count), cleanSpeciesName(species.trim()));
-      return true;
-    }
-    
-    // Pattern 3: "I saw/had/spotted 3 Blue Jays"
-    match = lower.match(/(?:i\s+)?(?:saw|had|spotted|observed|heard)\s+(\d+)\s+(.+)/);
-    if (match) {
-      const [_, count, species] = match;
-      addBird(parseInt(count), cleanSpeciesName(species.trim()));
-      return true;
-    }
-    
-    // Pattern 4: Just species name (assume count of 1)
-    // But exclude common filler words
-    const fillerWords = ['the', 'a', 'an', 'some', 'add', 'subtract', 'i', 'saw', 'had', 'spotted'];
-    const words = lower.trim().split(/\s+/);
-    const hasOnlyFillers = words.every(w => fillerWords.includes(w) || /^\d+$/.test(w));
-    
-    if (lower.length > 2 && !lower.match(/^\d/) && !hasOnlyFillers) {
-      const cleaned = cleanSpeciesName(lower.trim());
-      if (cleaned.length > 0) {
-        addBird(1, cleaned);
-        return true;
-      }
-    }
-    
-    return false;
-  };
-  
   const cleanSpeciesName = (name) => {
-    // Remove common filler words from the beginning/end
     let cleaned = name.toLowerCase();
     cleaned = cleaned.replace(/^(i\s+)?(saw|had|spotted|observed|heard|the|a|an|some)\s+/gi, '');
     cleaned = cleaned.replace(/\s+(bird|birds)$/gi, '');
     
-    // Capitalize each word (eBird format)
     cleaned = cleaned.split(' ').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
     
     return cleaned.trim();
   };
-  
+
+  const speciesMatch = (name1, name2) => {
+    const normalize = (name) => {
+      return name.toLowerCase()
+        .replace(/geese$/i, 'goose')
+        .replace(/ies$/i, 'y')
+        .replace(/ves$/i, 'f')
+        .replace(/s$/, '')
+        .replace(/[^a-z\s]/g, '')
+        .trim();
+    };
+    
+    const n1 = normalize(name1);
+    const n2 = normalize(name2);
+    
+    if (n1 === n2) return true;
+    
+    const words1 = n1.split(/\s+/);
+    const words2 = n2.split(/\s+/);
+    
+    if (words1.length === words2.length) {
+      let matches = 0;
+      for (let i = 0; i < words1.length; i++) {
+        if (words1[i] === words2[i]) {
+          matches++;
+        } else if (words1[i].includes(words2[i]) || words2[i].includes(words1[i])) {
+          if (Math.min(words1[i].length, words2[i].length) / Math.max(words1[i].length, words2[i].length) > 0.7) {
+            matches++;
+          }
+        }
+      }
+      return matches === words1.length;
+    }
+    
+    return false;
+  };
+
   const addBird = (count, species, location = '') => {
-    // Use the last entry time if within 5 minutes, otherwise use current time
     const now = new Date();
     let entryTime = now;
     
     if (lastEntryTimeRef.current) {
       const diffMinutes = (now - lastEntryTimeRef.current) / (1000 * 60);
       if (diffMinutes <= 5) {
-        entryTime = lastEntryTimeRef.current; // Use same time for grouping
+        entryTime = lastEntryTimeRef.current;
       } else {
         lastEntryTimeRef.current = now;
       }
@@ -322,7 +232,6 @@ const EBirdVoiceInput = () => {
     }
     
     setBirds(prev => {
-      // Check if this species already exists in the current time window (within 5 min)
       const recentMatch = prev.find(b => {
         const birdTime = new Date(`${b.date}T${b.time}`);
         const timeDiff = (now - birdTime) / (1000 * 60);
@@ -330,13 +239,11 @@ const EBirdVoiceInput = () => {
       });
       
       if (recentMatch) {
-        // Add to existing count
         setDebugInfo(p => p + `\nAdding ${count} to existing ${recentMatch.species} (was ${recentMatch.count})`);
         return prev.map(b => 
           b === recentMatch ? { ...b, count: b.count + count } : b
         );
       } else {
-        // Create new entry
         const newBird = {
           species: species,
           count: count,
@@ -351,11 +258,10 @@ const EBirdVoiceInput = () => {
       }
     });
   };
-  
+
   const modifyBirdCount = (species, delta) => {
     setDebugInfo(prev => prev + `\nTrying to modify: ${species}`);
     setBirds(prev => {
-      // Try to find existing entry with fuzzy matching
       let existing = null;
       let existingIndex = -1;
       
@@ -370,10 +276,8 @@ const EBirdVoiceInput = () => {
       
       if (existing) {
         setDebugInfo(p => p + `\nFound match at index ${existingIndex}, current count: ${existing.count}, delta: ${delta}`);
-        // Modify existing entry
         const newCount = Math.max(0, existing.count + delta);
         if (newCount === 0) {
-          // Remove entry if count becomes 0
           return prev.filter((_, i) => i !== existingIndex);
         }
         return prev.map((b, i) => 
@@ -382,11 +286,11 @@ const EBirdVoiceInput = () => {
       } else {
         setDebugInfo(p => p + `\nNo match found for "${species}"`);
         if (delta > 0) {
-          // Add new entry if it doesn't exist and delta is positive
           const now = new Date();
           return [...prev, {
             species: species,
             count: delta,
+            location: '',
             date: now.toISOString().split('T')[0],
             time: now.toTimeString().split(' ')[0],
             lat: coords?.latitude ?? null,
@@ -397,42 +301,80 @@ const EBirdVoiceInput = () => {
       return prev;
     });
   };
-  
-  // Fuzzy matching for species names (handles plurals, minor typos)
-  const speciesMatch = (name1, name2) => {
-    const normalize = (name) => {
-      return name.toLowerCase()
-        .replace(/geese$/i, 'goose') // Handle geese -> goose specifically
-        .replace(/ies$/i, 'y') // berries -> berry
-        .replace(/ves$/i, 'f') // wolves -> wolf
-        .replace(/s$/, '') // Remove trailing 's' for most plurals
-        .replace(/[^a-z\s]/g, '') // Remove non-letters except spaces
-        .trim();
-    };
+
+  const processCommand = (command) => {
+    const converted = wordsToNumbers(command);
+    const lower = converted.toLowerCase();
     
-    const n1 = normalize(name1);
-    const n2 = normalize(name2);
+    if (lower.includes('undo')) {
+      undoLastEntry();
+      return true;
+    }
     
-    // Exact match after normalization
-    if (n1 === n2) return true;
+    if (lower.includes('done') || lower.includes('stop') || lower.includes('finish')) {
+      stopListening();
+      return true;
+    }
     
-    // Also check if the words are similar enough
-    const words1 = n1.split(/\s+/);
-    const words2 = n2.split(/\s+/);
+    const locationMatch = lower.match(/^(\d+)\s+(.+?)\s+at\s+(.+)$/);
+    if (locationMatch) {
+      const [_, count, species, location] = locationMatch;
+      addBird(parseInt(count), cleanSpeciesName(species.trim()), location.trim());
+      return true;
+    }
     
-    // If same number of words, check word-by-word similarity
-    if (words1.length === words2.length) {
-      let matches = 0;
-      for (let i = 0; i < words1.length; i++) {
-        if (words1[i] === words2[i]) {
-          matches++;
-        } else if (words1[i].includes(words2[i]) || words2[i].includes(words1[i])) {
-          if (Math.min(words1[i].length, words2[i].length) / Math.max(words1[i].length, words2[i].length) > 0.7) {
-            matches++;
-          }
-        }
+    const sawLocationMatch = lower.match(/(?:i\s+)?(?:saw|had|spotted|observed|heard)\s+(\d+)\s+(.+?)\s+at\s+(.+)$/);
+    if (sawLocationMatch) {
+      const [_, count, species, location] = sawLocationMatch;
+      addBird(parseInt(count), cleanSpeciesName(species.trim()), location.trim());
+      return true;
+    }
+    
+    const modifyMatch = lower.match(/(add|plus|subtract|minus|remove)\s+(\d+)\s+(.+)/);
+    if (modifyMatch) {
+      const [_, action, countStr, species] = modifyMatch;
+      const count = parseInt(countStr);
+      const cleanSpecies = cleanSpeciesName(species.trim());
+      
+      if (action === 'subtract' || action === 'minus' || action === 'remove') {
+        modifyBirdCount(cleanSpecies, -count);
+      } else {
+        modifyBirdCount(cleanSpecies, count);
       }
-      return matches === words1.length;
+      return true;
+    }
+    
+    let match = lower.match(/^(\d+)\s+(.+)/);
+    if (match) {
+      const [_, count, species] = match;
+      addBird(parseInt(count), cleanSpeciesName(species.trim()));
+      return true;
+    }
+    
+    match = lower.match(/^([a-z\s'-]+?)[,\s]+(\d+)$/);
+    if (match) {
+      const [_, species, count] = match;
+      addBird(parseInt(count), cleanSpeciesName(species.trim()));
+      return true;
+    }
+    
+    match = lower.match(/(?:i\s+)?(?:saw|had|spotted|observed|heard)\s+(\d+)\s+(.+)/);
+    if (match) {
+      const [_, count, species] = match;
+      addBird(parseInt(count), cleanSpeciesName(species.trim()));
+      return true;
+    }
+    
+    const fillerWords = ['the', 'a', 'an', 'some', 'add', 'subtract', 'i', 'saw', 'had', 'spotted'];
+    const words = lower.trim().split(/\s+/);
+    const hasOnlyFillers = words.every(w => fillerWords.includes(w) || /^\d+$/.test(w));
+    
+    if (lower.length > 2 && !lower.match(/^\d/) && !hasOnlyFillers) {
+      const cleaned = cleanSpeciesName(lower.trim());
+      if (cleaned.length > 0) {
+        addBird(1, cleaned);
+        return true;
+      }
     }
     
     return false;
@@ -491,7 +433,7 @@ const EBirdVoiceInput = () => {
         if (!processCommand(command)) {
           setError('Not recognized. Try: "3 American Robin" or say "Done" to finish');
         } else {
-          setError(''); // Clear error on success
+          setError('');
         }
       };
 
@@ -500,10 +442,8 @@ const EBirdVoiceInput = () => {
         
         switch (event.error) {
           case 'no-speech':
-            // Don't stop on no-speech in continuous mode
             break;
           case 'aborted':
-            // Normal stop
             break;
           case 'audio-capture':
             setError('No microphone was found. Please check your microphone settings.');
@@ -534,7 +474,6 @@ const EBirdVoiceInput = () => {
 
       recognition.onend = () => {
         setDebugInfo(prev => prev + '\nRecognition ended');
-        // Check the ref instead of state to avoid stale closure
         if (listeningRef.current) {
           setDebugInfo(prev => prev + '\nRestarting...');
           setTimeout(() => {
@@ -575,7 +514,6 @@ const EBirdVoiceInput = () => {
   const generateCSV = () => {
     if (birds.length === 0) return;
     
-    // eBird Record Format columns (based on the image)
     const headers = [
       'Common Name',
       'Genus',
@@ -599,25 +537,25 @@ const EBirdVoiceInput = () => {
     ];
     
     const rows = birds.map(bird => [
-      `"${bird.species}"`,  // Common Name
-      '',  // Genus (empty)
-      '',  // Species (empty)
-      bird.count,  // Number
-      '',  // Species Comments
-      bird.location ? `"${bird.location}"` : '',  // Location Name
-      bird.lat !== null ? bird.lat.toFixed(6) : '',  // Latitude
-      bird.lng !== null ? bird.lng.toFixed(6) : '',  // Longitude
-      bird.date,  // Date (YYYY-MM-DD format)
-      bird.time,  // Start Time (HH:MM:SS format)
-      '',  // State/Province (empty)
-      '',  // Country Code (empty - eBird will determine from coordinates)
-      'Incidental',  // Protocol
-      '1',  // Number of Observers
-      '',  // Duration
-      'N',  // All observations reported (N for Incidental protocol)
-      '',  // Distance Traveled
-      '',  // Area Covered
-      ''   // Submission Comments
+      `"${bird.species}"`,
+      '',
+      '',
+      bird.count,
+      '',
+      bird.location ? `"${bird.location}"` : '',
+      bird.lat !== null ? bird.lat.toFixed(6) : '',
+      bird.lng !== null ? bird.lng.toFixed(6) : '',
+      bird.date,
+      bird.time,
+      '',
+      '',
+      'Incidental',
+      '1',
+      '',
+      'N',
+      '',
+      '',
+      ''
     ]);
     
     const csvContent = [
@@ -635,73 +573,51 @@ const EBirdVoiceInput = () => {
   };
 
   return (
-    <Card>
+    <Card className="w-full max-w-2xl mx-auto my-8">
       <CardHeader>
         <CardTitle>eBird Voice Input</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem'}}>
-          <div style={{
-            backgroundColor: '#eff6ff',
-            border: '2px solid #1e3a8a',
-            borderRadius: '8px',
-            padding: '1rem'
-          }}>
-            <h3 style={{
-              fontWeight: 'bold',
-              fontSize: '1.125rem',
-              marginBottom: '0.5rem',
-              color: '#111827'
-            }}>📋 Voice Commands:</h3>
-            <div style={{
-              fontSize: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '0.25rem',
-              color: '#111827'
-            }}>
-              <div><strong>Add birds:</strong> "3 American Robin" or "500 Canada Geese at Central Park"</div>
-              <div><strong>Modify count:</strong> "Add 50 Snow Goose" or "Subtract 10 Mallard"</div>
-              <div><strong>Natural speech:</strong> "I saw five hundred Cardinals at the lake"</div>
-              <div><strong>Undo:</strong> "Undo" (removes last entry)</div>
-              <div><strong>Finish:</strong> "Done" or "Stop"</div>
-            </div>
+      <CardContent className="space-y-6">
+        <div className="bg-blue-50 border-2 border-blue-900 rounded-lg p-4">
+          <h3 className="font-bold text-lg mb-2 text-gray-900">📋 Voice Commands:</h3>
+          <div className="text-base space-y-1 text-gray-900">
+            <div><strong>Add birds:</strong> "3 American Robin" or "500 Canada Geese at Central Park"</div>
+            <div><strong>Modify count:</strong> "Add 50 Snow Goose" or "Subtract 10 Mallard"</div>
+            <div><strong>Natural speech:</strong> "I saw five hundred Cardinals at the lake"</div>
+            <div><strong>Undo:</strong> "Undo" (removes last entry)</div>
+            <div><strong>Finish:</strong> "Done" or "Stop"</div>
+          </div>
           {!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window) && (
-            <div style={{
-              marginTop: '0.5rem',
-              fontSize: '0.875rem',
-              color: '#dc2626',
-              fontWeight: '500'
-            }}>
+            <div className="mt-2 text-sm text-red-600 font-medium">
               ⚠️ Speech recognition not supported. Please use Chrome, Edge, or Samsung Internet.
             </div>
           )}
         </div>
 
-        <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+        <div className="flex flex-col gap-4">
           <Button 
             onClick={isListening ? stopListening : startListening}
-            style={{height: '5rem', fontSize: '1.25rem', width: '100%'}}
+            className="h-20 text-xl"
           >
-            {isListening ? <MicOff style={{marginRight: '0.75rem', height: '2rem', width: '2rem'}} /> : <Mic style={{marginRight: '0.75rem', height: '2rem', width: '2rem'}} />}
+            {isListening ? <MicOff className="mr-3 h-8 w-8" /> : <Mic className="mr-3 h-8 w-8" />}
             {isListening ? 'Stop Listening' : 'Start Listening'}
           </Button>
-          <div style={{display: 'flex', gap: '1rem'}}>
+          <div className="flex gap-4">
             <Button
               onClick={() => setBirds([])}
               variant="outline"
-              style={{flex: 1, height: '4rem', fontSize: '1.125rem'}}
+              className="flex-1 h-16 text-lg"
             >
-              <Trash style={{marginRight: '0.5rem', height: '1.5rem', width: '1.5rem'}} />
+              <Trash className="mr-2 h-6 w-6" />
               Clear
             </Button>
             <Button
               onClick={generateCSV}
               disabled={birds.length === 0}
               variant="outline"
-              style={{flex: 1, height: '4rem', fontSize: '1.125rem'}}
+              className="flex-1 h-16 text-lg"
             >
-              <Download style={{marginRight: '0.5rem', height: '1.5rem', width: '1.5rem'}} />
+              <Download className="mr-2 h-6 w-6" />
               Download
             </Button>
           </div>
@@ -736,17 +652,19 @@ const EBirdVoiceInput = () => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b-2 border-gray-900">
-                    <th className="pb-2 pr-4 text-gray-900">Count</th>
                     <th className="pb-2 pr-4 text-gray-900">Species</th>
-                    <th className="pb-2 text-gray-900">Time</th>
+                    <th className="pb-2 pr-4 text-gray-900">Number</th>
+                    <th className="pb-2 pr-4 text-gray-900">Location</th>
+                    <th className="pb-2 text-gray-900">Start Time</th>
                   </tr>
                 </thead>
                 <tbody>
                   {birds.map((bird, index) => (
                     <tr key={index} className="border-b border-gray-300">
-                      <td className="py-2 pr-4 text-lg font-bold text-gray-900">{bird.count}</td>
                       <td className="py-2 pr-4 text-base text-gray-900">{bird.species}</td>
-                      <td className="py-2 text-sm text-gray-700">{bird.time}</td>
+                      <td className="py-2 pr-4 text-lg font-bold text-gray-900">{bird.count}</td>
+                      <td className="py-2 pr-4 text-sm text-gray-700">{bird.location || '—'}</td>
+                      <td className="py-2 text-sm text-gray-600">{bird.time}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -770,5 +688,4 @@ const EBirdVoiceInput = () => {
 };
 
 ReactDOM.render(<EBirdVoiceInput />, document.getElementById('root'));
-</script>
 </script>
