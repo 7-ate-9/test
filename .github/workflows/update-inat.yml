@@ -19,11 +19,11 @@ on:
         required: false
         default: '30'
       term_id:
-        description: 'Annotation term ID (e.g., 17 for Life Stage)'
+        description: 'Annotation term ID (e.g., 1 for Life Stage, 17 for Dead or Alive)'
         required: false
         default: '17'
       term_value_id:
-        description: 'Annotation value ID (e.g., 18 for Adult)'
+        description: 'Annotation value ID (e.g., 2 for Adult, 18 for Alive)'
         required: false
         default: '18'
 
@@ -52,7 +52,8 @@ jobs:
         TAXON="${{ github.event.inputs.taxon_id || '551307' }}"
         QUALITY="${{ github.event.inputs.quality_grade }}"
         COUNT="${{ github.event.inputs.count || '30' }}"
-        ADDITIONAL="${{ github.event.inputs.additional_params }}"
+        TERM_ID="${{ github.event.inputs.term_id || '1' }}"
+        TERM_VALUE="${{ github.event.inputs.term_value_id || '2' }}"
         
         CMD="$CMD --taxon=$TAXON"
         echo "Using taxon ID: $TAXON"
@@ -65,12 +66,15 @@ jobs:
         CMD="$CMD --count=$COUNT"
         echo "Count: $COUNT"
         
-        # Parse additional parameters
-        if [ -n "$ADDITIONAL" ]; then
-          for param in $ADDITIONAL; do
-            CMD="$CMD --$param"
-            echo "Additional param: $param"
-          done
+        # Add annotation filters (Life Stage: Adult)
+        if [ -n "$TERM_ID" ]; then
+          CMD="$CMD --term_id=$TERM_ID"
+          echo "Term ID: $TERM_ID"
+        fi
+        
+        if [ -n "$TERM_VALUE" ]; then
+          CMD="$CMD --term_value_id=$TERM_VALUE"
+          echo "Term Value ID: $TERM_VALUE"
         fi
         
         echo "Running: $CMD"
