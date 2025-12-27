@@ -1,9 +1,24 @@
 {
-  "last_updated": "2025-12-26T06:28:01.053902",
+  "last_updated": "2025-12-27T06:26:35.215836",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 332209594,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/602841720/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "Gino Nearns, Ph.D.",
+      "observer_login": "gnearns",
+      "date": "2025/12/26 9:12 AM",
+      "location": "Islas Santa Catalina, Costa Rica",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/332209594",
+      "quality_grade": "research"
+    },
     {
       "id": 332028947,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/602469409/large.jpg",
@@ -437,21 +452,6 @@
       "license_name": "CC BY",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/330674724",
-      "quality_grade": "research"
-    },
-    {
-      "id": 330610661,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/599552415/large.jpg",
-      "species_common": "Sand Tiger Shark",
-      "species_scientific": "Carcharias taurus",
-      "observer": "Hatty Pacheco",
-      "observer_login": "hatty2",
-      "date": "2025-12-11 17:55:28",
-      "location": "Delmarva Peninsula, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/330610661",
       "quality_grade": "research"
     }
   ]
