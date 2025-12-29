@@ -30,6 +30,8 @@ def scrape_inat_observations(taxon_id='', quality_grade='', per_page=30, **kwarg
         'order_by': 'created_at',
         'photos': 'true',  # Only observations with photos
         'photo_licensed': 'true',  # Only Creative Commons licensed photos
+        'captive': 'false',  # Exclude captive/cultivated organisms
+        'verifiable': 'true',  # Only verifiable observations (research grade + needs ID)
     }
     
     if taxon_id:
@@ -46,7 +48,9 @@ def scrape_inat_observations(taxon_id='', quality_grade='', per_page=30, **kwarg
     print(f"Run time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print("=" * 50)
     print(f"\nFetching observations from iNaturalist API...")
-    print(f"Parameters: {params}")
+    print(f"Full API URL parameters:")
+    for key, value in params.items():
+        print(f"  {key}: {value}")
     
     try:
         response = requests.get(base_url, params=params, timeout=30)
@@ -186,7 +190,7 @@ def save_observations(observations, taxon_id=''):
         "observations": observations
     }
     
-    # Save to observations.json in the inatslide directory 
+    # Save to observations.json in the birds directory (reusing same directory)
     with open('inatslide/observations.json', 'w') as f:
         json.dump(data, f, indent=2)
     
