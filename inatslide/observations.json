@@ -1,9 +1,54 @@
 {
-  "last_updated": "2025-12-29T06:30:23.965407",
+  "last_updated": "2025-12-30T06:28:24.791299",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 332685896,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603822356/large.jpg",
+      "species_common": "Sand Tiger Shark",
+      "species_scientific": "Carcharias taurus",
+      "observer": null,
+      "observer_login": "mandyc11",
+      "date": "2025-12-30 09:49:15",
+      "location": "CW32+7H LadiRoj Pond, Shell Cove NSW 2529, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/332685896",
+      "quality_grade": "research"
+    },
+    {
+      "id": 332572972,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603591210/large.jpg",
+      "species_common": "Port Jackson Shark",
+      "species_scientific": "Heterodontus portusjacksoni",
+      "observer": null,
+      "observer_login": "sharkturtle",
+      "date": "2025-12-29T10:00",
+      "location": "Beaumaris, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/332572972",
+      "quality_grade": "research"
+    },
+    {
+      "id": 332562142,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603567413/large.jpg",
+      "species_common": "Spot-tail Shark",
+      "species_scientific": "Carcharhinus sorrah",
+      "observer": "Vivek.N.Rathod",
+      "observer_login": "vivek32",
+      "date": "2025-12-25 08:07:58",
+      "location": "Andhra Pradesh, IN",
+      "license_code": "cc-by-nc-sa",
+      "license_name": "CC BY-NC-SA",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/332562142",
+      "quality_grade": "research"
+    },
     {
       "id": 332549917,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603541342/large.jpg",
@@ -62,7 +107,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/332546743",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 332541798,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/331683788",
-      "quality_grade": "research"
-    },
-    {
-      "id": 331673950,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/601739089/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2025/12/19 1:34 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/331673950",
-      "quality_grade": "research"
-    },
-    {
-      "id": 331673909,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/601738445/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2025/12/19 10:25 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/331673909",
-      "quality_grade": "research"
-    },
-    {
-      "id": 331653148,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/601699088/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "Jackie Campbell",
-      "observer_login": "jackie-oz",
-      "date": "2025-12-20T12:10",
-      "location": "AU",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/331653148",
       "quality_grade": "research"
     }
   ]
