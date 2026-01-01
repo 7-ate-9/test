@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-31T06:28:41.676997",
+  "last_updated": "2026-01-01T06:28:37.919777",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -7,8 +7,8 @@
     {
       "id": 332798990,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/604048281/large.jpg",
-      "species_common": "",
-      "species_scientific": "Scyliorhinus",
+      "species_common": "Nursehound",
+      "species_scientific": "Scyliorhinus stellaris",
       "observer": "Neil Taylor",
       "observer_login": "neil69413",
       "date": "2023-10-15 08:21:35",
@@ -17,7 +17,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/332798990",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 332777292,
