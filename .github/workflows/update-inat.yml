@@ -49,33 +49,39 @@ jobs:
       run: |
         CMD="python scripts/scrape_inat.py"
         
-        TAXON="${{ github.event.inputs.taxon_id || '551307' }}"
-        QUALITY="${{ github.event.inputs.quality_grade }}"
-        COUNT="${{ github.event.inputs.count || '30' }}"
-        TERM_ID="${{ github.event.inputs.term_id || '1' }}"
-        TERM_VALUE="${{ github.event.inputs.term_value_id || '2' }}"
+        # Use inputs if manually triggered, otherwise use defaults
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          TAXON="${{ github.event.inputs.taxon_id }}"
+          QUALITY="${{ github.event.inputs.quality_grade }}"
+          COUNT="${{ github.event.inputs.count }}"
+          TERM_ID="${{ github.event.inputs.term_id }}"
+          TERM_VALUE="${{ github.event.inputs.term_value_id }}"
+        else
+          # Scheduled run - use hardcoded defaults
+          TAXON="551307"
+          QUALITY=""
+          COUNT="30"
+          TERM_ID="17"
+          TERM_VALUE="18"
+        fi
         
-        CMD="$CMD --taxon=$TAXON"
-        echo "Using taxon ID: $TAXON"
+        CMD="$CMD --taxon=${TAXON:-551307}"
+        echo "Using taxon ID: ${TAXON:-551307}"
         
         if [ -n "$QUALITY" ]; then
           CMD="$CMD --quality=$QUALITY"
           echo "Quality grade: $QUALITY"
         fi
         
-        CMD="$CMD --count=$COUNT"
-        echo "Count: $COUNT"
+        CMD="$CMD --count=${COUNT:-30}"
+        echo "Count: ${COUNT:-30}"
         
-        # Add annotation filters (Life Stage: Adult)
-        if [ -n "$TERM_ID" ]; then
-          CMD="$CMD --term_id=$TERM_ID"
-          echo "Term ID: $TERM_ID"
-        fi
+        # Add annotation filters (Dead or Alive: Alive)
+        CMD="$CMD --term_id=${TERM_ID:-17}"
+        echo "Term ID: ${TERM_ID:-17}"
         
-        if [ -n "$TERM_VALUE" ]; then
-          CMD="$CMD --term_value_id=$TERM_VALUE"
-          echo "Term Value ID: $TERM_VALUE"
-        fi
+        CMD="$CMD --term_value_id=${TERM_VALUE:-18}"
+        echo "Term Value ID: ${TERM_VALUE:-18}"
         
         echo "Running: $CMD"
         $CMD
