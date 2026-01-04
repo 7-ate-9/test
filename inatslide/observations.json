@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-01-03T06:27:02.667722",
+  "last_updated": "2026-01-04T06:27:01.237046",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 333299667,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605075188/large.jpg",
+      "species_common": "Bonnethead",
+      "species_scientific": "Sphyrna tiburo",
+      "observer": "Niyan Shehan",
+      "observer_login": "niyan_shehan",
+      "date": "2026-01-01 13:54:24",
+      "location": "FL, US",
+      "license_code": "cc0",
+      "license_name": "CC0 (Public Domain)",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "obs_url": "https://www.inaturalist.org/observations/333299667",
+      "quality_grade": "research"
+    },
     {
       "id": 333241379,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/604957933/large.jpg",
@@ -122,6 +137,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/332885761",
+      "quality_grade": "research"
+    },
+    {
+      "id": 332858439,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/604170060/large.jpg",
+      "species_common": "Sand Tiger Shark",
+      "species_scientific": "Carcharias taurus",
+      "observer": "Fiona Miller",
+      "observer_login": "flmiller",
+      "date": "2025/12/31 08:30 AM",
+      "location": "Hayden's Rock, Mid-Coast Council, NSW, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/332858439",
       "quality_grade": "research"
     },
     {
@@ -422,36 +452,6 @@
       "license_name": "CC0 (Public Domain)",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
       "obs_url": "https://www.inaturalist.org/observations/332490923",
-      "quality_grade": "research"
-    },
-    {
-      "id": 332490868,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603413775/large.jpg",
-      "species_common": "Leopard Shark",
-      "species_scientific": "Triakis semifasciata",
-      "observer": null,
-      "observer_login": "laiet17",
-      "date": "2025/12/10 8:42 AM",
-      "location": "San Diego County, CA, USA",
-      "license_code": "cc0",
-      "license_name": "CC0 (Public Domain)",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "obs_url": "https://www.inaturalist.org/observations/332490868",
-      "quality_grade": "research"
-    },
-    {
-      "id": 332453282,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603341904/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2025/12/28 11:13 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/332453282",
       "quality_grade": "research"
     }
   ]
