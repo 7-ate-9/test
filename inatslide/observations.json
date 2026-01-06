@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-01-05T06:34:40.234227",
+  "last_updated": "2026-01-06T06:29:21.153428",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 333635354,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605691892/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": null,
+      "observer_login": "hugo_roger",
+      "date": "2025/12/26",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/333635354",
+      "quality_grade": "research"
+    },
+    {
+      "id": 333568744,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605619285/large.jpg",
+      "species_common": "Small-spotted Catshark",
+      "species_scientific": "Scyliorhinus canicula",
+      "observer": "Tony Gilbert",
+      "observer_login": "tonyjgilbert",
+      "date": "2019-06-28 09:05:47",
+      "location": "KLB, An Dubh Sgeir",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/333568744",
+      "quality_grade": "research"
+    },
     {
       "id": 333511244,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605502216/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/332600361",
-      "quality_grade": "research"
-    },
-    {
-      "id": 332580378,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603605717/large.jpg",
-      "species_common": "Bronze Whaler",
-      "species_scientific": "Carcharhinus brachyurus",
-      "observer": "Adam Welz",
-      "observer_login": "adamwelz",
-      "date": "2025/12/19 9:46 AM",
-      "location": "Overberg, Western Cape, South Africa",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/332580378",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 332574139,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603593059/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": "Mike G. Rutherford",
-      "observer_login": "mikegrutherford",
-      "date": "2006/06/02 1:42 PM",
-      "location": "Monroe County, FL, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/332574139",
       "quality_grade": "research"
     }
   ]
