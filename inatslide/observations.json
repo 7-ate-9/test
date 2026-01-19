@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-01-18T06:27:12.347184",
+  "last_updated": "2026-01-19T06:33:46.573924",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 335282485,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609048907/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": "cpar",
+      "observer_login": "como_plants_animals_rocks",
+      "date": "2025/03/25 9:59 AM",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/335282485",
+      "quality_grade": "research"
+    },
+    {
+      "id": 335264811,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609020844/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "Colin Marino",
+      "observer_login": "colin_208",
+      "date": "2025-02-20 21:14:37",
+      "location": "Panama",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/335264811",
+      "quality_grade": "research"
+    },
     {
       "id": 335027816,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/608545256/large.jpg",
@@ -412,8 +442,8 @@
     {
       "id": 333802314,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/606042913/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
+      "species_common": "Spinner Shark",
+      "species_scientific": "Carcharhinus brevipinna",
       "observer": "Cade Cottar",
       "observer_login": "cadecottar",
       "date": "2017-08-06 18:16:30-05:00",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/333802314",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 333783600,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605994352/large.jpg",
-      "species_common": "Dusky Smooth-hound",
-      "species_scientific": "Mustelus canis",
-      "observer": "Michelle Delaloye",
-      "observer_login": "michelledelaloye",
-      "date": "2024/12/02 12:27 PM",
-      "location": "Buenos Aires, AR",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/333783600",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 333747037,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/605922382/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "",
-      "observer_login": "keesgroenendijk",
-      "date": "2026/01/04 8:57 AM",
-      "location": "Coiba N.P., Isla machete",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/333747037",
       "quality_grade": "research"
     }
   ]
