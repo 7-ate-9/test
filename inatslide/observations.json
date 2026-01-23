@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-01-22T06:30:13.707721",
+  "last_updated": "2026-01-23T06:30:18.520615",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 335765492,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610029014/large.jpg",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
+      "observer": null,
+      "observer_login": "joelasus",
+      "date": "2025/02/27 6:02 PM",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/335765492",
+      "quality_grade": "research"
+    },
+    {
+      "id": 335737971,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609977774/large.jpg",
+      "species_common": "Swellshark",
+      "species_scientific": "Cephaloscyllium ventriosum",
+      "observer": null,
+      "observer_login": "cgarey67",
+      "date": "2025-12-13 12:37:06",
+      "location": "Monterey, CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/335737971",
+      "quality_grade": "research"
+    },
     {
       "id": 335649192,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609794009/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/334369890",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334091466,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/606633259/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": "Emily Palahnuk",
-      "observer_login": "emilypalah",
-      "date": "2026-01-01 13:47:01-05:00",
-      "location": "Caribbean Sea, Toledo, BZ",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334091466",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334091331,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/606632984/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": "Emily Palahnuk",
-      "observer_login": "emilypalah",
-      "date": "2026-01-01 13:47:09-05:00",
-      "location": "Caribbean Sea, Toledo, BZ",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334091331",
       "quality_grade": "research"
     }
   ]
