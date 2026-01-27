@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-01-26T06:32:27.841935",
+  "last_updated": "2026-01-27T06:30:26.573412",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 336228402,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610954543/large.jpg",
+      "species_common": "Port Jackson Shark",
+      "species_scientific": "Heterodontus portusjacksoni",
+      "observer": null,
+      "observer_login": "thedivingsloth",
+      "date": "2026-01-24 13:51:33",
+      "location": "Cockburn, AU-WA, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336228402",
+      "quality_grade": "research"
+    },
+    {
+      "id": 336154429,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610807645/large.jpg",
+      "species_common": "Bronze Whaler",
+      "species_scientific": "Carcharhinus brachyurus",
+      "observer": null,
+      "observer_login": "henri4452",
+      "date": "2025-08-28 15:00:00",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336154429",
+      "quality_grade": "research"
+    },
     {
       "id": 336144088,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610786577/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/334571106",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334480945,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/607427589/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "Shan",
-      "observer_login": "ssshan",
-      "date": "2026-01-12 14:47:28+08:00",
-      "location": "Commonwealth of the Northern Mariana Islands",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334480945",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334477911,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/607420920/large.jpg",
-      "species_common": "Tawny Nurse Shark",
-      "species_scientific": "Nebrius ferrugineus",
-      "observer": "Marine Lab of Banyan Tree Vibbanfaru and Dhawa Ihuru",
-      "observer_login": "ourmarinelab",
-      "date": "2026/01/04 11:35 AM",
-      "location": "Maldives",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334477911",
       "quality_grade": "research"
     }
   ]
