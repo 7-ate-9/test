@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-01-27T06:30:26.573412",
+  "last_updated": "2026-01-28T06:31:42.151732",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 336388915,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611278685/large.jpg",
+      "species_common": "Leopard Shark",
+      "species_scientific": "Triakis semifasciata",
+      "observer": "James Maughn",
+      "observer_login": "jmaughn",
+      "date": "2026/01/27 10:13 AM",
+      "location": "Santa Cruz County, CA, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336388915",
+      "quality_grade": "research"
+    },
+    {
+      "id": 336358002,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611217174/large.jpg",
+      "species_common": "Common Blacktip Shark",
+      "species_scientific": "Carcharhinus limbatus",
+      "observer": "Jonathan Gilmer",
+      "observer_login": "jongilmer",
+      "date": "2025-09-21 15:24:01",
+      "location": "United States",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336358002",
+      "quality_grade": "research"
+    },
     {
       "id": 336228402,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610954543/large.jpg",
@@ -17,6 +47,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/336228402",
+      "quality_grade": "research"
+    },
+    {
+      "id": 336223788,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610945282/large.jpg",
+      "species_common": "Port Jackson Shark",
+      "species_scientific": "Heterodontus portusjacksoni",
+      "observer": null,
+      "observer_login": "tully1969",
+      "date": "2026-01-26 10:45:00+10:30",
+      "location": "8 Mile Creek Rd, Port MacDonnell, SA, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336223788",
       "quality_grade": "research"
     },
     {
@@ -92,6 +137,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/335959026",
+      "quality_grade": "research"
+    },
+    {
+      "id": 335864791,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/610233923/large.jpg",
+      "species_common": "Sand Tiger Shark",
+      "species_scientific": "Carcharias taurus",
+      "observer": "Peter Swart",
+      "observer_login": "peterswart",
+      "date": "2025/11/28 10:58 PM",
+      "location": "2 Mile, Sodwana Bay, KZN, South Africa",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/335864791",
       "quality_grade": "research"
     },
     {
@@ -392,66 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/334843522",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334838914,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/608154832/large.jpg",
-      "species_common": "Common Blacktip Shark",
-      "species_scientific": "Carcharhinus limbatus",
-      "observer": "Gary Shackelford",
-      "observer_login": "amberwing",
-      "date": "2025/12/29 12:00 PM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334838914",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334789004,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/608049766/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
-      "observer": null,
-      "observer_login": "madisonwodo",
-      "date": "2026-01-13 11:52:49",
-      "location": "Florida, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334789004",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 334726340,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/607922811/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Frank Krasovec",
-      "observer_login": "wetlens",
-      "date": "2017/04/24 4:15 PM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334726340",
-      "quality_grade": "research"
-    },
-    {
-      "id": 334571106,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/607610726/large.jpg",
-      "species_common": "Atlantic Sharpnose Shark",
-      "species_scientific": "Rhizoprionodon terraenovae",
-      "observer": "tom kelley",
-      "observer_login": "rtklymlcoop",
-      "date": "2022/07/22 1:08 PM",
-      "location": "Wakulla County, FL, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/334571106",
       "quality_grade": "research"
     }
   ]
