@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-01-29T06:41:56.204726",
+  "last_updated": "2026-01-30T06:43:20.927947",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 336574826,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611656891/large.jpg",
+      "species_common": "Zebra Shark",
+      "species_scientific": "Stegostoma tigrinum",
+      "observer": "CORDENOS Thierry",
+      "observer_login": "thierrycordenos",
+      "date": "2025/10/09 17:20",
+      "location": "Diana, MG-AS, MG",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336574826",
+      "quality_grade": "research"
+    },
+    {
+      "id": 336572232,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611650894/large.jpg",
+      "species_common": "Small-spotted Catshark",
+      "species_scientific": "Scyliorhinus canicula",
+      "observer": "Tony Gilbert",
+      "observer_login": "tonyjgilbert",
+      "date": "2020-10-27 14:37:52",
+      "location": "Oban, Gallanach, Kerrera",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/336572232",
+      "quality_grade": "research"
+    },
     {
       "id": 336548718,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611602349/large.jpg",
@@ -37,8 +67,8 @@
     {
       "id": 336538647,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611580748/large.jpg",
-      "species_common": "Ground Sharks",
-      "species_scientific": "Carcharhiniformes",
+      "species_common": "Spotted Estuary Smooth-hound",
+      "species_scientific": "Mustelus lenticulatus",
       "observer": "Aymeric",
       "observer_login": "aymeric2882",
       "date": "2026/01/22 10:57 PM",
@@ -47,7 +77,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/336538647",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 336529271,
@@ -93,21 +123,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/336502618",
       "quality_grade": "research"
-    },
-    {
-      "id": 336498847,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/611499569/large.jpg",
-      "species_common": "Sharks",
-      "species_scientific": "Selachii",
-      "observer": null,
-      "observer_login": "johnserrat",
-      "date": "2026-01-28",
-      "location": "3P79+WC, Kralendijk, Caribbean Netherlands",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/336498847",
-      "quality_grade": "needs_id"
     },
     {
       "id": 336436665,
@@ -395,6 +410,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 335576535,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609650746/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "\u00d3scar S\u00e1nchez Villadeamigo",
+      "observer_login": "oscar_sv_01",
+      "date": "2025-10-24 21:32:26+01:00",
+      "location": "Islas Canarias, ES",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/335576535",
+      "quality_grade": "research"
+    },
+    {
       "id": 335572906,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609643052/large.jpg",
       "species_common": "Shortfin Mako",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/335488649",
-      "quality_grade": "research"
-    },
-    {
-      "id": 335488599,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609469898/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Frank Krasovec",
-      "observer_login": "wetlens",
-      "date": "2017/05/04 11:19 AM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/335488599",
-      "quality_grade": "research"
-    },
-    {
-      "id": 335432730,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/609346317/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": "cpar",
-      "observer_login": "como_plants_animals_rocks",
-      "date": "2025/03/26 3:41 PM",
-      "location": "Central, St John 00830, USVI",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/335432730",
       "quality_grade": "research"
     }
   ]
