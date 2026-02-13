@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-02-12T06:57:29.532539",
+  "last_updated": "2026-02-13T06:56:00.566075",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 338352967,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/615297018/large.jpg",
+      "species_common": "Whale Shark",
+      "species_scientific": "Rhincodon typus",
+      "observer": "Frank Krasovec",
+      "observer_login": "wetlens",
+      "date": "2015/10/31 9:02 AM",
+      "location": "Philippines",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/338352967",
+      "quality_grade": "research"
+    },
     {
       "id": 338269077,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/615123424/large.jpg",
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/337407126",
-      "quality_grade": "research"
-    },
-    {
-      "id": 337351976,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/613239777/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/02/03 12:58 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/337351976",
       "quality_grade": "research"
     }
   ]
