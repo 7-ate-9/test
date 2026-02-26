@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-02-25T06:58:16.589980",
+  "last_updated": "2026-02-26T06:56:12.399664",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 340205787,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/619068886/large.jpg",
+      "species_common": "Galean Sharks",
+      "species_scientific": "Galeomorphi",
+      "observer": "",
+      "observer_login": "sparkypetunia",
+      "date": "2026-02-25 11:03:11",
+      "location": "339G+2H, New Smyrna Beach, FL 32169, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/340205787",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 340142090,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/618926844/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "Timothy E Myer",
+      "observer_login": "tim2knowhim",
+      "date": "2026/02/25 6:46 PM",
+      "location": "Raja Ampat, ID-IB, ID",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/340142090",
+      "quality_grade": "research"
+    },
     {
       "id": 340013607,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/618658755/large.jpg",
@@ -77,6 +107,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/339875087",
+      "quality_grade": "research"
+    },
+    {
+      "id": 339839119,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/618301274/large.jpg",
+      "species_common": "Nurse Shark",
+      "species_scientific": "Ginglymostoma cirratum",
+      "observer": null,
+      "observer_login": "elodie_r",
+      "date": "2026-02-22 17:53:49-05:00",
+      "location": "BS",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/339839119",
       "quality_grade": "research"
     },
     {
@@ -408,51 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/339032460",
       "quality_grade": "research"
-    },
-    {
-      "id": 339009107,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/616603330/large.jpg",
-      "species_common": "Puffadder Shyshark",
-      "species_scientific": "Haploblepharus edwardsii",
-      "observer": "Di Boonman",
-      "observer_login": "diederik_7",
-      "date": "2026/02/16 2:05 PM",
-      "location": "Western Cape, ZA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/339009107",
-      "quality_grade": "research"
-    },
-    {
-      "id": 338948777,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/616487207/large.jpg",
-      "species_common": "Crested Hornshark",
-      "species_scientific": "Heterodontus galeatus",
-      "observer": "Lynne",
-      "observer_login": "scubalynne",
-      "date": "2026/02/16 7:45 AM",
-      "location": "Sydney NSW, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/338948777",
-      "quality_grade": "research"
-    },
-    {
-      "id": 338945250,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/616481337/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
-      "observer": "Kristina Weis",
-      "observer_login": "kristinaweis",
-      "date": "2017/03/23 10:49 AM",
-      "location": "Florida Keys National Marine Sanctuary, FL, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/338945250",
-      "quality_grade": "needs_id"
     }
   ]
 }
