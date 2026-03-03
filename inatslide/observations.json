@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-03-02T06:53:25.358620",
+  "last_updated": "2026-03-03T06:45:12.709232",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 341042948,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/620754676/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "Dream",
+      "observer_login": "dreamhamster",
+      "date": "2022-12-23 13:29:43",
+      "location": "\u00celes Sous-le-Vent, PF",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/341042948",
+      "quality_grade": "research"
+    },
     {
       "id": 340860075,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/620376673/large.jpg",
@@ -260,6 +275,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 339715735,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/618048592/large.jpg",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
+      "observer": "Sum fish",
+      "observer_login": "mola_backgirl",
+      "date": "2026-02-21 17:31:32",
+      "location": "New South Wales, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/339715735",
+      "quality_grade": "needs_id"
+    },
+    {
       "id": 339622290,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/617852673/large.jpg",
       "species_common": "Blacktip Reef Shark",
@@ -422,36 +452,6 @@
       "license_name": "CC BY",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/339237381",
-      "quality_grade": "research"
-    },
-    {
-      "id": 339237375,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/617073248/large.jpg",
-      "species_common": "Caribbean Reef Shark",
-      "species_scientific": "Carcharhinus perezii",
-      "observer": "",
-      "observer_login": "datadan",
-      "date": "2026/02/18 1:26 AM",
-      "location": "Bahamas",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/339237375",
-      "quality_grade": "research"
-    },
-    {
-      "id": 339237372,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/617073245/large.jpg",
-      "species_common": "Caribbean Reef Shark",
-      "species_scientific": "Carcharhinus perezii",
-      "observer": "",
-      "observer_login": "datadan",
-      "date": "2026/02/18 1:24 AM",
-      "location": "Bahamas",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/339237372",
       "quality_grade": "research"
     }
   ]
