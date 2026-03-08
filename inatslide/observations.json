@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-03-07T06:35:30.211852",
+  "last_updated": "2026-03-08T06:38:05.015654",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 341653318,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622014803/large.jpg",
+      "species_common": "Smooth Hammerhead",
+      "species_scientific": "Sphyrna zygaena",
+      "observer": null,
+      "observer_login": "tubbyand",
+      "date": "2026-03-06 20:19:35",
+      "location": "Bega Valley, AU-NS, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/341653318",
+      "quality_grade": "research"
+    },
     {
       "id": 341550276,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/621797470/large.jpg",
@@ -247,12 +262,12 @@
     {
       "id": 340205787,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/619068886/large.jpg",
-      "species_common": "Galean Sharks",
-      "species_scientific": "Galeomorphi",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
       "observer": "",
       "observer_login": "sparkypetunia",
       "date": "2026-02-25 11:03:11",
-      "location": "339G+2H, New Smyrna Beach, FL 32169, USA",
+      "location": "Florida, US",
       "license_code": "cc-by-nc",
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/339622289",
-      "quality_grade": "research"
-    },
-    {
-      "id": 339622286,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/617849635/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "Lena",
-      "observer_login": "lenaponiwass",
-      "date": "2025/03/07 10:09",
-      "location": "Maldives",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/339622286",
       "quality_grade": "research"
     }
   ]
