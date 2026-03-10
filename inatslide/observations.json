@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-03-09T06:57:36.363103",
+  "last_updated": "2026-03-10T06:42:53.943652",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 342082368,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622876372/large.jpg",
+      "species_common": "Pyjama Shark",
+      "species_scientific": "Poroderma africanum",
+      "observer": "Georgina Jones",
+      "observer_login": "seastung",
+      "date": "2026/03/06 11:58 AM",
+      "location": "crags Still Bay Harbour, South Africa",
+      "license_code": "cc-by-sa",
+      "license_name": "CC BY-SA",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/342082368",
+      "quality_grade": "research"
+    },
     {
       "id": 341977365,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622664416/large.jpg",
@@ -47,7 +62,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/341861846",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 341653318,
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/339839119",
-      "quality_grade": "research"
-    },
-    {
-      "id": 339775837,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/618170273/large.jpg",
-      "species_common": "Sicklefin Lemon Shark",
-      "species_scientific": "Negaprion acutidens",
-      "observer": "Barracud'Apps",
-      "observer_login": "barracudapps",
-      "date": "2026-02-21 21:28:18",
-      "location": "Maldives",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/339775837",
       "quality_grade": "research"
     }
   ]
