@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-03-11T06:47:55.080073",
+  "last_updated": "2026-03-12T06:50:25.503400",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 342443963,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623608656/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/03/10 8:12 PM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/342443963",
+      "quality_grade": "research"
+    },
     {
       "id": 342325426,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623365418/large.jpg",
@@ -438,21 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/340205787",
       "quality_grade": "needs_id"
-    },
-    {
-      "id": 340142090,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/618926844/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "Timothy E Myer",
-      "observer_login": "tim2knowhim",
-      "date": "2026/02/25 6:46 PM",
-      "location": "Raja Ampat, ID-IB, ID",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/340142090",
-      "quality_grade": "research"
     }
   ]
 }
