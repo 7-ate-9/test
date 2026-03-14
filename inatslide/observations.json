@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-03-13T06:48:00.756972",
+  "last_updated": "2026-03-14T06:41:13.311998",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 342752608,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/624216484/large.jpg",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
+      "observer": "Dan Schofield",
+      "observer_login": "djscho",
+      "date": "2026/03/10 2:02 PM",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/342752608",
+      "quality_grade": "research"
+    },
+    {
+      "id": 342751162,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/624214738/large.jpg",
+      "species_common": "Tawny Nurse Shark",
+      "species_scientific": "Nebrius ferrugineus",
+      "observer": "Bryan J",
+      "observer_login": "bryjoh",
+      "date": "2026/02/22 11:46 AM",
+      "location": "Maldives",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/342751162",
+      "quality_grade": "research"
+    },
     {
       "id": 342556128,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623839382/large.jpg",
@@ -423,36 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/341521959",
       "quality_grade": "research"
-    },
-    {
-      "id": 341521407,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/621743556/large.jpg",
-      "species_common": "Pelagic Thresher Shark",
-      "species_scientific": "Alopias pelagicus",
-      "observer": "Andy",
-      "observer_login": "poseidon_photography",
-      "date": "2022/03/08 8:34 AM",
-      "location": "Cebu, PH",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/341521407",
-      "quality_grade": "research"
-    },
-    {
-      "id": 341516313,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/621732782/large.jpg",
-      "species_common": "Spurdogs",
-      "species_scientific": "Squalus",
-      "observer": null,
-      "observer_login": "pierrel345",
-      "date": "2021-09-29 13:22:54",
-      "location": "KY",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/341516313",
-      "quality_grade": "needs_id"
     }
   ]
 }
