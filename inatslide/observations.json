@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-03-15T06:52:32.395708",
+  "last_updated": "2026-03-16T07:12:06.676954",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 343161859,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/625039727/large.jpg",
+      "species_common": "Oceanic Whitetip Shark",
+      "species_scientific": "Carcharhinus longimanus",
+      "observer": "Dayma",
+      "observer_login": "daymaorg",
+      "date": "2020-10-08 22:35:19",
+      "location": "Safaja, EG-BA, EG",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343161859",
+      "quality_grade": "research"
+    },
     {
       "id": 343035821,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/624786186/large.jpg",
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/341977365",
-      "quality_grade": "research"
-    },
-    {
-      "id": 341891081,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622490424/large.jpg",
-      "species_common": "Bonnethead",
-      "species_scientific": "Sphyrna tiburo",
-      "observer": "Tanner Barnharst",
-      "observer_login": "tanner-lichens-shrooms",
-      "date": "2026/03/02 11:51 AM",
-      "location": "North Naples, FL, USA",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/341891081",
       "quality_grade": "research"
     }
   ]
