@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-03-16T07:12:06.676954",
+  "last_updated": "2026-03-17T06:59:26.438574",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 343422039,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/625574037/large.jpg",
+      "species_common": "Horn Shark",
+      "species_scientific": "Heterodontus francisci",
+      "observer": "Rachel Lee Harper",
+      "observer_login": "rachelleaf",
+      "date": "2026/03/16 1:47 PM",
+      "location": "San Diego County, US-CA, US",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343422039",
+      "quality_grade": "research"
+    },
+    {
+      "id": 343308440,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/625341652/large.jpg",
+      "species_common": "Nurse Shark",
+      "species_scientific": "Ginglymostoma cirratum",
+      "observer": null,
+      "observer_login": "murphey_molly",
+      "date": "2018/01/03 9:25 AM",
+      "location": "Ambergris Caye, Belize",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343308440",
+      "quality_grade": "research"
+    },
     {
       "id": 343161859,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/625039727/large.jpg",
@@ -17,6 +47,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/343161859",
+      "quality_grade": "research"
+    },
+    {
+      "id": 343049848,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/624815459/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": "Thomson Hill",
+      "observer_login": "allthingswildlife2004",
+      "date": "2021-01-16",
+      "location": "Queensland, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343049848",
       "quality_grade": "research"
     },
     {
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/342106120",
-      "quality_grade": "research"
-    },
-    {
-      "id": 342082368,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622876372/large.jpg",
-      "species_common": "Pyjama Shark",
-      "species_scientific": "Poroderma africanum",
-      "observer": "Georgina Jones",
-      "observer_login": "seastung",
-      "date": "2026/03/06 11:58 AM",
-      "location": "crags Still Bay Harbour, South Africa",
-      "license_code": "cc-by-sa",
-      "license_name": "CC BY-SA",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342082368",
-      "quality_grade": "research"
-    },
-    {
-      "id": 342050996,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622815666/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": null,
-      "observer_login": "barthazes",
-      "date": "2026/03/08 5:50 PM",
-      "location": "Palawan, PH",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342050996",
-      "quality_grade": "research"
-    },
-    {
-      "id": 341977365,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/622664416/large.jpg",
-      "species_common": "Great Hammerhead",
-      "species_scientific": "Sphyrna mokarran",
-      "observer": "Katherine Watkinson",
-      "observer_login": "kat_meifyoucan",
-      "date": "2026/03/08 10:20 AM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/341977365",
       "quality_grade": "research"
     }
   ]
