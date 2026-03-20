@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-03-19T06:54:17.809052",
+  "last_updated": "2026-03-20T06:50:38.095236",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 343783080,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/626304542/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "K.L. Chew",
+      "observer_login": "kl_chew",
+      "date": "2026/03/17 3:30 PM",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343783080",
+      "quality_grade": "research"
+    },
+    {
+      "id": 343764233,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/626268602/large.jpg",
+      "species_common": "Spotted Wobbegong",
+      "species_scientific": "Orectolobus maculatus",
+      "observer": "Kelly Forbes",
+      "observer_login": "k72seahorse",
+      "date": "2026-03-19 09:38:21",
+      "location": "New South Wales, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343764233",
+      "quality_grade": "research"
+    },
     {
       "id": 343751368,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/626243410/large.jpg",
@@ -47,7 +77,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/343739863",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 343616148,
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/342322393",
-      "quality_grade": "research"
-    },
-    {
-      "id": 342322348,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623355393/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": "Breathe Sail Dive - Jason Spitz and Monica Schandel",
-      "observer_login": "breathesaildive",
-      "date": "2026/03/10 3:00 PM",
-      "location": "Central, St John 00830, USVI",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342322348",
-      "quality_grade": "research"
-    },
-    {
-      "id": 342320787,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623356425/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "",
-      "observer_login": "chris_schiller",
-      "date": "2026-03-07",
-      "location": "Costa Rica",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342320787",
       "quality_grade": "research"
     }
   ]
