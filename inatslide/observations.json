@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-03-20T06:50:38.095236",
+  "last_updated": "2026-03-21T06:38:17.481189",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 344078171,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/626882925/large.jpg",
+      "species_common": "Indonesian Houndshark",
+      "species_scientific": "Hemitriakis indroyonoi",
+      "observer": null,
+      "observer_login": "barnydillarstone",
+      "date": "2026/03/10 7:43 AM",
+      "location": "Indonesia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/344078171",
+      "quality_grade": "research"
+    },
+    {
+      "id": 343933172,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/626601816/large.jpg",
+      "species_common": "Swellshark",
+      "species_scientific": "Cephaloscyllium ventriosum",
+      "observer": "Person",
+      "observer_login": "person_person05",
+      "date": "2026-03-19T15:22",
+      "location": "Monterey, CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/343933172",
+      "quality_grade": "research"
+    },
     {
       "id": 343783080,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/626304542/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/342357214",
-      "quality_grade": "research"
-    },
-    {
-      "id": 342325426,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623365418/large.jpg",
-      "species_common": "Common Blacktip Shark",
-      "species_scientific": "Carcharhinus limbatus",
-      "observer": null,
-      "observer_login": "hannahdgeorge",
-      "date": "2026-03-10 17:22:40",
-      "location": "United States",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342325426",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 342322393,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623359430/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "",
-      "observer_login": "chris_schiller",
-      "date": "2026-03-07",
-      "location": "Costa Rica",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342322393",
       "quality_grade": "research"
     }
   ]
