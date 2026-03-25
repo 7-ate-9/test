@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-24T07:00:02.079863",
+  "last_updated": "2026-03-25T06:58:19.600148",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -47,6 +47,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/344730955",
+      "quality_grade": "research"
+    },
+    {
+      "id": 344678567,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/628056340/large.jpg",
+      "species_common": "Scalloped Hammerhead",
+      "species_scientific": "Sphyrna lewini",
+      "observer": "Alberto Alcal\u00e1",
+      "observer_login": "alboertoalcala",
+      "date": "2026-03-23 06:52:15",
+      "location": "Colima, MX",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/344678567",
       "quality_grade": "research"
     },
     {
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/342556128",
-      "quality_grade": "research"
-    },
-    {
-      "id": 342443963,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623608656/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/03/10 8:12 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/342443963",
       "quality_grade": "research"
     }
   ]
