@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-04-06T07:24:36.741674",
+  "last_updated": "2026-04-07T07:11:04.515864",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 347835539,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634278408/large.jpg",
+      "species_common": "Small-spotted Catshark",
+      "species_scientific": "Scyliorhinus canicula",
+      "observer": "Kamil Majewski",
+      "observer_login": "tecek",
+      "date": "2026-04-06 15:51:38",
+      "location": "Barry, Wales, GB",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/347835539",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 347767384,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634148278/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "Bert Smeitink",
+      "observer_login": "bertsmeitink",
+      "date": "2026-01-14 11:08:25",
+      "location": "Costa Rica",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/347767384",
+      "quality_grade": "research"
+    },
     {
       "id": 347605937,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/633819312/large.jpg",
@@ -47,6 +77,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/347491713",
+      "quality_grade": "research"
+    },
+    {
+      "id": 347431170,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/633475781/large.jpg",
+      "species_common": "Great Hammerhead",
+      "species_scientific": "Sphyrna mokarran",
+      "observer": "Dan Schofield",
+      "observer_login": "djscho",
+      "date": "2026-04-03 09:17:33",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/347431170",
       "quality_grade": "research"
     },
     {
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/346112900",
-      "quality_grade": "research"
-    },
-    {
-      "id": 346112895,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/630859773/large.jpg",
-      "species_common": "Grey Reef Shark",
-      "species_scientific": "Carcharhinus amblyrhynchos",
-      "observer": null,
-      "observer_login": "cr1970",
-      "date": "2026/03/30 11:40 AM",
-      "location": "Palau",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/346112895",
-      "quality_grade": "research"
-    },
-    {
-      "id": 345910381,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/630464763/large.jpg",
-      "species_common": "Dusky Smooth-hound",
-      "species_scientific": "Mustelus canis",
-      "observer": null,
-      "observer_login": "madcwow",
-      "date": "2026-03-28 19:40:56",
-      "location": "North Carolina, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/345910381",
-      "quality_grade": "research"
-    },
-    {
-      "id": 345887534,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/630420392/large.jpg",
-      "species_common": "Lemon Shark",
-      "species_scientific": "Negaprion brevirostris",
-      "observer": "Chloe Lovatt",
-      "observer_login": "chloelovatt",
-      "date": "2025-11-22 10:13:07",
-      "location": "Cape Verde",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/345887534",
       "quality_grade": "research"
     }
   ]
