@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-04-07T07:11:04.515864",
+  "last_updated": "2026-04-08T07:13:16.580729",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 348172913,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634945102/large.jpg",
+      "species_common": "Small-spotted Catshark",
+      "species_scientific": "Scyliorhinus canicula",
+      "observer": "J.L.H. Tsang",
+      "observer_login": "jlhtsang",
+      "date": "2026/04/07 11:57 AM",
+      "location": "The Hoe, Plymouth PL1, UK",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/348172913",
+      "quality_grade": "research"
+    },
+    {
+      "id": 348045935,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634699190/large.jpg",
+      "species_common": "Gummy Shark",
+      "species_scientific": "Mustelus antarcticus",
+      "observer": "Kelly Forbes",
+      "observer_login": "k72seahorse",
+      "date": "2026-04-07 21:38:02",
+      "location": "Port Lincoln SA 5606, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/348045935",
+      "quality_grade": "research"
+    },
     {
       "id": 347835539,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634278408/large.jpg",
@@ -17,7 +47,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/347835539",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 347767384,
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/346112904",
-      "quality_grade": "research"
-    },
-    {
-      "id": 346112903,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/630859852/large.jpg",
-      "species_common": "Grey Reef Shark",
-      "species_scientific": "Carcharhinus amblyrhynchos",
-      "observer": null,
-      "observer_login": "cr1970",
-      "date": "2026/03/30 3:25 PM",
-      "location": "Palau",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/346112903",
-      "quality_grade": "research"
-    },
-    {
-      "id": 346112900,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/630859821/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": null,
-      "observer_login": "cr1970",
-      "date": "2026/03/30 2:02 PM",
-      "location": "Koror, PW",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/346112900",
       "quality_grade": "research"
     }
   ]
