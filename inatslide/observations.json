@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-04-14T07:25:58.340423",
+  "last_updated": "2026-04-15T07:26:12.158758",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 349824005,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/638198442/large.jpg",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
+      "observer": "Dan Schofield",
+      "observer_login": "djscho",
+      "date": "2026-04-06 08:57:39",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/349824005",
+      "quality_grade": "research"
+    },
+    {
+      "id": 349667822,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/637896484/large.jpg",
+      "species_common": "Great Hammerhead",
+      "species_scientific": "Sphyrna mokarran",
+      "observer": "Dan Schofield",
+      "observer_login": "djscho",
+      "date": "2026/04/05 9:47 AM",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/349667822",
+      "quality_grade": "research"
+    },
     {
       "id": 349596569,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/637756954/large.jpg",
@@ -275,10 +305,25 @@
       "quality_grade": "research"
     },
     {
+      "id": 348623179,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/635838754/large.jpg",
+      "species_common": "Great White Shark",
+      "species_scientific": "Carcharodon carcharias",
+      "observer": "Andrew Harmer",
+      "observer_login": "noiselessowl",
+      "date": "2026-04-09 13:32:02-07:00",
+      "location": "San Luis Obispo County, US-CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/348623179",
+      "quality_grade": "research"
+    },
+    {
       "id": 348563091,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/635717083/large.jpg",
-      "species_common": "Sandbar Shark",
-      "species_scientific": "Carcharhinus plumbeus",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
       "observer": null,
       "observer_login": "alegalindo10",
       "date": "2026-04-08T12:00",
@@ -287,7 +332,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/348563091",
-      "quality_grade": "research"
+      "quality_grade": "needs_id"
     },
     {
       "id": 348441909,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/348172913",
-      "quality_grade": "research"
-    },
-    {
-      "id": 348141086,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634882241/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": null,
-      "observer_login": "eyeofevil",
-      "date": "2026-04-07 14:37:22",
-      "location": "Monroe County, US-FL, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/348141086",
-      "quality_grade": "research"
-    },
-    {
-      "id": 348110377,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634818819/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/04/07 2:30 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/348110377",
-      "quality_grade": "research"
-    },
-    {
-      "id": 348045935,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634699190/large.jpg",
-      "species_common": "Gummy Shark",
-      "species_scientific": "Mustelus antarcticus",
-      "observer": "Kelly Forbes",
-      "observer_login": "k72seahorse",
-      "date": "2026-04-07 21:38:02",
-      "location": "Port Lincoln SA 5606, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/348045935",
       "quality_grade": "research"
     }
   ]
