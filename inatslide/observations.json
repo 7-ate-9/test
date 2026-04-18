@@ -1,9 +1,69 @@
 {
-  "last_updated": "2026-04-17T07:27:57.838792",
+  "last_updated": "2026-04-18T07:02:19.845299",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 350721871,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/639958691/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": "",
+      "observer_login": "jerrygggg",
+      "date": "2025-12-19 21:49:30",
+      "location": "Queensland, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/350721871",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 350560679,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/639636861/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/04/17 9:09 AM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/350560679",
+      "quality_grade": "research"
+    },
+    {
+      "id": 350532848,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/639586548/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "R Lai",
+      "observer_login": "r_lai",
+      "date": "2026-02-01 21:12:06",
+      "location": "CR",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/350532848",
+      "quality_grade": "research"
+    },
+    {
+      "id": 350531491,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/639583613/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "R Lai",
+      "observer_login": "r_lai",
+      "date": "2026-02-01 20:52:24",
+      "location": "CR",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/350531491",
+      "quality_grade": "research"
+    },
     {
       "id": 350319362,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/639166105/large.jpg",
@@ -17,7 +77,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/350319362",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 350319252,
@@ -47,7 +107,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/350319251",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 350311865,
@@ -62,7 +122,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/350311865",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 350311864,
@@ -77,7 +137,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/350311864",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 350311752,
@@ -92,7 +152,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/350311752",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 350184733,
@@ -392,66 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/349426296",
-      "quality_grade": "research"
-    },
-    {
-      "id": 349418484,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/637404177/large.jpg",
-      "species_common": "Tasselled Wobbegong",
-      "species_scientific": "Eucrossorhinus dasypogon",
-      "observer": "Sue Janssen",
-      "observer_login": "suejanssen",
-      "date": "2026/03/28 8:13 AM",
-      "location": "Papua Barat, ID",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/349418484",
-      "quality_grade": "research"
-    },
-    {
-      "id": 349387689,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/637339454/large.jpg",
-      "species_common": "Blind Shark",
-      "species_scientific": "Brachaelurus waddi",
-      "observer": "Dubravka Skalamera",
-      "observer_login": "duka_skalamera",
-      "date": "2026/03/02 1:36 PM",
-      "location": "Point Lookout QLD 4183, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/349387689",
-      "quality_grade": "research"
-    },
-    {
-      "id": 348964244,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/636516478/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Hugo Brisset",
-      "observer_login": "azrael_31",
-      "date": "2026-04-11 15:45:49+02:00",
-      "location": "Red Sea, Gouvernorat d'Al Bahr al Ahmar, EG",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/348964244",
-      "quality_grade": "research"
-    },
-    {
-      "id": 348958539,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/636504885/large.jpg",
-      "species_common": "Whale Shark",
-      "species_scientific": "Rhincodon typus",
-      "observer": "Leah B",
-      "observer_login": "leah_b1",
-      "date": "2026-04-11T08:14",
-      "location": "Makkah, SA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/348958539",
       "quality_grade": "research"
     }
   ]
