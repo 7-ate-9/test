@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-04-21T07:43:44.596569",
+  "last_updated": "2026-04-22T07:27:40.931054",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 351917800,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/642273066/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": null,
+      "observer_login": "rayanbokhari",
+      "date": "2025-11-16 12:16:06",
+      "location": "Tabuk Region, SA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/351917800",
+      "quality_grade": "research"
+    },
+    {
+      "id": 351908541,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/642255657/large.jpg",
+      "species_common": "Zebra Shark",
+      "species_scientific": "Stegostoma tigrinum",
+      "observer": null,
+      "observer_login": "scuba_max",
+      "date": "2025/05/21 9:58 PM",
+      "location": "Waya island Waya Island, Fiji",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/351908541",
+      "quality_grade": "research"
+    },
     {
       "id": 351600747,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/641648153/large.jpg",
@@ -17,6 +47,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/351600747",
+      "quality_grade": "research"
+    },
+    {
+      "id": 351535100,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/641518596/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": "B. Reuvers",
+      "observer_login": "breuvers",
+      "date": "2026-04-20 17:29:00",
+      "location": "Cape Verde",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/351535100",
       "quality_grade": "research"
     },
     {
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/350169104",
-      "quality_grade": "research"
-    },
-    {
-      "id": 350061007,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/638646700/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Febrianne S",
-      "observer_login": "febrisuki",
-      "date": "2026/04/02 3:23 PM",
-      "location": "Pasir Putih Lhok Mee",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/350061007",
-      "quality_grade": "research"
-    },
-    {
-      "id": 350047024,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/638630172/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Ond\u0159ej Lachnit",
-      "observer_login": "ondrej_lachnit",
-      "date": "2026-04-15 18:17:46+02:00",
-      "location": "Mersa Um Gerifat, Al-Bahri al-Ahmari, EG",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/350047024",
-      "quality_grade": "research"
-    },
-    {
-      "id": 350016739,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/638574330/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "R Lai",
-      "observer_login": "r_lai",
-      "date": "2026-02-01 04:55:19",
-      "location": "CR",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/350016739",
       "quality_grade": "research"
     }
   ]
