@@ -363,6 +363,113 @@ title: Daily Bird Photos
         .filter-group {
             width: 100%;
         }
+
+        /* Fullscreen improvements */
+        .slideshow-container:fullscreen {
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slideshow-container:fullscreen .slide iframe {
+            height: calc(100vh - 200px) !important;
+            max-height: none;
+        }
+        
+        .slideshow-container:fullscreen .controls {
+            position: fixed;
+            bottom: 150px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slideshow-container:fullscreen:hover .controls {
+            opacity: 1;
+        }
+        
+        .slideshow-container:fullscreen .timer-display,
+        .slideshow-container:fullscreen .slide-counter,
+        .slideshow-container:fullscreen .fullscreen-btn {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slideshow-container:fullscreen:hover .timer-display,
+        .slideshow-container:fullscreen:hover .slide-counter,
+        .slideshow-container:fullscreen:hover .fullscreen-btn {
+            opacity: 1;
+        }
+        
+        /* Webkit fullscreen (Safari, Chrome) */
+        .slideshow-container:-webkit-full-screen {
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slideshow-container:-webkit-full-screen .slide iframe {
+            height: calc(100vh - 200px) !important;
+        }
+        
+        .slideshow-container:-webkit-full-screen .controls {
+            position: fixed;
+            bottom: 150px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slideshow-container:-webkit-full-screen:hover .controls {
+            opacity: 1;
+        }
+        
+        .slideshow-container:-webkit-full-screen .timer-display,
+        .slideshow-container:-webkit-full-screen .slide-counter,
+        .slideshow-container:-webkit-full-screen .fullscreen-btn {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slideshow-container:-webkit-full-screen:hover .timer-display,
+        .slideshow-container:-webkit-full-screen:hover .slide-counter,
+        .slideshow-container:-webkit-full-screen:hover .fullscreen-btn {
+            opacity: 1;
+        }
+        
+        /* Mozilla fullscreen (Firefox) */
+        .slideshow-container:-moz-full-screen {
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slideshow-container:-moz-full-screen .slide iframe {
+            height: calc(100vh - 200px) !important;
+        }
+        
+        .slideshow-container:-moz-full-screen .controls {
+            position: fixed;
+            bottom: 150px;
+            opacity: 0;
+        }
+        
+        .slideshow-container:-moz-full-screen:hover .controls {
+            opacity: 1;
+        }
+        
+        .slideshow-container:-moz-full-screen .timer-display,
+        .slideshow-container:-moz-full-screen .slide-counter,
+        .slideshow-container:-moz-full-screen .fullscreen-btn {
+            opacity: 0;
+        }
+        
+        .slideshow-container:-moz-full-screen:hover .timer-display,
+        .slideshow-container:-moz-full-screen:hover .slide-counter,
+        .slideshow-container:-moz-full-screen:hover .fullscreen-btn {
+            opacity: 1;
+        }
     }
 </style>
 
