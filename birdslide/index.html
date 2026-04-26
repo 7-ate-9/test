@@ -365,7 +365,8 @@ title: Daily Bird Photos
         }
     }
 
-    /* Fullscreen improvements */
+    
+    /* Fullscreen improvements 
         .slideshow-container:fullscreen {
             background: #000;
             display: flex;
@@ -402,7 +403,7 @@ title: Daily Bird Photos
             opacity: 1;
         }
         
-        /* Webkit fullscreen (Safari, Chrome) */
+        /* Webkit fullscreen (Safari, Chrome) 
         .slideshow-container:-webkit-full-screen {
             background: #000;
             display: flex;
@@ -438,7 +439,7 @@ title: Daily Bird Photos
             opacity: 1;
         }
         
-        /* Mozilla fullscreen (Firefox) */
+        /* Mozilla fullscreen (Firefox) 
         .slideshow-container:-moz-full-screen {
             background: #000;
             display: flex;
@@ -471,6 +472,9 @@ title: Daily Bird Photos
         .slideshow-container:-moz-full-screen:hover .fullscreen-btn {
             opacity: 1;
         }
+    */
+
+        
 </style>
 
 <div class="title">
@@ -912,4 +916,73 @@ title: Daily Bird Photos
     document.addEventListener('DOMContentLoaded', () => {
         new BirdSlideshow();
     });
+
+    /* Add fullscreen detection and styling */
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+    
+    function handleFullscreenChange() {
+        const container = document.querySelector('.slideshow-container');
+        const isFullscreen = document.fullscreenElement || 
+                            document.webkitFullscreenElement || 
+                            document.mozFullScreenElement || 
+                            document.msFullscreenElement;
+        
+        if (isFullscreen) {
+            container.style.background = '#000';
+            container.style.display = 'flex';
+            container.style.flexDirection = 'column';
+            container.style.justifyContent = 'center';
+            
+            const iframe = container.querySelector('.slide.active iframe');
+            if (iframe) {
+                iframe.style.height = 'calc(100vh - 200px)';
+            }
+            
+            // Hide controls initially
+            hideControlsOnIdle();
+        } else {
+            // Reset styles
+            container.style.background = '';
+            container.style.display = '';
+            const iframe = container.querySelector('.slide.active iframe');
+            if (iframe) {
+                iframe.style.height = '580px';
+            }
+        }
+    }
+    
+    let hideTimeout;
+    function hideControlsOnIdle() {
+        const container = document.querySelector('.slideshow-container');
+        const controls = document.getElementById('controls');
+        const timer = document.getElementById('timerDisplay');
+        const counter = document.getElementById('slideCounter');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        
+        function hideControls() {
+            if (document.fullscreenElement) {
+                controls.style.opacity = '0';
+                timer.style.opacity = '0';
+                counter.style.opacity = '0';
+                fullscreenBtn.style.opacity = '0';
+            }
+        }
+        
+        function showControls() {
+            controls.style.opacity = '1';
+            timer.style.opacity = '1';
+            counter.style.opacity = '1';
+            fullscreenBtn.style.opacity = '1';
+            
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(hideControls, 2000);
+        }
+        
+        container.addEventListener('mousemove', showControls);
+        hideTimeout = setTimeout(hideControls, 2000);
+    }
+    
 </script>
