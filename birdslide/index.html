@@ -923,33 +923,60 @@ title: Daily Bird Photos
     document.addEventListener('mozfullscreenchange', handleFullscreenChange);
     document.addEventListener('MSFullscreenChange', handleFullscreenChange);
     
-    function handleFullscreenChange() {
-        const container = document.querySelector('.slideshow-container');
-        const isFullscreen = document.fullscreenElement || 
-                            document.webkitFullscreenElement || 
-                            document.mozFullScreenElement || 
-                            document.msFullscreenElement;
+    // Replace the handleFullscreenChange function with this updated version:
+
+function handleFullscreenChange() {
+    const container = document.querySelector('.slideshow-container');
+    const isFullscreen = document.fullscreenElement || 
+                        document.webkitFullscreenElement || 
+                        document.mozFullScreenElement || 
+                        document.msFullscreenElement;
+    
+    if (isFullscreen) {
+        container.style.background = '#000';
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column';
+        container.style.justifyContent = 'center';
+        container.style.alignItems = 'center';
+        container.style.padding = '0';
         
-        if (isFullscreen) {
-            container.style.background = '#000';
-            container.style.display = 'flex';
-            container.style.flexDirection = 'column';
-            container.style.justifyContent = 'center';
-            
-            const iframe = container.querySelector('.slide.active iframe');
-            if (iframe) {
-                iframe.style.height = 'calc(100vh - 200px)';
-            }
-            
-            // Hide controls initially
-            hideControlsOnIdle();
+        const slide = container.querySelector('.slide.active');
+        const iframe = slide ? slide.querySelector('iframe') : null;
+        if (iframe) {
+            // Make iframe much taller to maximize image size
+            iframe.style.height = '95vh';
+            iframe.style.width = '100vw';
+            iframe.style.maxWidth = 'none';
+        }
+        
+        if (slide) {
+            slide.style.width = '100%';
+            slide.style.maxWidth = 'none';
+            slide.style.minHeight = 'auto';
+        }
+        
+        // Hide controls initially
+        hideControlsOnIdle();
         } else {
             // Reset styles
             container.style.background = '';
             container.style.display = '';
-            const iframe = container.querySelector('.slide.active iframe');
+            container.style.justifyContent = '';
+            container.style.alignItems = '';
+            container.style.padding = '';
+            
+            const slide = container.querySelector('.slide.active');
+            const iframe = slide ? slide.querySelector('iframe') : null;
             if (iframe) {
                 iframe.style.height = '580px';
+                iframe.style.width = '100%';
+                iframe.style.maxWidth = '';
+            }
+            
+            if (slide) {
+                slide.style.width = '';
+                slide.style.maxWidth = '';
+                slide.style.minHeight = '';
             }
         }
     }
