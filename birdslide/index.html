@@ -519,56 +519,23 @@ title: eBird Slideshow
             this.currentSlide = 0;
             this.isPlaying = true;
             this.interval = null;
-            this.slideDuration = 30000; // 30 seconds per slide (default)
-            this.progressInterval = null;
+            this.slideDuration = 30000;
             this.countdownInterval = null;
             this.timeRemaining = 30;
+            this.hideTimeout = null;
+            this.mouseMoveHandler = null;
             
             this.init();
+            this.setupFullscreenListeners();
         }
 
         async init() {
-            console.log('Initializing slideshow...'); // Debug
             this.setupFilterControls();
             await this.loadAssets();
-            console.log('Assets loaded, slides count:', this.slides.length); // Debug
             this.setupControls();
             if (this.slides.length > 0) {
-                console.log('Starting slideshow with', this.slides.length, 'slides'); // Debug
                 this.startSlideshow();
-            } else {
-                console.error('No slides to show!'); // Debug
             }
-        }
-
-        showFilterMessage(regionCode, userId) {
-            const container = document.getElementById('slides-container');
-            let filterText = '';
-            if (regionCode && userId) {
-                filterText = `Region: ${regionCode}, User: ${userId}`;
-            } else if (regionCode) {
-                filterText = `Region: ${regionCode}`;
-            } else if (userId) {
-                filterText = `User: ${userId}`;
-            }
-            
-            container.innerHTML = `
-                <div style="padding: 60px 20px; text-align: center; color: var(--text-primary);">
-                    <h3 style="margin-bottom: 20px;">🔍 Filters Applied: ${filterText}</h3>
-                    <p style="margin-bottom: 15px; color: var(--text-secondary);">To view filtered results:</p>
-                    <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8; color: var(--text-secondary);">
-                        <li>Go to your repository's <strong>Actions</strong> tab</li>
-                        <li>Click <strong>"Manual Scrape with Filters"</strong></li>
-                        <li>Click <strong>"Run workflow"</strong></li>
-                        <li>Enter: <code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 3px;">${regionCode ? `Region: ${regionCode}` : ''}</code> ${userId ? `<code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 3px;">User: ${userId}</code>` : ''}</li>
-                        <li>Wait ~30 seconds for it to complete</li>
-                        <li>Reload this page to see the filtered results!</li>
-                    </ol>
-                    <p style="margin-top: 30px; color: var(--text-secondary); font-size: 14px;">
-                        Or run locally: <code style="background: var(--bg-primary); padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 10px;">python scripts/scrape_ebird.py${regionCode ? ` --region=${regionCode}` : ''}${userId ? ` --user=${userId}` : ''}</code>
-                    </p>
-                </div>
-            `;
         }
 
         setupFilterControls() {
@@ -576,21 +543,15 @@ title: eBird Slideshow
             const timerInput = document.getElementById('timerInput');
 
             applyBtn.addEventListener('click', () => {
-                // Update timer duration
                 const newDuration = parseInt(timerInput.value) || 30;
                 this.slideDuration = newDuration * 1000;
                 this.timeRemaining = newDuration;
                 
-                console.log('Timer updated to:', newDuration, 'seconds');
-                
-                // Restart slideshow with new timing if playing
                 if (this.isPlaying && this.slides.length > 0) {
                     clearInterval(this.interval);
-                    this.pauseProgress();
-                    this.resetProgressBar();
+                    clearInterval(this.countdownInterval);
                     this.timeRemaining = newDuration;
                     this.updateTimerDisplay();
-                    this.startProgress();
                     this.startCountdown();
                     this.interval = setInterval(() => {
                         this.nextSlide();
@@ -601,82 +562,29 @@ title: eBird Slideshow
 
         async loadAssets() {
             try {
-                console.log('Fetching assets.json...'); // Debug
-                
-                // Build URL with filters
-                let url = 'https://media.ebird.org/catalog?birdOnly=true&mediaType=photo&sort=rating_rank_desc';
-                
-                if (this.userId) {
-                    // If user ID is specified, use it and don't use daysSinceUp
-                    url += `&userId=${this.userId}`;
-                    console.log('Using user filter:', this.userId);
-                } else {
-                    // Default: use daysSinceUp=7
-                    url += '&daysSinceUp=7';
-                }
-                
-                if (this.regionCode) {
-                    url += `&regionCode=${this.regionCode}`;
-                    console.log('Using region filter:', this.regionCode);
-                }
-                
-                console.log('Filter URL:', url);
-                
+                const response = await fetch('assets.json');
                 let assetNumbers;
                 
-                // Check if filters are applied
-                if (this.regionCode || this.userId) {
-                    // Filters applied
-                    console.log('⚠️ Filters applied! To get filtered images:');
-                    console.log('1. Go to your repository Actions tab');
-                    console.log('2. Run "Manual Scrape with Filters" workflow');
-                    console.log('3. Enter your region/user filters');
-                    console.log('4. Wait for it to complete and reload this page');
-                    console.log('');
-                    console.log('Or run locally: python scripts/scrape_ebird.py --region=' + this.regionCode + ' --user=' + this.userId);
-                    
-                    // Show a user-friendly message
-                    this.showFilterMessage(this.regionCode, this.userId);
-                    return;
+                if (response && response.ok) {
+                    const data = await response.json();
+                    assetNumbers = data.assets;
                 } else {
-                    // No filters - use cached data
-                    const response = await fetch('assets.json').catch((err) => {
-                        console.log('Fetch failed:', err);
-                        return null;
-                    });
-                    
-                    if (response && response.ok) {
-                        const data = await response.json();
-                        assetNumbers = data.assets;
-                        console.log('Loaded assets from JSON:', assetNumbers);
-                    } else {
-                        console.log('Using fallback data');
-                        assetNumbers = [
-                            '121689041',
-                            '642398752',
-                            '638399431',
-                            '644382546',
-                            '265530851',
-                            '644309560',
-                            '621907936',
-                            '646501597'
-                        ];
-                    }
+                    assetNumbers = [
+                        '121689041', '642398752', '638399431', '644382546',
+                        '265530851', '644309560', '621907936', '646501597'
+                    ];
                 }
 
-                console.log('Creating slides for', assetNumbers.length, 'assets');
                 this.createSlides(assetNumbers);
             } catch (error) {
-                console.error('Error in loadAssets:', error);
-                this.showError('Failed to load bird photos. Please try again later.');
+                console.error('Error loading assets:', error);
+                this.showError('Failed to load bird photos.');
             }
         }
 
         createSlides(assetNumbers) {
             const container = document.getElementById('slides-container');
             container.innerHTML = '';
-            
-            // Clear existing slides array
             this.slides = [];
 
             assetNumbers.forEach((assetNumber, index) => {
@@ -686,25 +594,20 @@ title: eBird Slideshow
                 const iframe = document.createElement('iframe');
                 iframe.src = `https://macaulaylibrary.org/asset/${assetNumber}/embed/640`;
                 iframe.width = '100%';
-                iframe.height = '500';
+                iframe.height = '580';
                 iframe.frameBorder = '0';
                 iframe.loading = 'lazy';
+                iframe.allowFullscreen = true;
+                
+                if (window.innerWidth <= 768) {
+                    iframe.height = '450';
+                }
                 
                 slide.appendChild(iframe);
-                
-                // Add asset link positioned over the embed
-                const assetLink = document.createElement('a');
-                assetLink.href = `https://macaulaylibrary.org/asset/${assetNumber}`;
-                assetLink.target = '_blank';
-                assetLink.className = 'asset-link';
-                assetLink.textContent = `ML${assetNumber}`;
-                slide.appendChild(assetLink);
-                
                 container.appendChild(slide);
                 this.slides.push(slide);
             });
 
-            // Show controls, counter, and timer
             document.getElementById('controls').style.display = 'flex';
             document.getElementById('slideCounter').style.display = 'block';
             document.getElementById('timerDisplay').style.display = 'block';
@@ -713,70 +616,113 @@ title: eBird Slideshow
 
         showError(message) {
             const container = document.getElementById('slides-container');
-            container.innerHTML = `
-                <div class="error">
-                    <h3>⚠️ ${message}</h3>
-                    <p>The slideshow will retry automatically.</p>
-                </div>
-            `;
-            
-            // Retry after 30 seconds
-            setTimeout(() => {
-                this.init();
-            }, 30000);
+            container.innerHTML = `<div class="error"><h3>⚠️ ${message}</h3></div>`;
         }
 
         setupControls() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const playPauseBtn = document.getElementById('playPauseBtn');
-            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            document.getElementById('prevBtn').addEventListener('click', () => this.previousSlide());
+            document.getElementById('nextBtn').addEventListener('click', () => this.nextSlide());
+            document.getElementById('playPauseBtn').addEventListener('click', () => this.togglePlayPause());
+            document.getElementById('fullscreenBtn').addEventListener('click', () => this.toggleFullscreen());
+        }
 
-            prevBtn.addEventListener('click', () => this.previousSlide());
-            nextBtn.addEventListener('click', () => this.nextSlide());
-            playPauseBtn.addEventListener('click', () => this.togglePlayPause());
-            fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
+        setupFullscreenListeners() {
+            ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange']
+                .forEach(event => document.addEventListener(event, () => this.handleFullscreenChange()));
+        }
+
+        handleFullscreenChange() {
+            const container = document.querySelector('.slideshow-container');
+            const isFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement || 
+                                    document.mozFullScreenElement || document.msFullscreenElement);
+            
+            if (isFullscreen) {
+                // Enter fullscreen
+                container.style.cssText = 'background: #000; padding: 0;';
+                
+                const activeSlide = container.querySelector('.slide.active');
+                const iframe = activeSlide?.querySelector('iframe');
+                
+                if (activeSlide) activeSlide.style.cssText = 'padding: 0; background: #000;';
+                if (iframe) iframe.style.cssText = 'height: 100vh; width: 100vw;';
+                
+                this.hideControlsOnIdle();
+            } else {
+                // Exit fullscreen
+                container.style.cssText = '';
+                
+                const activeSlide = container.querySelector('.slide.active');
+                const iframe = activeSlide?.querySelector('iframe');
+                
+                if (activeSlide) activeSlide.style.cssText = '';
+                if (iframe) iframe.style.cssText = 'height: 580px; width: 100%;';
+                
+                // Show all controls
+                ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.style.opacity = '';
+                });
+                
+                // Clean up listeners
+                if (this.mouseMoveHandler) {
+                    container.removeEventListener('mousemove', this.mouseMoveHandler);
+                    this.mouseMoveHandler = null;
+                }
+                clearTimeout(this.hideTimeout);
+            }
+        }
+
+        hideControlsOnIdle() {
+            const container = document.querySelector('.slideshow-container');
+            const elements = ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn']
+                .map(id => document.getElementById(id));
+            
+            const hideControls = () => {
+                if (document.fullscreenElement) {
+                    elements.forEach(el => el.style.opacity = '0');
+                }
+            };
+            
+            const showControls = () => {
+                elements.forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transition = 'opacity 0.3s ease';
+                });
+                clearTimeout(this.hideTimeout);
+                this.hideTimeout = setTimeout(hideControls, 2000);
+            };
+            
+            // Remove old listener if exists
+            if (this.mouseMoveHandler) {
+                container.removeEventListener('mousemove', this.mouseMoveHandler);
+            }
+            
+            this.mouseMoveHandler = showControls;
+            container.addEventListener('mousemove', this.mouseMoveHandler);
+            this.hideTimeout = setTimeout(hideControls, 2000);
         }
 
         toggleFullscreen() {
             const container = document.querySelector('.slideshow-container');
             
             if (!document.fullscreenElement) {
-                if (container.requestFullscreen) {
-                    container.requestFullscreen();
-                } else if (container.webkitRequestFullscreen) {
-                    container.webkitRequestFullscreen();
-                } else if (container.msRequestFullscreen) {
-                    container.msRequestFullscreen();
-                }
+                container.requestFullscreen?.() || 
+                container.webkitRequestFullscreen?.() || 
+                container.msRequestFullscreen?.();
             } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
+                document.exitFullscreen?.() || 
+                document.webkitExitFullscreen?.() || 
+                document.msExitFullscreen?.();
             }
         }
 
         startSlideshow() {
-            if (this.slides.length === 0) {
-                console.error('Cannot start slideshow - no slides!'); // Debug
-                return;
-            }
+            if (this.slides.length === 0) return;
             
-            console.log('startSlideshow called, isPlaying:', this.isPlaying); // Debug
             this.showSlide(0);
             if (this.isPlaying) {
-                console.log('Starting auto-advance with', this.slideDuration, 'ms interval'); // Debug
-                this.startProgress();
                 this.startCountdown();
-                this.interval = setInterval(() => {
-                    console.log('Interval fired - advancing slide'); // Debug
-                    this.nextSlide();
-                }, this.slideDuration);
-                console.log('Interval ID:', this.interval); // Debug
+                this.interval = setInterval(() => this.nextSlide(), this.slideDuration);
             }
         }
 
@@ -791,28 +737,21 @@ title: eBird Slideshow
         nextSlide() {
             const nextIndex = (this.currentSlide + 1) % this.slides.length;
             this.showSlide(nextIndex);
-            // Reset progress bar and timer
-            this.pauseProgress();
-            this.resetProgressBar();
             this.timeRemaining = this.slideDuration / 1000;
             this.updateTimerDisplay();
             if (this.isPlaying) {
-                this.startProgress();
+                clearInterval(this.countdownInterval);
                 this.startCountdown();
             }
-            console.log('Advanced to slide', nextIndex + 1); // Debug log
         }
 
         previousSlide() {
             const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
             this.showSlide(prevIndex);
-            // Reset progress bar and timer
-            this.pauseProgress();
-            this.resetProgressBar();
             this.timeRemaining = this.slideDuration / 1000;
             this.updateTimerDisplay();
             if (this.isPlaying) {
-                this.startProgress();
+                clearInterval(this.countdownInterval);
                 this.startCountdown();
             }
         }
@@ -823,75 +762,21 @@ title: eBird Slideshow
             if (this.isPlaying) {
                 this.isPlaying = false;
                 clearInterval(this.interval);
-                this.pauseProgress();
+                clearInterval(this.countdownInterval);
                 playPauseBtn.textContent = '▶️';
-                console.log('Paused slideshow'); // Debug log
             } else {
                 this.isPlaying = true;
-                // Reset and restart progress/countdown
-                this.pauseProgress();
-                this.resetProgressBar();
                 this.timeRemaining = this.slideDuration / 1000;
                 this.updateTimerDisplay();
-                this.startProgress();
                 this.startCountdown();
-                this.interval = setInterval(() => {
-                    this.nextSlide();
-                }, this.slideDuration);
+                this.interval = setInterval(() => this.nextSlide(), this.slideDuration);
                 playPauseBtn.textContent = '⏸️';
-                console.log('Resumed slideshow'); // Debug log
-            }
-        }
-
-        startProgress() {
-            this.resetProgressBar();
-            let progress = 0;
-            this.progressInterval = setInterval(() => {
-                progress += 100 / (this.slideDuration / 100);
-                document.getElementById('progressBar').style.width = `${Math.min(progress, 100)}%`;
-            }, 100);
-        }
-
-        resetProgressBar() {
-            const progressBar = document.getElementById('progressBar');
-            if (progressBar) {
-                progressBar.style.width = '0%';
-            }
-        }
-
-        pauseProgress() {
-            if (this.progressInterval) {
-                clearInterval(this.progressInterval);
-                this.progressInterval = null;
-            }
-            if (this.countdownInterval) {
-                clearInterval(this.countdownInterval);
-                this.countdownInterval = null;
-            }
-        }
-
-        resumeProgress() {
-            if (this.isPlaying && !this.progressInterval) {
-                this.startProgress();
-                this.startCountdown();
-            }
-        }
-
-        resetProgress() {
-            this.pauseProgress();
-            this.resetProgressBar();
-            this.timeRemaining = this.slideDuration / 1000;
-            this.updateTimerDisplay();
-            if (this.isPlaying) {
-                // Don't call startProgress/startCountdown here to avoid recursion
-                // They'll be called from the appropriate place
             }
         }
 
         startCountdown() {
             this.timeRemaining = this.slideDuration / 1000;
             this.updateTimerDisplay();
-            console.log('Starting countdown from', this.timeRemaining); // Debug log
             this.countdownInterval = setInterval(() => {
                 this.timeRemaining -= 1;
                 if (this.timeRemaining < 0) this.timeRemaining = 0;
@@ -912,104 +797,5 @@ title: eBird Slideshow
         }
     }
 
-    // Initialize slideshow when page loads
-    document.addEventListener('DOMContentLoaded', () => {
-        new BirdSlideshow();
-    });
-
-    /* Add fullscreen detection and styling */
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-    
-    // Replace the handleFullscreenChange function with this updated version:
-
-    function handleFullscreenChange() {
-    const container = document.querySelector('.slideshow-container');
-    const isFullscreen = document.fullscreenElement || 
-                        document.webkitFullscreenElement || 
-                        document.mozFullScreenElement || 
-                        document.msFullscreenElement;
-    
-    if (isFullscreen) {
-        container.style.background = '#000';
-        container.style.display = 'flex';
-        container.style.flexDirection = 'column';
-        container.style.justifyContent = 'flex-start';
-        container.style.alignItems = 'center';
-        container.style.padding = '0';
-        
-        const slide = container.querySelector('.slide.active');
-        const iframe = slide ? slide.querySelector('iframe') : null;
-        if (iframe) {
-            // Make iframe wider, keep reasonable height
-            iframe.style.width = '100vw';
-            iframe.style.height = '100vh';
-            iframe.style.maxWidth = 'none';
-        }
-        
-        if (slide) {
-            slide.style.width = '100%';
-            slide.style.maxWidth = 'none';
-            slide.style.minHeight = '100vh';
-        }
-        
-        // Hide controls initially
-        hideControlsOnIdle();
-        } else {
-            // Reset styles
-            container.style.background = '';
-            container.style.display = '';
-            container.style.justifyContent = '';
-            container.style.alignItems = '';
-            container.style.padding = '';
-            
-            const slide = container.querySelector('.slide.active');
-            const iframe = slide ? slide.querySelector('iframe') : null;
-            if (iframe) {
-                iframe.style.height = '580px';
-                iframe.style.width = '100%';
-                iframe.style.maxWidth = '';
-            }
-            
-            if (slide) {
-                slide.style.width = '';
-                slide.style.maxWidth = '';
-                slide.style.minHeight = '';
-            }
-        }
-    }
-    
-    let hideTimeout;
-    function hideControlsOnIdle() {
-        const container = document.querySelector('.slideshow-container');
-        const controls = document.getElementById('controls');
-        const timer = document.getElementById('timerDisplay');
-        const counter = document.getElementById('slideCounter');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        
-        function hideControls() {
-            if (document.fullscreenElement) {
-                controls.style.opacity = '0';
-                timer.style.opacity = '0';
-                counter.style.opacity = '0';
-                fullscreenBtn.style.opacity = '0';
-            }
-        }
-        
-        function showControls() {
-            controls.style.opacity = '1';
-            timer.style.opacity = '1';
-            counter.style.opacity = '1';
-            fullscreenBtn.style.opacity = '1';
-            
-            clearTimeout(hideTimeout);
-            hideTimeout = setTimeout(hideControls, 2000);
-        }
-        
-        container.addEventListener('mousemove', showControls);
-        hideTimeout = setTimeout(hideControls, 2000);
-    }
-    
+    document.addEventListener('DOMContentLoaded', () => new BirdSlideshow());
 </script>
