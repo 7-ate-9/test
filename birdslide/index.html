@@ -366,114 +366,86 @@ title: eBird Slideshow
     }
 
     
-    /* Fullscreen improvements 
-        .slideshow-container:fullscreen {
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .slideshow-container:fullscreen .slide iframe {
-            height: calc(100vh - 200px) !important;
-            max-height: none;
-        }
-        
-        .slideshow-container:fullscreen .controls {
-            position: fixed;
-            bottom: 150px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .slideshow-container:fullscreen:hover .controls {
-            opacity: 1;
-        }
-        
-        .slideshow-container:fullscreen .timer-display,
-        .slideshow-container:fullscreen .slide-counter,
-        .slideshow-container:fullscreen .fullscreen-btn {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .slideshow-container:fullscreen:hover .timer-display,
-        .slideshow-container:fullscreen:hover .slide-counter,
-        .slideshow-container:fullscreen:hover .fullscreen-btn {
-            opacity: 1;
-        }
-        
-        /* Webkit fullscreen (Safari, Chrome) 
-        .slideshow-container:-webkit-full-screen {
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .slideshow-container:-webkit-full-screen .slide iframe {
-            height: calc(100vh - 200px) !important;
-        }
-        
-        .slideshow-container:-webkit-full-screen .controls {
-            position: fixed;
-            bottom: 150px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .slideshow-container:-webkit-full-screen:hover .controls {
-            opacity: 1;
-        }
-        
-        .slideshow-container:-webkit-full-screen .timer-display,
-        .slideshow-container:-webkit-full-screen .slide-counter,
-        .slideshow-container:-webkit-full-screen .fullscreen-btn {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .slideshow-container:-webkit-full-screen:hover .timer-display,
-        .slideshow-container:-webkit-full-screen:hover .slide-counter,
-        .slideshow-container:-webkit-full-screen:hover .fullscreen-btn {
-            opacity: 1;
-        }
-        
-        /* Mozilla fullscreen (Firefox) 
-        .slideshow-container:-moz-full-screen {
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .slideshow-container:-moz-full-screen .slide iframe {
-            height: calc(100vh - 200px) !important;
-        }
-        
-        .slideshow-container:-moz-full-screen .controls {
-            position: fixed;
-            bottom: 150px;
-            opacity: 0;
-        }
-        
-        .slideshow-container:-moz-full-screen:hover .controls {
-            opacity: 1;
-        }
-        
-        .slideshow-container:-moz-full-screen .timer-display,
-        .slideshow-container:-moz-full-screen .slide-counter,
-        .slideshow-container:-moz-full-screen .fullscreen-btn {
-            opacity: 0;
-        }
-        
-        .slideshow-container:-moz-full-screen:hover .timer-display,
-        .slideshow-container:-moz-full-screen:hover .slide-counter,
-        .slideshow-container:-moz-full-screen:hover .fullscreen-btn {
-            opacity: 1;
-        }
-    */
-
+    /* Fullscreen overlay styles */
+    .fullscreen-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+    }
+    
+    .fullscreen-image {
+        max-width: 100%;
+        max-height: calc(100vh - 150px);
+        object-fit: contain;
+    }
+    
+    .fullscreen-metadata {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 70%, transparent 100%);
+        color: white;
+        padding: 40px 20px 20px;
+    }
+    
+    .metadata-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .species-line {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .species-name {
+        color: #fff;
+    }
+    
+    .scientific-name {
+        font-style: italic;
+        font-weight: normal;
+        font-size: 20px;
+        color: #ccc;
+    }
+    
+    .metadata-details {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        color: #ddd;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .metadata-catalog a {
+        color: #58a6ff;
+        text-decoration: none;
+        font-size: 13px;
+    }
+    
+    .metadata-catalog a:hover {
+        text-decoration: underline;
+    }
+    
+    .metadata-loading {
+        text-align: center;
+        color: #888;
+        padding: 20px;
+    }
         
 </style>
 
@@ -524,6 +496,7 @@ title: eBird Slideshow
             this.timeRemaining = 30;
             this.hideTimeout = null;
             this.mouseMoveHandler = null;
+            this.metadataCache = {}; // Cache metadata to avoid re-fetching
             
             this.init();
             this.setupFullscreenListeners();
@@ -553,9 +526,7 @@ title: eBird Slideshow
                     this.timeRemaining = newDuration;
                     this.updateTimerDisplay();
                     this.startCountdown();
-                    this.interval = setInterval(() => {
-                        this.nextSlide();
-                    }, this.slideDuration);
+                    this.interval = setInterval(() => this.nextSlide(), this.slideDuration);
                 }
             });
         }
@@ -590,6 +561,7 @@ title: eBird Slideshow
             assetNumbers.forEach((assetNumber, index) => {
                 const slide = document.createElement('div');
                 slide.className = `slide ${index === 0 ? 'active' : ''}`;
+                slide.dataset.assetNumber = assetNumber; // Store for fullscreen use
                 
                 const iframe = document.createElement('iframe');
                 iframe.src = `https://macaulaylibrary.org/asset/${assetNumber}/embed/640`;
@@ -614,6 +586,55 @@ title: eBird Slideshow
             this.updateCounter();
         }
 
+        async fetchAssetMetadata(assetNumber) {
+            // Check cache first
+            if (this.metadataCache[assetNumber]) {
+                return this.metadataCache[assetNumber];
+            }
+
+            try {
+                const response = await fetch(`https://macaulaylibrary.org/asset/${assetNumber}`);
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Try multiple possible selectors
+                const metadata = {
+                    species: doc.querySelector('h1')?.textContent?.trim() ||
+                            doc.querySelector('[class*="species"]')?.textContent?.trim() ||
+                            'Unknown Species',
+                    scientificName: doc.querySelector('[class*="scientific"]')?.textContent?.trim() ||
+                                  doc.querySelector('em')?.textContent?.trim() ||
+                                  '',
+                    photographer: doc.querySelector('[class*="user"]')?.textContent?.trim() ||
+                                doc.querySelector('a[href*="profile"]')?.textContent?.trim() ||
+                                'Unknown Photographer',
+                    date: doc.querySelector('[class*="date"]')?.textContent?.trim() ||
+                         doc.querySelector('time')?.textContent?.trim() ||
+                         '',
+                    location: doc.querySelector('[class*="location"]')?.textContent?.trim() ||
+                            doc.querySelector('[class*="place"]')?.textContent?.trim() ||
+                            'Unknown Location',
+                    catalogNumber: `ML ${assetNumber}`
+                };
+
+                // Cache it
+                this.metadataCache[assetNumber] = metadata;
+                return metadata;
+            } catch (error) {
+                console.error('Error fetching metadata:', error);
+                // Return fallback metadata
+                return {
+                    species: 'Bird Species',
+                    scientificName: '',
+                    photographer: 'Photographer',
+                    date: '',
+                    location: 'Location',
+                    catalogNumber: `ML ${assetNumber}`
+                };
+            }
+        }
+
         showError(message) {
             const container = document.getElementById('slides-container');
             container.innerHTML = `<div class="error"><h3>⚠️ ${message}</h3></div>`;
@@ -631,45 +652,97 @@ title: eBird Slideshow
                 .forEach(event => document.addEventListener(event, () => this.handleFullscreenChange()));
         }
 
-        handleFullscreenChange() {
+        async handleFullscreenChange() {
             const container = document.querySelector('.slideshow-container');
             const isFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement || 
                                     document.mozFullScreenElement || document.msFullscreenElement);
             
             if (isFullscreen) {
-                // Enter fullscreen
-                container.style.cssText = 'background: #000; padding: 0;';
-                
-                const activeSlide = container.querySelector('.slide.active');
-                const iframe = activeSlide?.querySelector('iframe');
-                
-                if (activeSlide) activeSlide.style.cssText = 'padding: 0; background: #000;';
-                if (iframe) iframe.style.cssText = 'height: 100vh; width: 100vw;';
-                
-                this.hideControlsOnIdle();
+                await this.enterFullscreenMode();
             } else {
-                // Exit fullscreen
-                container.style.cssText = '';
-                
-                const activeSlide = container.querySelector('.slide.active');
-                const iframe = activeSlide?.querySelector('iframe');
-                
-                if (activeSlide) activeSlide.style.cssText = '';
-                if (iframe) iframe.style.cssText = 'height: 580px; width: 100%;';
-                
-                // Show all controls
-                ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.style.opacity = '';
-                });
-                
-                // Clean up listeners
-                if (this.mouseMoveHandler) {
-                    container.removeEventListener('mousemove', this.mouseMoveHandler);
-                    this.mouseMoveHandler = null;
-                }
-                clearTimeout(this.hideTimeout);
+                this.exitFullscreenMode();
             }
+        }
+
+        async enterFullscreenMode() {
+            const container = document.querySelector('.slideshow-container');
+            const activeSlide = container.querySelector('.slide.active');
+            const assetNumber = activeSlide.dataset.assetNumber;
+            
+            // Hide iframe
+            const iframe = activeSlide.querySelector('iframe');
+            if (iframe) iframe.style.display = 'none';
+            
+            // Create fullscreen overlay with direct image
+            const overlay = document.createElement('div');
+            overlay.className = 'fullscreen-overlay';
+            overlay.innerHTML = `
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200" 
+                     alt="Bird Photo" 
+                     class="fullscreen-image">
+                <div class="fullscreen-metadata">
+                    <div class="metadata-loading">Loading...</div>
+                </div>
+            `;
+            
+            activeSlide.appendChild(overlay);
+            
+            // Fetch and display metadata
+            const metadata = await this.fetchAssetMetadata(assetNumber);
+            const metadataDiv = overlay.querySelector('.fullscreen-metadata');
+            metadataDiv.innerHTML = `
+                <div class="metadata-content">
+                    <div class="species-line">
+                        <span class="species-name">${metadata.species}</span>
+                        ${metadata.scientificName ? `<span class="scientific-name">${metadata.scientificName}</span>` : ''}
+                    </div>
+                    <div class="metadata-details">
+                        <span>📷 ${metadata.photographer}</span>
+                        ${metadata.date ? `<span>📅 ${metadata.date}</span>` : ''}
+                        <span>📍 ${metadata.location}</span>
+                    </div>
+                    <div class="metadata-catalog">
+                        <a href="https://macaulaylibrary.org/asset/${assetNumber}" target="_blank">${metadata.catalogNumber}</a>
+                    </div>
+                </div>
+            `;
+            
+            container.style.cssText = 'background: #000; padding: 0;';
+            activeSlide.style.cssText = 'padding: 0; background: #000; display: flex; align-items: center; justify-content: center; height: 100vh;';
+            
+            this.hideControlsOnIdle();
+        }
+
+        exitFullscreenMode() {
+            const container = document.querySelector('.slideshow-container');
+            const activeSlide = container.querySelector('.slide.active');
+            
+            // Remove fullscreen overlay
+            const overlay = activeSlide.querySelector('.fullscreen-overlay');
+            if (overlay) overlay.remove();
+            
+            // Show iframe again
+            const iframe = activeSlide.querySelector('iframe');
+            if (iframe) {
+                iframe.style.display = 'block';
+                iframe.style.cssText = 'height: 580px; width: 100%;';
+            }
+            
+            container.style.cssText = '';
+            activeSlide.style.cssText = '';
+            
+            // Show all controls
+            ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.opacity = '';
+            });
+            
+            // Clean up listeners
+            if (this.mouseMoveHandler) {
+                container.removeEventListener('mousemove', this.mouseMoveHandler);
+                this.mouseMoveHandler = null;
+            }
+            clearTimeout(this.hideTimeout);
         }
 
         hideControlsOnIdle() {
@@ -732,6 +805,12 @@ title: eBird Slideshow
             });
             this.currentSlide = index;
             this.updateCounter();
+            
+            // If in fullscreen, update the fullscreen view
+            if (document.fullscreenElement) {
+                this.exitFullscreenMode();
+                setTimeout(() => this.enterFullscreenMode(), 100);
+            }
         }
 
         nextSlide() {
