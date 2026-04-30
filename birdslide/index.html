@@ -372,7 +372,7 @@ title: eBird Slideshow
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         background: #000;
@@ -380,12 +380,15 @@ title: eBird Slideshow
     
     .fullscreen-image {
         width: 100%;
-        flex: 1;
+        height: calc(100vh - 100px);
         object-fit: contain;
         object-position: center;
+        margin: 0 auto;
+        display: block;
     }
     
     .fullscreen-metadata {
+        height: 100px;
         background: #1a1a1a;
         color: white;
         padding: 20px 40px;
@@ -393,6 +396,7 @@ title: eBird Slideshow
         justify-content: space-between;
         align-items: center;
         gap: 40px;
+        flex-shrink: 0;
     }
     
     .metadata-left {
@@ -405,9 +409,8 @@ title: eBird Slideshow
     }
     
     .species-line {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 600;
-        margin-bottom: 8px;
     }
     
     .species-name {
@@ -417,7 +420,7 @@ title: eBird Slideshow
     .scientific-name {
         font-style: italic;
         font-weight: normal;
-        font-size: 22px;
+        font-size: 20px;
         color: #aaa;
         margin-left: 12px;
     }
@@ -425,20 +428,20 @@ title: eBird Slideshow
     .metadata-details {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        font-size: 15px;
+        gap: 6px;
+        font-size: 14px;
         color: #ccc;
         align-items: flex-end;
     }
     
     .metadata-catalog {
-        margin-top: 8px;
+        margin-top: 6px;
     }
     
     .metadata-catalog a {
         color: #58a6ff;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .metadata-catalog a:hover {
@@ -446,9 +449,8 @@ title: eBird Slideshow
     }
     
     .metadata-loading {
-        text-align: center;
         color: #888;
-        padding: 20px;
+        font-size: 14px;
     }
         
 </style>
