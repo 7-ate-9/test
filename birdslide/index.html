@@ -751,6 +751,17 @@ title: eBird Slideshow
             this.currentSlide = index;
             this.updateCounter();
             
+            // Preload next slide to prevent white flash
+            const nextIndex = (index + 1) % this.slides.length;
+            const nextSlide = this.slides[nextIndex];
+            const nextIframe = nextSlide?.querySelector('iframe');
+            if (nextIframe && !nextIframe.dataset.loaded) {
+                // Force iframe to start loading
+                const currentSrc = nextIframe.src;
+                nextIframe.src = currentSrc;
+                nextIframe.dataset.loaded = 'true';
+            }
+            
             // If in fullscreen, update the fullscreen view
             if (document.fullscreenElement) {
                 this.exitFullscreenMode();
