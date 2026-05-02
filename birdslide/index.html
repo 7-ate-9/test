@@ -33,6 +33,11 @@ title: eBird Slideshow
         background: #161b22;
     }
 
+    #slides-container {
+        background: #161b22;
+        min-height: 580px;
+    }
+
     .slide {
         display: none;
         width: 100%;
@@ -747,22 +752,20 @@ title: eBird Slideshow
         }
 
         showSlide(index) {
+            // Don't hide old slide immediately
+            const newSlide = this.slides[index];
+            
             this.slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    // Delay hiding old slides slightly
+                    setTimeout(() => slide.classList.remove('active'), 50);
+                }
             });
+            
             this.currentSlide = index;
             this.updateCounter();
-            
-            // Preload next slide to prevent white flash
-            const nextIndex = (index + 1) % this.slides.length;
-            const nextSlide = this.slides[nextIndex];
-            const nextIframe = nextSlide?.querySelector('iframe');
-            if (nextIframe && !nextIframe.dataset.loaded) {
-                // Force iframe to start loading
-                const currentSrc = nextIframe.src;
-                nextIframe.src = currentSrc;
-                nextIframe.dataset.loaded = 'true';
-            }
             
             // If in fullscreen, update the fullscreen view
             if (document.fullscreenElement) {
