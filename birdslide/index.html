@@ -695,37 +695,39 @@ title: eBird Slideshow
         clearTimeout(this.hideTimeout);
     }
 
-        hideControlsOnIdle() {
-            const container = document.querySelector('.slideshow-container');
-            const elements = ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn']
-                .map(id => document.getElementById(id));
-            
-            const hideControls = () => {
-                if (document.fullscreenElement) {
-                    elements.forEach(el => el.style.opacity = '0');
-                }
-            };
-            
-            const showControls = () => {
-                elements.forEach(el => {
-                    el.style.opacity = '1';
-                    el.style.transition = 'opacity 0.3s ease';
-                });
-                clearTimeout(this.hideTimeout);
-                this.hideTimeout = setTimeout(hideControls, 2000);
-            };
-            
-            // Remove old listener if exists
-            if (this.mouseMoveHandler) {
-                container.removeEventListener('mousemove', this.mouseMoveHandler);
+    hideControlsOnIdle() {
+        const container = document.querySelector('.slideshow-container');
+        const elements = ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn']
+            .map(id => document.getElementById(id));
+        
+        const hideControls = () => {
+            if (document.fullscreenElement) {
+                elements.forEach(el => el.style.opacity = '0');
             }
-            
-            this.mouseMoveHandler = showControls;
-            container.addEventListener('mousemove', this.mouseMoveHandler);
+        };
+        
+        const showControls = () => {
+            elements.forEach(el => {
+                el.style.opacity = '1';
+                el.style.transition = 'opacity 0.3s ease';
+            });
+            clearTimeout(this.hideTimeout);
             this.hideTimeout = setTimeout(hideControls, 2000);
+        };
+        
+        // Remove old listener if exists
+        if (this.mouseMoveHandler) {
+            container.removeEventListener('mousemove', this.mouseMoveHandler);
         }
+        
+        this.mouseMoveHandler = showControls;
+        container.addEventListener('mousemove', this.mouseMoveHandler);
+        
+        // Hide immediately when entering fullscreen (don't wait 2 seconds)
+        hideControls();
+    }
 
-        toggleFullscreen() {
+    toggleFullscreen() {
             const container = document.querySelector('.slideshow-container');
             
             if (!document.fullscreenElement) {
