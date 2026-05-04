@@ -636,62 +636,64 @@ title: eBird Slideshow
         }
 
       async enterFullscreenMode() {
-        const container = document.querySelector('.slideshow-container');
-        const activeSlide = container.querySelector('.slide.active');
-        const assetNumber = activeSlide.dataset.assetNumber;
-        
-        // Hide iframe
-        const iframe = activeSlide.querySelector('iframe');
-        if (iframe) iframe.style.display = 'none';
-        
-        // Create fullscreen overlay with just the image
-        const overlay = document.createElement('div');
-        overlay.className = 'fullscreen-overlay';
-        overlay.innerHTML = `
-            <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200" 
-                 alt="Bird Photo" 
-                 class="fullscreen-image">
-        `;
-        
-        activeSlide.appendChild(overlay);
-        
-        container.style.cssText = 'background: #000; padding: 0;';
-        activeSlide.style.cssText = 'padding: 0; background: #000; height: 100vh;';
-        
-        this.hideControlsOnIdle();
-    }
-
-        exitFullscreenMode() {
             const container = document.querySelector('.slideshow-container');
             const activeSlide = container.querySelector('.slide.active');
+            const assetNumber = activeSlide.dataset.assetNumber;
             
-            // Remove fullscreen overlay
-            const overlay = activeSlide.querySelector('.fullscreen-overlay');
-            if (overlay) overlay.remove();
-            
-            // Show iframe again
+            // Hide iframe, show or create overlay
             const iframe = activeSlide.querySelector('iframe');
-            if (iframe) {
-                iframe.style.display = 'block';
-                iframe.style.cssText = 'height: 580px; width: 100%;';
+            if (iframe) iframe.style.display = 'none';
+            
+            let overlay = activeSlide.querySelector('.fullscreen-overlay');
+            
+            if (!overlay) {
+                // Create overlay for this slide
+                overlay = document.createElement('div');
+                overlay.className = 'fullscreen-overlay';
+                overlay.innerHTML = `
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200" 
+                         alt="Bird Photo" 
+                         class="fullscreen-image">
+                `;
+                activeSlide.appendChild(overlay);
+            } else {
+                // Just show existing overlay
+                overlay.style.display = 'flex';
             }
             
-            container.style.cssText = '';
-            activeSlide.style.cssText = '';
+            container.style.cssText = 'background: #000; padding: 0;';
+            activeSlide.style.cssText = 'padding: 0; background: #000; height: 100vh;';
             
-            // Show all controls
-            ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.style.opacity = '';
-            });
-            
-            // Clean up listeners
-            if (this.mouseMoveHandler) {
-                container.removeEventListener('mousemove', this.mouseMoveHandler);
-                this.mouseMoveHandler = null;
-            }
-            clearTimeout(this.hideTimeout);
+            this.hideControlsOnIdle();
         }
+
+      exitFullscreenMode() {
+        const container = document.querySelector('.slideshow-container');
+        
+        // Hide all overlays and show all iframes
+        this.slides.forEach(slide => {
+            const overlay = slide.querySelector('.fullscreen-overlay');
+            const iframe = slide.querySelector('iframe');
+            
+            if (overlay) overlay.style.display = 'none';
+            if (iframe) iframe.style.display = 'block';
+        });
+        
+        container.style.cssText = '';
+        
+        // Show all controls
+        ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.opacity = '';
+        });
+        
+        // Clean up listeners
+        if (this.mouseMoveHandler) {
+            container.removeEventListener('mousemove', this.mouseMoveHandler);
+            this.mouseMoveHandler = null;
+        }
+        clearTimeout(this.hideTimeout);
+    }
 
         hideControlsOnIdle() {
             const container = document.querySelector('.slideshow-container');
@@ -748,25 +750,38 @@ title: eBird Slideshow
         }
 
         showSlide(index) {
-            // Don't hide old slide immediately
-            const newSlide = this.slides[index];
-            
             this.slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.add('active');
-                } else {
-                    // Delay hiding old slides slightly
-                    setTimeout(() => slide.classList.remove('active'), 50);
-                }
+                slide.classList.toggle('active', i === index);
             });
-            
             this.currentSlide = index;
             this.updateCounter();
             
-            // If in fullscreen, update the fullscreen view
+            // If in fullscreen, just update the image src, don't rebuild everything
             if (document.fullscreenElement) {
-                this.exitFullscreenMode();
-                setTimeout(() => this.enterFullscreenMode(), 100);
+                const activeSlide = this.slides[index];
+                const assetNumber = activeSlide.dataset.assetNumber;
+                const overlay = activeSlide.querySelector('.fullscreen-overlay');
+                
+                if (overlay) {
+                    // Overlay already exists, just update the image
+                    const img = overlay.querySelector('.fullscreen-image');
+                    if (img) {
+                        img.src = `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200`;
+                    }
+                } else {
+                    // No overlay yet, create it (first time entering fullscreen on this slide)
+                    const iframe = activeSlide.querySelector('iframe');
+                    if (iframe) iframe.style.display = 'none';
+                    
+                    const newOverlay = document.createElement('div');
+                    newOverlay.className = 'fullscreen-overlay';
+                    newOverlay.innerHTML = `
+                        <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200" 
+                             alt="Bird Photo" 
+                             class="fullscreen-image">
+                    `;
+                    activeSlide.appendChild(newOverlay);
+                }
             }
         }
 
