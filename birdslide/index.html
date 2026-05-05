@@ -758,32 +758,38 @@ title: eBird Slideshow
             this.currentSlide = index;
             this.updateCounter();
             
-            // If in fullscreen, just update the image src, don't rebuild everything
+            // If in fullscreen, update the fullscreen display
             if (document.fullscreenElement) {
                 const activeSlide = this.slides[index];
                 const assetNumber = activeSlide.dataset.assetNumber;
-                const overlay = activeSlide.querySelector('.fullscreen-overlay');
+                const iframe = activeSlide.querySelector('iframe');
                 
-                if (overlay) {
-                    // Overlay already exists, just update the image
-                    const img = overlay.querySelector('.fullscreen-image');
-                    if (img) {
-                        img.src = `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200`;
-                    }
-                } else {
-                    // No overlay yet, create it (first time entering fullscreen on this slide)
-                    const iframe = activeSlide.querySelector('iframe');
-                    if (iframe) iframe.style.display = 'none';
-                    
-                    const newOverlay = document.createElement('div');
-                    newOverlay.className = 'fullscreen-overlay';
-                    newOverlay.innerHTML = `
+                // Always hide iframe in fullscreen
+                if (iframe) iframe.style.display = 'none';
+                
+                let overlay = activeSlide.querySelector('.fullscreen-overlay');
+                
+                if (!overlay) {
+                    // Create overlay for this slide
+                    overlay = document.createElement('div');
+                    overlay.className = 'fullscreen-overlay';
+                    overlay.innerHTML = `
                         <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200" 
                              alt="Bird Photo" 
                              class="fullscreen-image">
                     `;
-                    activeSlide.appendChild(newOverlay);
+                    activeSlide.appendChild(overlay);
+                } else {
+                    // Show existing overlay and update image
+                    overlay.style.display = 'flex';
+                    const img = overlay.querySelector('.fullscreen-image');
+                    if (img) {
+                        img.src = `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${assetNumber}/1200`;
+                    }
                 }
+                
+                // Ensure proper styling for fullscreen
+                activeSlide.style.cssText = 'padding: 0; background: #000; height: 100vh;';
             }
         }
 
