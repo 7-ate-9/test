@@ -667,7 +667,7 @@ title: eBird Slideshow
             this.hideControlsOnIdle();
         }
 
-      exitFullscreenMode() {
+    exitFullscreenMode() {
         const container = document.querySelector('.slideshow-container');
         
         // Hide all overlays and show all iframes
@@ -677,6 +677,9 @@ title: eBird Slideshow
             
             if (overlay) overlay.style.display = 'none';
             if (iframe) iframe.style.display = 'block';
+            
+            // Reset slide styling
+            slide.style.cssText = '';
         });
         
         container.style.cssText = '';
@@ -694,7 +697,7 @@ title: eBird Slideshow
         }
         clearTimeout(this.hideTimeout);
     }
-
+        
     hideControlsOnIdle() {
         const container = document.querySelector('.slideshow-container');
         const elements = ['controls', 'timerDisplay', 'slideCounter', 'fullscreenBtn']
