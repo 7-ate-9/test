@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-15T08:44:40.183285",
+  "last_updated": "2026-05-16T07:58:49.231803",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -24,8 +24,8 @@
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/659256249/large.jpg",
       "species_common": "Nursehound",
       "species_scientific": "Scyliorhinus stellaris",
-      "observer": null,
-      "observer_login": "p_fromentin",
+      "observer": "",
+      "observer_login": "piotr_f",
       "date": "2026/05/08 14:20",
       "location": "Provence-Alpes-C\u00f4te d'Azur, FR",
       "license_code": "cc-by-nc",
