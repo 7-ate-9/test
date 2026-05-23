@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-05-22T08:55:48.827896",
+  "last_updated": "2026-05-23T08:12:51.493032",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 364125452,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/664713972/large.jpg",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
+      "observer": "Jacob Weston",
+      "observer_login": "bonesigh",
+      "date": "2026-05-22 18:17:00-04:00",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/364125452",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 364046038,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/664562469/large.jpg",
+      "species_common": "Sandbar Shark",
+      "species_scientific": "Carcharhinus plumbeus",
+      "observer": "Thomas",
+      "observer_login": "sctommy06",
+      "date": "2026-05-21 20:33:00",
+      "location": "Beaufort County, US-SC, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/364046038",
+      "quality_grade": "research"
+    },
     {
       "id": 363694374,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/663902613/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/362122256",
-      "quality_grade": "research"
-    },
-    {
-      "id": 362073325,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/660818878/large.jpg",
-      "species_common": "Dusky Smooth-hound",
-      "species_scientific": "Mustelus canis",
-      "observer": "Megarex",
-      "observer_login": "megarex",
-      "date": "2026-05-13 16:41:00",
-      "location": "United States",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/362073325",
-      "quality_grade": "research"
-    },
-    {
-      "id": 362049625,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/660769087/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/05/15 1:20 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/362049625",
       "quality_grade": "research"
     }
   ]
