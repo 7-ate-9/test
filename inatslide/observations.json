@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-24T08:24:45.645951",
+  "last_updated": "2026-05-25T09:58:12.524504",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -51,7 +51,7 @@
     },
     {
       "id": 364125452,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/664713972/large.jpg",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/666123745/large.jpg",
       "species_common": "Typical Requiem Sharks",
       "species_scientific": "Carcharhinus",
       "observer": "Jacob Weston",
