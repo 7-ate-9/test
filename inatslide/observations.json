@@ -1,9 +1,99 @@
 {
-  "last_updated": "2026-05-29T09:46:00.142408",
+  "last_updated": "2026-05-30T08:23:50.144415",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 366577458,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/669376293/large.jpg",
+      "species_common": "Port Jackson Shark",
+      "species_scientific": "Heterodontus portusjacksoni",
+      "observer": "Terry Savidis",
+      "observer_login": "tjwsav",
+      "date": "2026-05-30 17:17:16",
+      "location": "Prince Charles Pde before Captain Cook Dr, Kurnell NSW 2231, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/366577458",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 366520184,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/669267254/large.jpg",
+      "species_common": "Sandbar Shark",
+      "species_scientific": "Carcharhinus plumbeus",
+      "observer": "",
+      "observer_login": "laurabankey",
+      "date": "2026-05-29 14:18:58-04:00",
+      "location": "United States",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/366520184",
+      "quality_grade": "research"
+    },
+    {
+      "id": 366468938,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/669165865/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": "Jabin",
+      "observer_login": "mississippi_fish_guy",
+      "date": "2026-05-29 14:32:40",
+      "location": "United States",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/366468938",
+      "quality_grade": "research"
+    },
+    {
+      "id": 366337669,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/668839239/large.jpg",
+      "species_common": "Grey Reef Shark",
+      "species_scientific": "Carcharhinus amblyrhynchos",
+      "observer": "Luis P. B.",
+      "observer_login": "luispb",
+      "date": "2026/02/03 2:11 PM",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/366337669",
+      "quality_grade": "research"
+    },
+    {
+      "id": 366337653,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/668839170/large.jpg",
+      "species_common": "Grey Reef Shark",
+      "species_scientific": "Carcharhinus amblyrhynchos",
+      "observer": "Luis P. B.",
+      "observer_login": "luispb",
+      "date": "2026/02/03 7:46 AM",
+      "location": "Palau",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/366337653",
+      "quality_grade": "research"
+    },
+    {
+      "id": 366337627,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/668838955/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "Luis P. B.",
+      "observer_login": "luispb",
+      "date": "2026/02/02 1:55 PM",
+      "location": "Ulong Sand Bar, Palau",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/366337627",
+      "quality_grade": "research"
+    },
     {
       "id": 366202649,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/668659931/large.jpg",
@@ -17,7 +107,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/366202649",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 366118735,
@@ -32,7 +122,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/366118735",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 366118571,
@@ -47,7 +137,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/366118571",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 366118562,
@@ -62,7 +152,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/366118562",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 366118496,
@@ -77,7 +167,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/366118496",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 366060868,
@@ -362,96 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/364076704",
-      "quality_grade": "research"
-    },
-    {
-      "id": 364046038,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/664562469/large.jpg",
-      "species_common": "Sandbar Shark",
-      "species_scientific": "Carcharhinus plumbeus",
-      "observer": "Thomas",
-      "observer_login": "sctommy06",
-      "date": "2026-05-21 20:33:00",
-      "location": "Beaufort County, US-SC, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/364046038",
-      "quality_grade": "research"
-    },
-    {
-      "id": 363989216,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/664457255/large.jpg",
-      "species_common": "Whale Shark",
-      "species_scientific": "Rhincodon typus",
-      "observer": null,
-      "observer_login": "dennismr",
-      "date": "Thu Aug 21 2025 10:30:00 GMT +0200 (GMT)",
-      "location": "Maldives",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/363989216",
-      "quality_grade": "research"
-    },
-    {
-      "id": 363694374,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/663902613/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/05/21 12:51 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/363694374",
-      "quality_grade": "research"
-    },
-    {
-      "id": 363694304,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/663902010/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/05/21 10:19 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/363694304",
-      "quality_grade": "research"
-    },
-    {
-      "id": 363694292,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/663901955/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/05/21 10:09 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/363694292",
-      "quality_grade": "research"
-    },
-    {
-      "id": 363694250,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/663901690/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/05/21 9:53 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/363694250",
       "quality_grade": "research"
     }
   ]
