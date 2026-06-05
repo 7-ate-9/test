@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-06-04T09:50:48.295467",
+  "last_updated": "2026-06-05T09:39:27.087945",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 368329365,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/672725981/large.jpg",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
+      "observer": "Dan Schofield",
+      "observer_login": "djscho",
+      "date": "2026-05-31 09:34:36",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/368329365",
+      "quality_grade": "research"
+    },
+    {
+      "id": 368303953,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/672678800/large.jpg",
+      "species_common": "Nervous Shark",
+      "species_scientific": "Carcharhinus cautus",
+      "observer": "Vicki",
+      "observer_login": "cockatoo89",
+      "date": "2023/09/24 1:15 PM",
+      "location": "Dirk Hartog Island WA 6537, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/368303953",
+      "quality_grade": "research"
+    },
     {
       "id": 368284439,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/672640561/large.jpg",
@@ -17,7 +47,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/368284439",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 368129917,
@@ -290,6 +320,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 367302829,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/670758415/large.jpg",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
+      "observer": "Dan Schofield",
+      "observer_login": "djscho",
+      "date": "2026/05/16 12:35 PM",
+      "location": "Location obscured",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/367302829",
+      "quality_grade": "research"
+    },
+    {
       "id": 367206250,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/670566561/large.jpg",
       "species_common": "Nurse Shark",
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/366683954",
-      "quality_grade": "research"
-    },
-    {
-      "id": 366683946,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/669569216/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/05/29 10:09 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/366683946",
-      "quality_grade": "research"
-    },
-    {
-      "id": 366630702,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/669468508/large.jpg",
-      "species_common": "Bull Shark",
-      "species_scientific": "Carcharhinus leucas",
-      "observer": null,
-      "observer_login": "mbaggett1",
-      "date": "2026/05/29 11:34 AM",
-      "location": "Monroe County, US-FL, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/366630702",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 366604783,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/669427405/large.jpg",
-      "species_common": "Tawny Nurse Shark",
-      "species_scientific": "Nebrius ferrugineus",
-      "observer": "",
-      "observer_login": "erikgabriel",
-      "date": "2026-05-05 19:20:00",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/366604783",
       "quality_grade": "research"
     }
   ]
