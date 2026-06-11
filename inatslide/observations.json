@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-10T09:52:04.083865",
+  "last_updated": "2026-06-11T10:16:51.784780",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -63,6 +63,21 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/369926487",
       "quality_grade": "research"
+    },
+    {
+      "id": 369719249,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/675365947/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": "Grant Parton",
+      "observer_login": "grant_parton",
+      "date": "2026-06-08 11:02:36",
+      "location": "Florida, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/369719249",
+      "quality_grade": "needs_id"
     },
     {
       "id": 369710522,
@@ -438,21 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/368750213",
       "quality_grade": "needs_id"
-    },
-    {
-      "id": 368598005,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/673243824/large.jpg",
-      "species_common": "Smooth Hammerhead",
-      "species_scientific": "Sphyrna zygaena",
-      "observer": null,
-      "observer_login": "earthicanv2",
-      "date": "2026-06-01T09:00",
-      "location": "Clovelly, AU",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/368598005",
-      "quality_grade": "research"
     }
   ]
 }
