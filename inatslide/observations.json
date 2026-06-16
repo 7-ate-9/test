@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-06-15T11:56:18.546884",
+  "last_updated": "2026-06-16T11:04:13.947156",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 372222332,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680158089/large.jpg",
+      "species_common": "Leopard Shark",
+      "species_scientific": "Triakis semifasciata",
+      "observer": "Brenda",
+      "observer_login": "brendagarcia931",
+      "date": "2026-04-10 18:35:15",
+      "location": "Ventura Pier, Ventura, CA 93001, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/372222332",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 372133151,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679980943/large.jpg",
+      "species_common": "Hammerhead Sharks",
+      "species_scientific": "Sphyrna",
+      "observer": "Nathaniel Mimms",
+      "observer_login": "nathaniel31043",
+      "date": "2026-05-31 23:14:17",
+      "location": "Florida, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/372133151",
+      "quality_grade": "needs_id"
+    },
     {
       "id": 371898165,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679531623/large.jpg",
@@ -32,21 +62,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/371828878",
-      "quality_grade": "research"
-    },
-    {
-      "id": 371705137,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679149589/large.jpg",
-      "species_common": "Basking Shark",
-      "species_scientific": "Cetorhinus maximus",
-      "observer": "",
-      "observer_login": "usernamelesss",
-      "date": "2026-06-14 14:59:31",
-      "location": "Ireland",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/371705137",
       "quality_grade": "research"
     },
     {
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/369515761",
-      "quality_grade": "research"
-    },
-    {
-      "id": 369477223,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/674898765/large.jpg",
-      "species_common": "Thresher Shark",
-      "species_scientific": "Alopias vulpinus",
-      "observer": null,
-      "observer_login": "bkrangerrob",
-      "date": "2026/06/07 4:43 PM",
-      "location": "United States",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/369477223",
       "quality_grade": "research"
     }
   ]
