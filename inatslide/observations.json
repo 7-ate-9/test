@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-06-17T10:48:19.533176",
+  "last_updated": "2026-06-18T10:15:22.184674",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 372718644,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/681100448/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "robin",
+      "observer_login": "robin40367",
+      "date": "2026-06-17 14:06:33",
+      "location": "Costa Rica",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/372718644",
+      "quality_grade": "research"
+    },
     {
       "id": 372307416,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680314492/large.jpg",
@@ -17,7 +32,7 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/372307416",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 372274830,
@@ -159,7 +174,7 @@
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679531623/large.jpg",
       "species_common": "Small-spotted Catshark",
       "species_scientific": "Scyliorhinus canicula",
-      "observer": null,
+      "observer": "Clara Malfrait",
       "observer_login": "claramalfrait",
       "date": "2025-10-13 18:21:50+02:00",
       "location": "Rade de Brest, FR",
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/370078204",
-      "quality_grade": "research"
-    },
-    {
-      "id": 369926502,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/675761246/large.jpg",
-      "species_common": "Swellshark",
-      "species_scientific": "Cephaloscyllium ventriosum",
-      "observer": "Nathan",
-      "observer_login": "befuddledowl",
-      "date": "2026/06/07 12:27 PM",
-      "location": "Santa Barbara County, US-CA, US",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/369926502",
       "quality_grade": "research"
     }
   ]
