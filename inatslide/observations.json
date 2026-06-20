@@ -1,9 +1,54 @@
 {
-  "last_updated": "2026-06-19T10:20:26.794662",
+  "last_updated": "2026-06-20T08:49:25.087490",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 373284672,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/682174782/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/06/19 11:56 AM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/373284672",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 373284652,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/682174703/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/06/19 11:46 AM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/373284652",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 373284560,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/682174176/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/06/19 9:35 AM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/373284560",
+      "quality_grade": "needs_id"
+    },
     {
       "id": 373071993,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/681773152/large.jpg",
@@ -408,51 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/371336081",
       "quality_grade": "research"
-    },
-    {
-      "id": 371248218,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678284351/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/06/13 10:35 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/371248218",
-      "quality_grade": "research"
-    },
-    {
-      "id": 371053746,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678562351/large.jpg",
-      "species_common": "Ground Sharks",
-      "species_scientific": "Carcharhiniformes",
-      "observer": "Kyle Dettloff",
-      "observer_login": "kyle481",
-      "date": "2026-06-12 13:15:00",
-      "location": "Florida, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/371053746",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 370950352,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/677720707/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/06/12 12:44 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/370950352",
-      "quality_grade": "needs_id"
     }
   ]
 }
