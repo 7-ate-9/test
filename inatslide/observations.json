@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-06-28T08:46:21.307192",
+  "last_updated": "2026-06-29T10:49:34.036883",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 376240668,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687884910/large.jpg",
+      "species_common": "Swellshark",
+      "species_scientific": "Cephaloscyllium ventriosum",
+      "observer": null,
+      "observer_login": "jmongoose",
+      "date": "2026/06/27 10:52 AM",
+      "location": "Santa Barbara County, CA, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/376240668",
+      "quality_grade": "research"
+    },
+    {
+      "id": 376139238,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687705018/large.jpg",
+      "species_common": "Brown-banded Bamboo Shark",
+      "species_scientific": "Chiloscyllium punctatum",
+      "observer": null,
+      "observer_login": "kian_hc",
+      "date": "2026-01-17 11:35:30",
+      "location": "Wellington Point, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/376139238",
+      "quality_grade": "research"
+    },
     {
       "id": 376045085,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687517009/large.jpg",
@@ -22,8 +52,8 @@
     {
       "id": 375997577,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687421529/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
+      "species_common": "Caribbean Reef Shark",
+      "species_scientific": "Carcharhinus perezii",
       "observer": "Tom Harr",
       "observer_login": "yo15930",
       "date": "2026/06/27 8:49 AM",
@@ -32,7 +62,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/375997577",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 375850133,
@@ -63,6 +93,21 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/375827669",
       "quality_grade": "needs_id"
+    },
+    {
+      "id": 375808621,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687070370/large.jpg",
+      "species_common": "Horn Shark",
+      "species_scientific": "Heterodontus francisci",
+      "observer": "priyanka soni",
+      "observer_login": "sonipriyanka423",
+      "date": "2026-06-21 23:05:49-09:00",
+      "location": "San Pedro Channel, CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/375808621",
+      "quality_grade": "research"
     },
     {
       "id": 375740189,
@@ -305,6 +350,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 374755961,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/685016292/large.jpg",
+      "species_common": "Great White Shark",
+      "species_scientific": "Carcharodon carcharias",
+      "observer": "Andrew Harmer",
+      "observer_login": "noiselessowl",
+      "date": "2026-06-23 12:30:16-07:00",
+      "location": "San Luis Obispo County, US-CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/374755961",
+      "quality_grade": "research"
+    },
+    {
       "id": 374664615,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684834760/large.jpg",
       "species_common": "Great Hammerhead",
@@ -392,66 +452,6 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/373976350",
-      "quality_grade": "research"
-    },
-    {
-      "id": 373976322,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683492564/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/06/19 9:04 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/373976322",
-      "quality_grade": "research"
-    },
-    {
-      "id": 373820063,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683202936/large.jpg",
-      "species_common": "Great White Shark",
-      "species_scientific": "Carcharodon carcharias",
-      "observer": "Andrew Harmer",
-      "observer_login": "noiselessowl",
-      "date": "2026/06/19 10:54 AM",
-      "location": "San Luis Obispo County, US-CA, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/373820063",
-      "quality_grade": "research"
-    },
-    {
-      "id": 373577774,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/682744247/large.jpg",
-      "species_common": "Puffadder Shyshark",
-      "species_scientific": "Haploblepharus edwardsii",
-      "observer": "Emily Steyn",
-      "observer_login": "emily60825",
-      "date": "2026-06-20 16:51:56",
-      "location": "Western Cape, ZA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/373577774",
-      "quality_grade": "research"
-    },
-    {
-      "id": 373564744,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/682716774/large.jpg",
-      "species_common": "Shortfin Mako",
-      "species_scientific": "Isurus oxyrinchus",
-      "observer": "",
-      "observer_login": "carina_g",
-      "date": "2026/06/20 9:00 AM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/373564744",
       "quality_grade": "research"
     }
   ]
