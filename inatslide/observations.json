@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-07-01T09:38:47.586134",
+  "last_updated": "2026-07-02T08:50:06.827429",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 377188803,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689718238/large.jpg",
+      "species_common": "Pyjama Shark",
+      "species_scientific": "Poroderma africanum",
+      "observer": "Calla Vandehaar Johnsen",
+      "observer_login": "cvandejohn",
+      "date": "2026/06/25 10:45 AM",
+      "location": "Fish Hoek Beach, South Africa",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/377188803",
+      "quality_grade": "research"
+    },
+    {
+      "id": 377188798,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689718212/large.jpg",
+      "species_common": "Puffadder Shyshark",
+      "species_scientific": "Haploblepharus edwardsii",
+      "observer": "Calla Vandehaar Johnsen",
+      "observer_login": "cvandejohn",
+      "date": "2026/06/23 10:35 AM",
+      "location": "Western Cape, ZA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/377188798",
+      "quality_grade": "research"
+    },
     {
       "id": 376240668,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687884910/large.jpg",
@@ -93,6 +123,21 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/375827669",
       "quality_grade": "needs_id"
+    },
+    {
+      "id": 375812498,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687078041/large.jpg",
+      "species_common": "Sandbar Shark",
+      "species_scientific": "Carcharhinus plumbeus",
+      "observer": "Sarah H",
+      "observer_login": "surfnsarah22",
+      "date": "2026-06-26 19:30:02-04:00",
+      "location": "Virginia, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/375812498",
+      "quality_grade": "research"
     },
     {
       "id": 375808621,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/374598344",
-      "quality_grade": "research"
-    },
-    {
-      "id": 374246807,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684029092/large.jpg",
-      "species_common": "Scalloped Hammerhead",
-      "species_scientific": "Sphyrna lewini",
-      "observer": "Sara Chaves Beam",
-      "observer_login": "schaves",
-      "date": "2026/06/14 6:09 AM",
-      "location": "United States",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374246807",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 374029743,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683597999/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/06/20 11:27 AM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374029743",
-      "quality_grade": "research"
-    },
-    {
-      "id": 373976350,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683492873/large.jpg",
-      "species_common": "Angelshark",
-      "species_scientific": "Squatina squatina",
-      "observer": "Dennis Rabeling",
-      "observer_login": "dennisthediver",
-      "date": "2026/06/19 9:15 PM",
-      "location": "Las Palmas, ES-CN, ES",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/373976350",
       "quality_grade": "research"
     }
   ]
