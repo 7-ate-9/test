@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-07-02T08:50:06.827429",
+  "last_updated": "2026-07-03T08:56:29.344590",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 377527263,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/690382211/large.jpg",
+      "species_common": "Silky Shark",
+      "species_scientific": "Carcharhinus falciformis",
+      "observer": null,
+      "observer_login": "joelasus",
+      "date": "2026-07-01 11:01:28",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/377527263",
+      "quality_grade": "research"
+    },
+    {
+      "id": 377350004,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/690041443/large.jpg",
+      "species_common": "Great White Shark",
+      "species_scientific": "Carcharodon carcharias",
+      "observer": "Andrew Harmer",
+      "observer_login": "noiselessowl",
+      "date": "2026-07-01 14:16:29-07:00",
+      "location": "San Luis Obispo County, US-CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/377350004",
+      "quality_grade": "research"
+    },
     {
       "id": 377188803,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689718238/large.jpg",
@@ -33,6 +63,21 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/377188798",
       "quality_grade": "research"
+    },
+    {
+      "id": 377149065,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689644405/large.jpg",
+      "species_common": "Ground Sharks",
+      "species_scientific": "Carcharhiniformes",
+      "observer": "John C.",
+      "observer_login": "casseljs",
+      "date": "2026/06/27 5:21 PM",
+      "location": "Sarasota, Florida, United States",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/377149065",
+      "quality_grade": "needs_id"
     },
     {
       "id": 376240668,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/374755961",
-      "quality_grade": "research"
-    },
-    {
-      "id": 374664615,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684834760/large.jpg",
-      "species_common": "Great Hammerhead",
-      "species_scientific": "Sphyrna mokarran",
-      "observer": "Etienne Guitton",
-      "observer_login": "tiouf",
-      "date": "2024/12/22 10:52",
-      "location": "\u00celes Tuamotu-Gambier, PF",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374664615",
-      "quality_grade": "research"
-    },
-    {
-      "id": 374611835,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684738477/large.jpg",
-      "species_common": "Scalloped Hammerhead",
-      "species_scientific": "Sphyrna lewini",
-      "observer": "Etienne Guitton",
-      "observer_login": "tiouf",
-      "date": "2014/11/22 10:42",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374611835",
-      "quality_grade": "research"
-    },
-    {
-      "id": 374598344,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684714363/large.jpg",
-      "species_common": "Bull Shark",
-      "species_scientific": "Carcharhinus leucas",
-      "observer": "Catherine",
-      "observer_login": "tchootchkes",
-      "date": "2026-06-23 08:59:58",
-      "location": "United States",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374598344",
       "quality_grade": "research"
     }
   ]
