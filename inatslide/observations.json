@@ -1,14 +1,44 @@
 {
-  "last_updated": "2026-07-04T08:31:24.544680",
+  "last_updated": "2026-07-05T08:47:35.573329",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
     {
+      "id": 378234291,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/691741169/large.jpg",
+      "species_common": "Swellshark",
+      "species_scientific": "Cephaloscyllium ventriosum",
+      "observer": "Jeremy_Jodoin",
+      "observer_login": "jeremy_jodoin",
+      "date": "2026/06/28 8:09 AM",
+      "location": "Rancho Palos Verdes, CA, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/378234291",
+      "quality_grade": "research"
+    },
+    {
+      "id": 378234262,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/691740201/large.jpg",
+      "species_common": "Swellshark",
+      "species_scientific": "Cephaloscyllium ventriosum",
+      "observer": "Jeremy_Jodoin",
+      "observer_login": "jeremy_jodoin",
+      "date": "2026/06/28 7:50 AM",
+      "location": "Rancho Palos Verdes, CA, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/378234262",
+      "quality_grade": "research"
+    },
+    {
       "id": 377894853,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/691094385/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
+      "species_common": "Silky Shark",
+      "species_scientific": "Carcharhinus falciformis",
       "observer": "Tom Harr",
       "observer_login": "yo15930",
       "date": "2026/07/01 10:27 AM",
@@ -17,7 +47,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/377894853",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 377894126,
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/374904972",
-      "quality_grade": "research"
-    },
-    {
-      "id": 374856516,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/685214721/large.jpg",
-      "species_common": "Silvertip Shark",
-      "species_scientific": "Carcharhinus albimarginatus",
-      "observer": "Etienne Guitton",
-      "observer_login": "tiouf",
-      "date": "2021/05/23 17:03",
-      "location": "\u00celes Tuamotu-Gambier, PF",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374856516",
-      "quality_grade": "research"
-    },
-    {
-      "id": 374856113,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/685214085/large.jpg",
-      "species_common": "Silvertip Shark",
-      "species_scientific": "Carcharhinus albimarginatus",
-      "observer": "Etienne Guitton",
-      "observer_login": "tiouf",
-      "date": "2021/05/23 16:50",
-      "location": "\u00celes Tuamotu-Gambier, PF",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/374856113",
       "quality_grade": "research"
     }
   ]
