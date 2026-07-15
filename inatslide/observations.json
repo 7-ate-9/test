@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-07-14T07:56:18.648227",
+  "last_updated": "2026-07-15T08:01:14.562150",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 381322293,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697716177/large.jpg",
+      "species_common": "Australian Angelshark",
+      "species_scientific": "Squatina australis",
+      "observer": null,
+      "observer_login": "ibsees",
+      "date": "2026-07-13 08:09:39",
+      "location": "Middle Harbour, NSW, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/381322293",
+      "quality_grade": "research"
+    },
     {
       "id": 381141376,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697362014/large.jpg",
@@ -17,6 +32,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/381141376",
+      "quality_grade": "research"
+    },
+    {
+      "id": 381019154,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697132595/large.jpg",
+      "species_common": "Nurse Shark",
+      "species_scientific": "Ginglymostoma cirratum",
+      "observer": null,
+      "observer_login": "sergioueda",
+      "date": "2013/07/23 19:05",
+      "location": "San Miguel de Cozumel, Quintana Roo, M\u00e9xico",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/381019154",
       "quality_grade": "research"
     },
     {
@@ -410,48 +440,18 @@
       "quality_grade": "research"
     },
     {
-      "id": 377313687,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689968716/large.jpg",
-      "species_common": "Great White Shark",
-      "species_scientific": "Carcharodon carcharias",
-      "observer": "Andrew Harmer",
-      "observer_login": "noiselessowl",
-      "date": "2026-07-01 11:02:07-07:00",
-      "location": "San Luis Obispo County, US-CA, US",
+      "id": 377330309,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/690001812/large.jpg",
+      "species_common": "Dusky Smooth-hound",
+      "species_scientific": "Mustelus canis",
+      "observer": null,
+      "observer_login": "i_need_a_more_socialhobby",
+      "date": "2026-07-01T21:47",
+      "location": "New Jersey, US",
       "license_code": "cc-by-nc",
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/377313687",
-      "quality_grade": "research"
-    },
-    {
-      "id": 377188803,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689718238/large.jpg",
-      "species_common": "Pyjama Shark",
-      "species_scientific": "Poroderma africanum",
-      "observer": "Calla Vandehaar Johnsen",
-      "observer_login": "cvandejohn",
-      "date": "2026/06/25 10:45 AM",
-      "location": "Fish Hoek Beach, South Africa",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/377188803",
-      "quality_grade": "research"
-    },
-    {
-      "id": 377188798,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689718212/large.jpg",
-      "species_common": "Puffadder Shyshark",
-      "species_scientific": "Haploblepharus edwardsii",
-      "observer": "Calla Vandehaar Johnsen",
-      "observer_login": "cvandejohn",
-      "date": "2026/06/23 10:35 AM",
-      "location": "Western Cape, ZA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/377188798",
+      "obs_url": "https://www.inaturalist.org/observations/377330309",
       "quality_grade": "research"
     }
   ]
