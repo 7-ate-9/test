@@ -1,9 +1,54 @@
 {
-  "last_updated": "2026-07-23T08:23:21.505633",
+  "last_updated": "2026-07-24T08:20:32.300601",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 384473424,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/703794825/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "Ramadhany",
+      "observer_login": "rmadhany",
+      "date": "2026/01/27 5:24 PM",
+      "location": "Jizan, SA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/384473424",
+      "quality_grade": "research"
+    },
+    {
+      "id": 384332024,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/703514526/large.jpg",
+      "species_common": "Nursehound",
+      "species_scientific": "Scyliorhinus stellaris",
+      "observer": "Tony Gilbert",
+      "observer_login": "tonyjgilbert",
+      "date": "2016-05-28 13:59:12",
+      "location": "Gwynedd, Wales, GB",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/384332024",
+      "quality_grade": "research"
+    },
+    {
+      "id": 384276405,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/703381260/large.jpg",
+      "species_common": "Starspotted Smooth-hound",
+      "species_scientific": "Mustelus manazo",
+      "observer": null,
+      "observer_login": "markuseng",
+      "date": "2023/03/31 7:33 PM",
+      "location": "Wando-gun, Jeollanam-do, South Korea",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/384276405",
+      "quality_grade": "research"
+    },
     {
       "id": 384146844,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/703162195/large.jpg",
@@ -32,7 +77,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/384100443",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 384089895,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/382184854",
-      "quality_grade": "research"
-    },
-    {
-      "id": 382116810,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/699253485/large.jpg",
-      "species_common": "Leopard Shark",
-      "species_scientific": "Triakis semifasciata",
-      "observer": null,
-      "observer_login": "quetzal013",
-      "date": "2024-01-28 12:49:18",
-      "location": "Malibu, CA, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/382116810",
-      "quality_grade": "research"
-    },
-    {
-      "id": 382013221,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/699055380/large.jpg",
-      "species_common": "Bonnethead",
-      "species_scientific": "Sphyrna tiburo",
-      "observer": "",
-      "observer_login": "davidsc59",
-      "date": "2026-07-15 08:09:20",
-      "location": "Fripp Island, SC 29920, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/382013221",
-      "quality_grade": "research"
-    },
-    {
-      "id": 381893000,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/698828898/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "joe corne",
-      "observer_login": "joe70982",
-      "date": "2026-07-16 09:49:13",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/381893000",
       "quality_grade": "research"
     }
   ]
