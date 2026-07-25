@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-07-24T08:20:32.300601",
+  "last_updated": "2026-07-25T08:00:32.785337",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 384698497,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/704223961/large.jpg",
+      "species_common": "Atlantic Sharpnose Shark",
+      "species_scientific": "Rhizoprionodon terraenovae",
+      "observer": "Dominic",
+      "observer_login": "thatguydominic",
+      "date": "2026-07-23 06:42:04",
+      "location": "Hilton Head Island, SC, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/384698497",
+      "quality_grade": "research"
+    },
+    {
+      "id": 384649842,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/704127783/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": "Thanda Ko Gyi",
+      "observer_login": "thandapanda",
+      "date": "2025/04/17 1:48 AM",
+      "location": "Myanmar",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/384649842",
+      "quality_grade": "research"
+    },
     {
       "id": 384473424,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/703794825/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/382359436",
-      "quality_grade": "research"
-    },
-    {
-      "id": 382259597,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/699534224/large.jpg",
-      "species_common": "Basking Shark",
-      "species_scientific": "Cetorhinus maximus",
-      "observer": "Beth",
-      "observer_login": "quinonesb",
-      "date": "2026-07-16 19:06:07Z",
-      "location": "Austurland, IS",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/382259597",
-      "quality_grade": "research"
-    },
-    {
-      "id": 382184854,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/699388632/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "yala",
-      "observer_login": "m1yaru",
-      "date": "2026-07-17 09:36:47",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/382184854",
       "quality_grade": "research"
     }
   ]
