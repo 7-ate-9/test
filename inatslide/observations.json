@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-07-29T08:33:18.200362",
+  "last_updated": "2026-07-30T08:18:24.434163",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 386237189,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707165435/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": "Gonzalo Mucientes Sandoval",
+      "observer_login": "gmucientes",
+      "date": "2026/07/19 12:20 AM",
+      "location": "Cape Verde",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/386237189",
+      "quality_grade": "research"
+    },
+    {
+      "id": 386225274,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707144515/large.jpg",
+      "species_common": "Milk Shark",
+      "species_scientific": "Rhizoprionodon acutus",
+      "observer": "Gonzalo Mucientes Sandoval",
+      "observer_login": "gmucientes",
+      "date": "2026/07/23 3:01 PM",
+      "location": "Santa Isabel, Cabo Verde",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/386225274",
+      "quality_grade": "needs_id"
+    },
     {
       "id": 386173093,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707045569/large.jpg",
@@ -17,7 +47,22 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/386173093",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
+    },
+    {
+      "id": 386165968,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707027515/large.jpg",
+      "species_common": "Leopard Catshark",
+      "species_scientific": "Poroderma pantherinum",
+      "observer": "Georgina Jones",
+      "observer_login": "seastung",
+      "date": "2026/07/18 10:32 AM",
+      "location": "batsata maze false bay",
+      "license_code": "cc-by-sa",
+      "license_name": "CC BY-SA",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/386165968",
+      "quality_grade": "research"
     },
     {
       "id": 385783110,
@@ -77,7 +122,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/385385336",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 385311338,
@@ -365,6 +410,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 383574005,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/702058930/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": "Gonzalo Mucientes Sandoval",
+      "observer_login": "gmucientes",
+      "date": "2026-07-19 22:00:00",
+      "location": "Cape Verde",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/383574005",
+      "quality_grade": "needs_id"
+    },
+    {
       "id": 383561927,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/702037517/large.jpg",
       "species_common": "Whale Shark",
@@ -392,66 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/383542565",
-      "quality_grade": "research"
-    },
-    {
-      "id": 383448196,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701816085/large.jpg",
-      "species_common": "Sand Tiger Shark",
-      "species_scientific": "Carcharias taurus",
-      "observer": "Sarah Jantos",
-      "observer_login": "sarahgreenheroes",
-      "date": "2010/07/05 10:29 AM",
-      "location": "New South Wales, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/383448196",
-      "quality_grade": "research"
-    },
-    {
-      "id": 383413756,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701750984/large.jpg",
-      "species_common": "Oceanic Whitetip Shark",
-      "species_scientific": "Carcharhinus longimanus",
-      "observer": "Selim T\u00fcreli",
-      "observer_login": "selimtureli",
-      "date": "2026-07-20 23:48:03+03:00",
-      "location": "Red Sea, EG",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/383413756",
-      "quality_grade": "research"
-    },
-    {
-      "id": 383398755,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701722071/large.jpg",
-      "species_common": "Leopard Shark",
-      "species_scientific": "Triakis semifasciata",
-      "observer": "Chris Dettmering",
-      "observer_login": "dettmerc",
-      "date": "2020-05-21",
-      "location": "Huntington Beach, CA 92648, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/383398755",
-      "quality_grade": "research"
-    },
-    {
-      "id": 383398379,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701721207/large.jpg",
-      "species_common": "School Shark",
-      "species_scientific": "Galeorhinus galeus",
-      "observer": "Chris Dettmering",
-      "observer_login": "dettmerc",
-      "date": "2025-07-23 11:04:32",
-      "location": "Los Angeles County, US-CA, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/383398379",
       "quality_grade": "research"
     }
   ]
