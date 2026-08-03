@@ -1,9 +1,54 @@
 {
-  "last_updated": "2026-08-02T08:16:10.566536",
+  "last_updated": "2026-08-03T09:35:33.529721",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 387724783,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710016928/large.jpg",
+      "species_common": "Leopard Shark",
+      "species_scientific": "Triakis semifasciata",
+      "observer": null,
+      "observer_login": "breezygamer117",
+      "date": "2026-06-14 16:53:49-07:00",
+      "location": "San Francisco Bay, Fremont, CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/387724783",
+      "quality_grade": "research"
+    },
+    {
+      "id": 387648247,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709867357/large.jpg",
+      "species_common": "Dusky Smooth-hound",
+      "species_scientific": "Mustelus canis",
+      "observer": "kary",
+      "observer_login": "karyorelicta4662",
+      "date": "2026-08-02 13:57:09-04:00",
+      "location": "United States",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/387648247",
+      "quality_grade": "research"
+    },
+    {
+      "id": 387574697,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709726547/large.jpg",
+      "species_common": "Salmon Shark",
+      "species_scientific": "Lamna ditropis",
+      "observer": null,
+      "observer_login": "kaiden",
+      "date": "2026-08-01 09:54:41",
+      "location": "Skeena-Queen Charlotte, BC, CA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/387574697",
+      "quality_grade": "research"
+    },
     {
       "id": 387385072,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709362284/large.jpg",
@@ -17,7 +62,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/387385072",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 387305251,
@@ -245,6 +290,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 386364126,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707405005/large.jpg",
+      "species_common": "Blue Shark",
+      "species_scientific": "Prionace glauca",
+      "observer": "\u00c1ngel Mu\u00f1oz Cano",
+      "observer_login": "angelmunozcano",
+      "date": "2026-07-28 13:33:29",
+      "location": "Cadaqu\u00e9s, Girona, Espa\u00f1a",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/386364126",
+      "quality_grade": "research"
+    },
+    {
       "id": 386237189,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/707165435/large.jpg",
       "species_common": "Lemon Shark",
@@ -392,66 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/385311338",
-      "quality_grade": "research"
-    },
-    {
-      "id": 385307853,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705363797/large.jpg",
-      "species_common": "Cobbler Wobbegong",
-      "species_scientific": "Sutorectus tentaculatus",
-      "observer": "J. Martin Crossley",
-      "observer_login": "jmartincrossley",
-      "date": "2026/07/24 11:18 AM",
-      "location": "Inner Wall, Canal Rocks, WA, Australia",
-      "license_code": "cc-by-nc-nd",
-      "license_name": "CC BY-NC-ND",
-      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/385307853",
-      "quality_grade": "research"
-    },
-    {
-      "id": 385282863,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705325287/large.jpg",
-      "species_common": "Small-spotted Catshark",
-      "species_scientific": "Scyliorhinus canicula",
-      "observer": "vadim fouilland",
-      "observer_login": "vadim_fouilland",
-      "date": "2026/07/10 18:06",
-      "location": "Parc national de Port-Cros, FR-VR, Provence-Alpes-C\u00f4te d'Azur, FR",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/385282863",
-      "quality_grade": "research"
-    },
-    {
-      "id": 385176283,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705145863/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": null,
-      "observer_login": "karlslug",
-      "date": "2026/05/23",
-      "location": "\u00celes du Vent, PF",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/385176283",
-      "quality_grade": "research"
-    },
-    {
-      "id": 385164607,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705122998/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": null,
-      "observer_login": "karlslug",
-      "date": "2026/05/29",
-      "location": "\u00celes Sous-le-Vent, PF",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/385164607",
       "quality_grade": "research"
     }
   ]
