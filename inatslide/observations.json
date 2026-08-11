@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-10T07:23:27.480260",
+  "last_updated": "2026-08-11T06:59:10.893669",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -306,7 +306,7 @@
     },
     {
       "id": 387874430,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710319854/large.jpg",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/714631072/large.jpg",
       "species_common": "Sandbar Shark",
       "species_scientific": "Carcharhinus plumbeus",
       "observer": "kary",
