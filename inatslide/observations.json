@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-08-11T06:59:10.893669",
+  "last_updated": "2026-08-12T07:17:54.059476",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 390278538,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/714987022/large.jpg",
+      "species_common": "Brown-banded Bamboo Shark",
+      "species_scientific": "Chiloscyllium punctatum",
+      "observer": null,
+      "observer_login": "fishlea",
+      "date": "2025-10-11T19:00",
+      "location": "Indonesia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/390278538",
+      "quality_grade": "research"
+    },
     {
       "id": 389661853,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713778767/large.jpg",
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/387385072",
-      "quality_grade": "research"
-    },
-    {
-      "id": 387305251,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709206564/large.jpg",
-      "species_common": "Dusky Smooth-hound",
-      "species_scientific": "Mustelus canis",
-      "observer": "David LaMagna",
-      "observer_login": "lamagswag",
-      "date": "2026-08-01 15:46:27",
-      "location": "United States",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/387305251",
       "quality_grade": "research"
     }
   ]
