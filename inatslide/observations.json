@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-17T06:44:47.704432",
+  "last_updated": "2026-08-18T06:35:24.772460",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -7,8 +7,8 @@
     {
       "id": 391708091,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717780594/large.jpg",
-      "species_common": "Brown-banded Bamboo Shark",
-      "species_scientific": "Chiloscyllium punctatum",
+      "species_common": "Bamboo Sharks",
+      "species_scientific": "Chiloscyllium",
       "observer": "Ingmar Rondeel",
       "observer_login": "ingmar51",
       "date": "2026-08-12",
@@ -17,7 +17,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/391708091",
-      "quality_grade": "research"
+      "quality_grade": "needs_id"
     },
     {
       "id": 391684518,
