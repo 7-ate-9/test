@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-08-18T06:35:24.772460",
+  "last_updated": "2026-08-19T06:36:05.091774",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 392435373,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/719188011/large.jpg",
+      "species_common": "Basking Shark",
+      "species_scientific": "Cetorhinus maximus",
+      "observer": null,
+      "observer_login": "marjoleinlouisa",
+      "date": "2026-08-16 09:46:58",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/392435373",
+      "quality_grade": "research"
+    },
+    {
+      "id": 392371238,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/719065606/large.jpg",
+      "species_common": "Atlantic Sharpnose Shark",
+      "species_scientific": "Rhizoprionodon terraenovae",
+      "observer": null,
+      "observer_login": "awkwardsquid",
+      "date": "2026-08-18 08:45:39",
+      "location": "VA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/392371238",
+      "quality_grade": "research"
+    },
     {
       "id": 391708091,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717780594/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/389134192",
-      "quality_grade": "research"
-    },
-    {
-      "id": 388927556,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/712378012/large.jpg",
-      "species_common": "Sand Tiger Shark",
-      "species_scientific": "Carcharias taurus",
-      "observer": null,
-      "observer_login": "riseoftheturtles",
-      "date": "2018/07/04 12:00 AM",
-      "location": "Cook Island, New South Wales, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/388927556",
-      "quality_grade": "research"
-    },
-    {
-      "id": 388913016,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/712349668/large.jpg",
-      "species_common": "Spotted Estuary Smooth-hound",
-      "species_scientific": "Mustelus lenticulatus",
-      "observer": null,
-      "observer_login": "samboothroyd",
-      "date": "2026-08-02 14:38:59+12:00",
-      "location": "South Pacific Ocean, Canterbury, NZ",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/388913016",
       "quality_grade": "research"
     }
   ]
