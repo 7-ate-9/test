@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-08-26T06:40:21.638255",
+  "last_updated": "2026-08-27T17:16:12.288028",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 394911830,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724043158/large.jpg",
+      "species_common": "Greenland Shark",
+      "species_scientific": "Somniosus microcephalus",
+      "observer": null,
+      "observer_login": "mrmuhna",
+      "date": "2018/06/04 13:00",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/394911830",
+      "quality_grade": "research"
+    },
+    {
+      "id": 394631506,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723491218/large.jpg",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
+      "observer": "Kieran Chau",
+      "observer_login": "lowviz_kieran",
+      "date": "2026/08/24 11:30 AM",
+      "location": "Port Stephens, AU-NS, AU",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/394631506",
+      "quality_grade": "needs_id"
+    },
     {
       "id": 394600211,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723430811/large.jpg",
@@ -17,6 +47,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/394600211",
+      "quality_grade": "research"
+    },
+    {
+      "id": 394516533,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723263909/large.jpg",
+      "species_common": "Small-spotted Catshark",
+      "species_scientific": "Scyliorhinus canicula",
+      "observer": "Charcos Companhia",
+      "observer_login": "charcoscompanhia",
+      "date": "2026-08-25 20:15:28",
+      "location": "Praia de Mira, Portugal",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/394516533",
       "quality_grade": "research"
     },
     {
@@ -112,8 +157,8 @@
     {
       "id": 393710551,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/721681772/large.jpg",
-      "species_common": "Typical Wobbegongs",
-      "species_scientific": "Orectolobus",
+      "species_common": "Spotted Wobbegong",
+      "species_scientific": "Orectolobus maculatus",
       "observer": null,
       "observer_login": "estellehakner",
       "date": "2026/06/21 3:00 PM",
@@ -122,7 +167,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/393710551",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 393706513,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/392321345",
-      "quality_grade": "research"
-    },
-    {
-      "id": 392310079,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718944929/large.jpg",
-      "species_common": "Dark Shyshark",
-      "species_scientific": "Haploblepharus pictus",
-      "observer": "Zubayr Abdullah",
-      "observer_login": "z-a",
-      "date": "2026-08-01 16:13:00",
-      "location": "Cape Town, 7975, South Africa",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/392310079",
-      "quality_grade": "research"
-    },
-    {
-      "id": 391708091,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717780594/large.jpg",
-      "species_common": "Bamboo Sharks",
-      "species_scientific": "Chiloscyllium",
-      "observer": "Ingmar Rondeel",
-      "observer_login": "ingmar51",
-      "date": "2026-08-12",
-      "location": "Sabah, MY",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/391708091",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 391684518,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717735951/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Berta Llanas",
-      "observer_login": "bllanasv",
-      "date": "2025-10-06 11:40:00+02:00",
-      "location": "Indian Ocean, Seychelles, SC",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/391684518",
       "quality_grade": "research"
     }
   ]
