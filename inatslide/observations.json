@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-29T12:12:19.577492",
+  "last_updated": "2026-08-30T11:09:12.588840",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -80,6 +80,21 @@
       "quality_grade": "research"
     },
     {
+      "id": 395280949,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724764971/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": "Nature Foundation St. Maarten",
+      "observer_login": "naturefoundationsxm",
+      "date": "2026-08-28 14:49:16",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/395280949",
+      "quality_grade": "research"
+    },
+    {
       "id": 395267245,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724735161/large.jpg",
       "species_common": "Leopard Shark",
@@ -107,7 +122,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/395267215",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 395260760,
@@ -437,21 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/392957016",
-      "quality_grade": "research"
-    },
-    {
-      "id": 392820480,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/719939076/large.jpg",
-      "species_common": "Bull Shark",
-      "species_scientific": "Carcharhinus leucas",
-      "observer": null,
-      "observer_login": "mikeh302",
-      "date": "2026/08/14 11:49 AM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/392820480",
       "quality_grade": "research"
     }
   ]
