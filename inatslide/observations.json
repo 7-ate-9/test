@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-09-05T09:53:41.941123",
+  "last_updated": "2026-09-06T10:11:25.863518",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 397606351,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/729272441/large.jpg",
+      "species_common": "Thresher Shark",
+      "species_scientific": "Alopias vulpinus",
+      "observer": "",
+      "observer_login": "beezeze",
+      "date": "2026/08/22 9:37 AM",
+      "location": "California, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/397606351",
+      "quality_grade": "research"
+    },
     {
       "id": 397114082,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/728323445/large.jpg",
@@ -32,6 +47,21 @@
       "license_name": "CC BY-NC-ND",
       "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/397039288",
+      "quality_grade": "research"
+    },
+    {
+      "id": 397033517,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/728157498/large.jpg",
+      "species_common": "Great White Shark",
+      "species_scientific": "Carcharodon carcharias",
+      "observer": "David Aitken",
+      "observer_login": "flightless_nomad",
+      "date": "2017-04-04 19:46:44",
+      "location": "Western Cape, ZA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/397033517",
       "quality_grade": "research"
     },
     {
@@ -423,36 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/395260760",
       "quality_grade": "needs_id"
-    },
-    {
-      "id": 395260098,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724725150/large.jpg",
-      "species_common": "Network Wobbegong",
-      "species_scientific": "Orectolobus reticulatus",
-      "observer": "Roxanne Lazarus",
-      "observer_login": "roxylaz",
-      "date": "2026-08-29 00:55:47",
-      "location": "East Point, AU",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/395260098",
-      "quality_grade": "research"
-    },
-    {
-      "id": 395140945,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724447874/large.jpg",
-      "species_common": "Zebra Shark",
-      "species_scientific": "Stegostoma tigrinum",
-      "observer": "Debra Baker",
-      "observer_login": "quokka2",
-      "date": "2026/08/25 3:05 PM",
-      "location": "Lifou, New Caledonia",
-      "license_code": "cc-by",
-      "license_name": "CC BY",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/395140945",
-      "quality_grade": "research"
     }
   ]
 }
