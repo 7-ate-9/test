@@ -1,9 +1,54 @@
 {
-  "last_updated": "2026-09-10T10:30:38.776713",
+  "last_updated": "2026-09-11T10:31:38.177796",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 399105959,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732203437/large.jpg",
+      "species_common": "Great White Shark",
+      "species_scientific": "Carcharodon carcharias",
+      "observer": "Andrew Harmer",
+      "observer_login": "noiselessowl",
+      "date": "2026-09-10 08:45:16-07:00",
+      "location": "San Luis Obispo County, US-CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/399105959",
+      "quality_grade": "research"
+    },
+    {
+      "id": 399004704,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732006124/large.jpg",
+      "species_common": "Dusky Smooth-hound",
+      "species_scientific": "Mustelus canis",
+      "observer": null,
+      "observer_login": "mmothmman",
+      "date": "2026-09-10 09:51:30",
+      "location": "United States",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/399004704",
+      "quality_grade": "research"
+    },
+    {
+      "id": 398962862,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/731928699/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "Miguel Palminha",
+      "observer_login": "littack",
+      "date": "2025/10/15 1:56 PM",
+      "location": "Thailand",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/398962862",
+      "quality_grade": "research"
+    },
     {
       "id": 398885486,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/731783460/large.jpg",
@@ -17,7 +62,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/398885486",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 398812974,
@@ -182,6 +227,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/397946025",
+      "quality_grade": "research"
+    },
+    {
+      "id": 397673725,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/729413620/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "Ben Costamagna",
+      "observer_login": "bencostamagna",
+      "date": "2026-09-06 09:03:46",
+      "location": "Sulawesi Utara, ID",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/397673725",
       "quality_grade": "research"
     },
     {
@@ -393,66 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/396190279",
       "quality_grade": "research"
-    },
-    {
-      "id": 396118949,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726406253/large.jpg",
-      "species_common": "Common Blacktip Shark",
-      "species_scientific": "Carcharhinus limbatus",
-      "observer": "",
-      "observer_login": "piercedpossum",
-      "date": "2025-03-22 19:44:48",
-      "location": "Florida, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/396118949",
-      "quality_grade": "research"
-    },
-    {
-      "id": 396091371,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726354111/large.jpg",
-      "species_common": "Great White Shark",
-      "species_scientific": "Carcharodon carcharias",
-      "observer": "Nathan Beerkens",
-      "observer_login": "nathanbeerkens",
-      "date": "2019/06/16 8:22 PM",
-      "location": "Unincorp. Lincoln, AU-SA, AU",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/396091371",
-      "quality_grade": "research"
-    },
-    {
-      "id": 396042208,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726252600/large.jpg",
-      "species_common": "Whale Shark",
-      "species_scientific": "Rhincodon typus",
-      "observer": "Nathan Beerkens",
-      "observer_login": "nathanbeerkens",
-      "date": "2016/01/15 9:29 PM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/396042208",
-      "quality_grade": "research"
-    },
-    {
-      "id": 396042145,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726252003/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
-      "observer": "Nathan Beerkens",
-      "observer_login": "nathanbeerkens",
-      "date": "2015/12/25 12:21 PM",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/396042145",
-      "quality_grade": "needs_id"
     }
   ]
 }
