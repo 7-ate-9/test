@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-09-12T09:59:48.432387",
+  "last_updated": "2026-09-13T11:00:48.522535",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 399814067,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/733581229/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "Marcia Morris",
+      "observer_login": "dull2shinetoo",
+      "date": "2026/08/19 3:51 PM",
+      "location": "Isabela, Parque Nacional Gal\u00e1pagos, EC-GA, EC",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/399814067",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 399602781,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/733164726/large.jpg",
+      "species_common": "Galean Sharks",
+      "species_scientific": "Galeomorphi",
+      "observer": "",
+      "observer_login": "sparkypetunia",
+      "date": "2019-07-11 09:22:00",
+      "location": "Volusia County, FL, USA",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/399602781",
+      "quality_grade": "needs_id"
+    },
     {
       "id": 399343591,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732660055/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/396513663",
-      "quality_grade": "research"
-    },
-    {
-      "id": 396305913,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726778171/large.jpg",
-      "species_common": "Port Jackson Shark",
-      "species_scientific": "Heterodontus portusjacksoni",
-      "observer": "TheSnorkelSisters",
-      "observer_login": "thesnorkelsisters",
-      "date": "2026-09-01 07:39:15",
-      "location": "Williamstown, AU",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/396305913",
-      "quality_grade": "research"
-    },
-    {
-      "id": 396272066,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726710944/large.jpg",
-      "species_common": "Whale Shark",
-      "species_scientific": "Rhincodon typus",
-      "observer": "Chelsea",
-      "observer_login": "chelseasea",
-      "date": "2026-08-31 8:11am",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/396272066",
       "quality_grade": "research"
     }
   ]
