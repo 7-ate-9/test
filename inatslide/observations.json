@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-09-17T10:53:25.370848",
+  "last_updated": "2026-09-18T10:28:52.605335",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 401166405,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/736284021/large.jpg",
+      "species_common": "Whale Shark",
+      "species_scientific": "Rhincodon typus",
+      "observer": "Yi\u011fit S\u00fco\u011flu",
+      "observer_login": "yigit_suoglu",
+      "date": "2024-06-08 11:10:13",
+      "location": "Philippines",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/401166405",
+      "quality_grade": "research"
+    },
     {
       "id": 400914353,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/735780921/large.jpg",
@@ -62,6 +77,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/400717729",
+      "quality_grade": "research"
+    },
+    {
+      "id": 400696495,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/735351236/large.jpg",
+      "species_common": "Atlantic Sharpnose Shark",
+      "species_scientific": "Rhizoprionodon terraenovae",
+      "observer": null,
+      "observer_login": "jo3y64",
+      "date": "2026-03-21 09:30:30",
+      "location": "Sarasota County, US-FL, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/400696495",
       "quality_grade": "research"
     },
     {
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/398962862",
-      "quality_grade": "research"
-    },
-    {
-      "id": 398885486,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/731783460/large.jpg",
-      "species_common": "Sand Tiger Shark",
-      "species_scientific": "Carcharias taurus",
-      "observer": "Sebastian Ford",
-      "observer_login": "sebfford",
-      "date": "2026-09-09 22:22:24",
-      "location": "Virginia Beach City County, US-VA, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/398885486",
-      "quality_grade": "research"
-    },
-    {
-      "id": 398812974,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/731632134/large.jpg",
-      "species_common": "Spinner Shark",
-      "species_scientific": "Carcharhinus brevipinna",
-      "observer": null,
-      "observer_login": "maebriknox",
-      "date": "2026/07/17 8:24 PM",
-      "location": "New Jersey, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/398812974",
       "quality_grade": "research"
     }
   ]
