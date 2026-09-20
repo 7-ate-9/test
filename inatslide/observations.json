@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-09-19T10:14:15.287083",
+  "last_updated": "2026-09-20T10:32:49.617280",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 401624855,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737142173/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/09/18 12:56 PM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/401624855",
+      "quality_grade": "research"
+    },
+    {
+      "id": 401589099,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737102290/large.jpg",
+      "species_common": "Silky Shark",
+      "species_scientific": "Carcharhinus falciformis",
+      "observer": "Brett",
+      "observer_login": "oceanus1",
+      "date": "2024-07-21 10:34:27",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/401589099",
+      "quality_grade": "research"
+    },
     {
       "id": 401379337,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/736691107/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/399343572",
-      "quality_grade": "research"
-    },
-    {
-      "id": 399343571,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732659985/large.jpg",
-      "species_common": "Whale Shark",
-      "species_scientific": "Rhincodon typus",
-      "observer": "Siobhan O'Neill",
-      "observer_login": "nudibitch",
-      "date": "2026/09/05 2:13 PM",
-      "location": "22980 Bah\u00eda de los \u00c1ngeles, Baja California, Mexico",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/399343571",
-      "quality_grade": "research"
-    },
-    {
-      "id": 399278576,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732534065/large.jpg",
-      "species_common": "Lemon Shark",
-      "species_scientific": "Negaprion brevirostris",
-      "observer": "Ken Rosales",
-      "observer_login": "krosa86",
-      "date": "2024-05-17 09:55:00",
-      "location": "Miami-Dade County, US-FL, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/399278576",
       "quality_grade": "research"
     }
   ]
