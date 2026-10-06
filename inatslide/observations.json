@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-05T13:28:54.900190",
+  "last_updated": "2026-10-06T12:40:45.087850",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -17,6 +17,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/405880555",
+      "quality_grade": "research"
+    },
+    {
+      "id": 405816985,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745469643/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": null,
+      "observer_login": "larvalfishguy",
+      "date": "2026-10-03 10:57:00-04:00",
+      "location": "Florida, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/405816985",
       "quality_grade": "research"
     },
     {
@@ -50,6 +65,21 @@
       "quality_grade": "needs_id"
     },
     {
+      "id": 405158800,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744152899/large.jpg",
+      "species_common": "Dusky Shark",
+      "species_scientific": "Carcharhinus obscurus",
+      "observer": null,
+      "observer_login": "dgagnon55",
+      "date": "2026-10-02 14:54:19",
+      "location": "Busan, Busan, KR",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/405158800",
+      "quality_grade": "research"
+    },
+    {
       "id": 405008737,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743847115/large.jpg",
       "species_common": "Bull Shark",
@@ -67,8 +97,8 @@
     {
       "id": 404931054,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743699396/large.jpg",
-      "species_common": "Bronze Whaler",
-      "species_scientific": "Carcharhinus brachyurus",
+      "species_common": "Dusky Shark",
+      "species_scientific": "Carcharhinus obscurus",
       "observer": "Ama\u00ebl Borz\u00e9e",
       "observer_login": "amarzee",
       "date": "2026-10-01 15:16:19",
@@ -307,8 +337,8 @@
     {
       "id": 403207943,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740286332/large.jpg",
-      "species_common": "Bronze Whaler",
-      "species_scientific": "Carcharhinus brachyurus",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
       "observer": "\ub3c4\ub9ac",
       "observer_login": "woo_duck",
       "date": "2026-09-25 15:59:59",
@@ -317,7 +347,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403207943",
-      "quality_grade": "research"
+      "quality_grade": "needs_id"
     },
     {
       "id": 403200591,
@@ -337,8 +367,8 @@
     {
       "id": 403196421,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740264482/large.jpg",
-      "species_common": "Bronze Whaler",
-      "species_scientific": "Carcharhinus brachyurus",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
       "observer": "\ud835\ude43\ud835\ude64\ud835\ude62\ud835\ude64 \ud835\ude68\ud835\ude5a\ud835\ude64\ud835\ude6a\ud835\ude61\ud835\ude5a\ud835\ude63\ud835\ude68\ud835\ude5e\ud835\ude68 | \uc870\ud604\uc11c",
       "observer_login": "winterphills",
       "date": "2026-09-25 14:18:46+09:00",
@@ -347,7 +377,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403196421",
-      "quality_grade": "research"
+      "quality_grade": "needs_id"
     },
     {
       "id": 403194873,
@@ -397,8 +427,8 @@
     {
       "id": 403141160,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740152721/large.jpg",
-      "species_common": "Bronze Whaler",
-      "species_scientific": "Carcharhinus brachyurus",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
       "observer": "\ud835\ude43\ud835\ude64\ud835\ude62\ud835\ude64 \ud835\ude68\ud835\ude5a\ud835\ude64\ud835\ude6a\ud835\ude61\ud835\ude5a\ud835\ude63\ud835\ude68\ud835\ude5e\ud835\ude68 | \uc870\ud604\uc11c",
       "observer_login": "winterphills",
       "date": "2026-09-24 11:26:00+09:00",
@@ -407,7 +437,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403141160",
-      "quality_grade": "research"
+      "quality_grade": "needs_id"
     },
     {
       "id": 403137340,
@@ -423,36 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403137340",
       "quality_grade": "research"
-    },
-    {
-      "id": 403028477,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739931558/large.jpg",
-      "species_common": "Atlantic Sharpnose Shark",
-      "species_scientific": "Rhizoprionodon terraenovae",
-      "observer": "Luke",
-      "observer_login": "luke_call",
-      "date": "2026-09-21 08:10:35",
-      "location": "Carteret County, NC, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/403028477",
-      "quality_grade": "research"
-    },
-    {
-      "id": 403009431,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739894297/large.jpg",
-      "species_common": "Brown-banded Bamboo Shark",
-      "species_scientific": "Chiloscyllium punctatum",
-      "observer": "Baron Parsaulian",
-      "observer_login": "baronpm",
-      "date": "2025/10/11 18:30",
-      "location": "Indonesia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/403009431",
-      "quality_grade": "needs_id"
     }
   ]
 }
