@@ -1,9 +1,24 @@
 {
-  "last_updated": "2026-10-06T12:40:45.087850",
+  "last_updated": "2026-10-07T12:34:10.687616",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 406251783,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/746356680/large.jpg",
+      "species_common": "Leopard Shark",
+      "species_scientific": "Triakis semifasciata",
+      "observer": "Henrik Kibak",
+      "observer_login": "hkibak",
+      "date": "2026/06/26 11:18 AM",
+      "location": "San Diego County, CA, USA",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/406251783",
+      "quality_grade": "research"
+    },
     {
       "id": 405880555,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745600224/large.jpg",
@@ -48,6 +63,36 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/405631205",
       "quality_grade": "research"
+    },
+    {
+      "id": 405457266,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744747861/large.jpg",
+      "species_common": "Whale Shark",
+      "species_scientific": "Rhincodon typus",
+      "observer": "Ewout Knoester",
+      "observer_login": "ewoutknoester",
+      "date": "2023/11/24 9:25 AM",
+      "location": "Location obscured",
+      "license_code": "cc-by-sa",
+      "license_name": "CC BY-SA",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/405457266",
+      "quality_grade": "research"
+    },
+    {
+      "id": 405429918,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744697254/large.jpg",
+      "species_common": "Bull Shark",
+      "species_scientific": "Carcharhinus leucas",
+      "observer": null,
+      "observer_login": "darlingdarjeeling",
+      "date": "2026-10-03 15:33:48",
+      "location": "Okinawa, JP",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/405429918",
+      "quality_grade": "needs_id"
     },
     {
       "id": 405426507,
@@ -337,8 +382,8 @@
     {
       "id": 403207943,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740286332/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
+      "species_common": "Dusky Shark",
+      "species_scientific": "Carcharhinus obscurus",
       "observer": "\ub3c4\ub9ac",
       "observer_login": "woo_duck",
       "date": "2026-09-25 15:59:59",
@@ -347,7 +392,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403207943",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 403200591,
@@ -367,8 +412,8 @@
     {
       "id": 403196421,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740264482/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
+      "species_common": "Dusky Shark",
+      "species_scientific": "Carcharhinus obscurus",
       "observer": "\ud835\ude43\ud835\ude64\ud835\ude62\ud835\ude64 \ud835\ude68\ud835\ude5a\ud835\ude64\ud835\ude6a\ud835\ude61\ud835\ude5a\ud835\ude63\ud835\ude68\ud835\ude5e\ud835\ude68 | \uc870\ud604\uc11c",
       "observer_login": "winterphills",
       "date": "2026-09-25 14:18:46+09:00",
@@ -377,7 +422,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403196421",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 403194873,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/403160641",
-      "quality_grade": "research"
-    },
-    {
-      "id": 403141364,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740153034/large.jpg",
-      "species_common": "Tawny Nurse Shark",
-      "species_scientific": "Nebrius ferrugineus",
-      "observer": null,
-      "observer_login": "taxono-my",
-      "date": "2014/11/22 3:14 PM",
-      "location": "Solomon Islands",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/403141364",
-      "quality_grade": "research"
-    },
-    {
-      "id": 403141160,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740152721/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
-      "observer": "\ud835\ude43\ud835\ude64\ud835\ude62\ud835\ude64 \ud835\ude68\ud835\ude5a\ud835\ude64\ud835\ude6a\ud835\ude61\ud835\ude5a\ud835\ude63\ud835\ude68\ud835\ude5e\ud835\ude68 | \uc870\ud604\uc11c",
-      "observer_login": "winterphills",
-      "date": "2026-09-24 11:26:00+09:00",
-      "location": "\ucd08\ub7c9\ub3d9, \ubd80\uc0b0\uad11\uc5ed\uc2dc, \ubd80\uc0b0\uad11\uc5ed\uc2dc, KR",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/403141160",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 403137340,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740145147/large.jpg",
-      "species_common": "Atlantic Sharpnose Shark",
-      "species_scientific": "Rhizoprionodon terraenovae",
-      "observer": "Luke",
-      "observer_login": "luke_call",
-      "date": "2026-09-21 08:53:42",
-      "location": "Carteret County, NC, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/403137340",
       "quality_grade": "research"
     }
   ]
