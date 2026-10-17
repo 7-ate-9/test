@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-16T10:36:06.366714",
+  "last_updated": "2026-10-17T10:05:08.935586",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -397,12 +397,12 @@
     {
       "id": 405429918,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744697292/large.jpg",
-      "species_common": "Bull Shark",
-      "species_scientific": "Carcharhinus leucas",
+      "species_common": "Typical Requiem Sharks",
+      "species_scientific": "Carcharhinus",
       "observer": null,
       "observer_login": "darlingdarjeeling",
       "date": "2026-10-03 15:33:48",
-      "location": "Okinawa, JP",
+      "location": "\u65e5\u672c",
       "license_code": "cc-by-nc",
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
