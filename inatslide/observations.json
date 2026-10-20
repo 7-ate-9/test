@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-10-19T11:59:10.187627",
+  "last_updated": "2026-10-20T10:52:07.985750",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 409562183,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/753075117/large.jpg",
+      "species_common": "Snaggletooth Shark",
+      "species_scientific": "Hemipristis elongata",
+      "observer": null,
+      "observer_login": "mwel0267",
+      "date": "2026-10-17",
+      "location": "Nusa Tenggara Timur, ID",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/409562183",
+      "quality_grade": "research"
+    },
+    {
+      "id": 409498427,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/752940744/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": "Jo\u00e3o D'Andretta",
+      "observer_login": "jpdandretta",
+      "date": "2026/06/21 12:16",
+      "location": "Maehama Beach, Aka, Zamami, Shimajiri District, Okinawa 901-3311, Jap\u00e3o",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/409498427",
+      "quality_grade": "research"
+    },
     {
       "id": 409410859,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/752759575/large.jpg",
@@ -152,6 +182,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/408749697",
+      "quality_grade": "research"
+    },
+    {
+      "id": 408515514,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/750918966/large.jpg",
+      "species_common": "Dusky Smooth-hound",
+      "species_scientific": "Mustelus canis",
+      "observer": null,
+      "observer_login": "wildlifeguy_5000",
+      "date": "2026/03/07 1:31 AM",
+      "location": "North Carolina, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/408515514",
       "quality_grade": "research"
     },
     {
@@ -408,51 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/407339789",
       "quality_grade": "needs_id"
-    },
-    {
-      "id": 407331833,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748521888/large.jpg",
-      "species_common": "Small-spotted Catshark",
-      "species_scientific": "Scyliorhinus canicula",
-      "observer": "KW",
-      "observer_login": "kw24",
-      "date": "2026-10-10 14:37:37+01:00",
-      "location": "Castle Beach, Falmouth, England, GB",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/407331833",
-      "quality_grade": "needs_id"
-    },
-    {
-      "id": 407168944,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748195239/large.jpg",
-      "species_common": "Leopard Shark",
-      "species_scientific": "Triakis semifasciata",
-      "observer": "Aranza Aranda",
-      "observer_login": "biologistaranza",
-      "date": "2026-10-08 10:02:42",
-      "location": "Alameda, CA, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/407168944",
-      "quality_grade": "research"
-    },
-    {
-      "id": 406740192,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/747341431/large.jpg",
-      "species_common": "Blind Shark",
-      "species_scientific": "Brachaelurus waddi",
-      "observer": "Eddie Bedi",
-      "observer_login": "submerg_ed",
-      "date": "2026/09/20 10:52AM",
-      "location": "Cook Island, New South Wales, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/406740192",
-      "quality_grade": "research"
     }
   ]
 }
