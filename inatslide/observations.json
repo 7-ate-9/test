@@ -1,9 +1,54 @@
 {
-  "last_updated": "2026-10-21T11:04:33.067770",
+  "last_updated": "2026-10-22T11:04:30.836407",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 409951863,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/753867120/large.jpg",
+      "species_common": "Lemon Shark",
+      "species_scientific": "Negaprion brevirostris",
+      "observer": "Kelly K",
+      "observer_login": "kelly97king",
+      "date": "2026-09-17T10:22",
+      "location": "Cape Verde",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/409951863",
+      "quality_grade": "research"
+    },
+    {
+      "id": 409949267,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/753862628/large.jpg",
+      "species_common": "Scalloped Hammerhead",
+      "species_scientific": "Sphyrna lewini",
+      "observer": "Logan Stallard",
+      "observer_login": "lizardlogan",
+      "date": "2026-10-21 16:07:16-04:00",
+      "location": "Volusia County, US-FL, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/409949267",
+      "quality_grade": "research"
+    },
+    {
+      "id": 409910803,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/753776130/large.jpg",
+      "species_common": "Nursehound",
+      "species_scientific": "Scyliorhinus stellaris",
+      "observer": null,
+      "observer_login": "seasynergy",
+      "date": "2026/09/02 6:23 PM",
+      "location": "Kerry, IE",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/409910803",
+      "quality_grade": "research"
+    },
     {
       "id": 409841627,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/753640375/large.jpg",
@@ -408,51 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/407540889",
       "quality_grade": "research"
-    },
-    {
-      "id": 407540880,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748944986/large.jpg",
-      "species_common": "Nursehound",
-      "species_scientific": "Scyliorhinus stellaris",
-      "observer": "Le Gallais",
-      "observer_login": "legallais",
-      "date": "2026/10/11 09:53",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/407540880",
-      "quality_grade": "research"
-    },
-    {
-      "id": 407491038,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748848935/large.jpg",
-      "species_common": "Port Jackson Shark",
-      "species_scientific": "Heterodontus portusjacksoni",
-      "observer": "Fonce Ramos",
-      "observer_login": "foncechavez",
-      "date": "2026-10-11 07:00:00",
-      "location": "Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/407491038",
-      "quality_grade": "research"
-    },
-    {
-      "id": 407416868,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748694450/large.jpg",
-      "species_common": "Common Blacktip Shark",
-      "species_scientific": "Carcharhinus limbatus",
-      "observer": "Bill Uttenweiler",
-      "observer_login": "bill_32953",
-      "date": "2026-10-10 16:12:21",
-      "location": "Florida, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/407416868",
-      "quality_grade": "needs_id"
     }
   ]
 }
