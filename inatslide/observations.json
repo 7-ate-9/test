@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-25T10:37:29.351594",
+  "last_updated": "2026-10-26T12:10:29.412201",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -32,7 +32,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/410562738",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 410343767,
