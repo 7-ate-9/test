@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-10-27T11:31:50.758163",
+  "last_updated": "2026-10-28T12:01:09.038281",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 411342960,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756701589/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/10/22 12:43 PM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/411342960",
+      "quality_grade": "needs_id"
+    },
+    {
+      "id": 411333742,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756683988/large.jpg",
+      "species_common": "Tiger Shark",
+      "species_scientific": "Galeocerdo cuvier",
+      "observer": "",
+      "observer_login": "mattdowse",
+      "date": "2026/10/18 4:55 PM",
+      "location": "Maldives",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/411333742",
+      "quality_grade": "needs_id"
+    },
     {
       "id": 411136735,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756272603/large.jpg",
@@ -17,7 +47,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/411136735",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 411042974,
@@ -47,7 +77,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/411038760",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 411030027,
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/408515514",
-      "quality_grade": "research"
-    },
-    {
-      "id": 408443055,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/750801506/large.jpg",
-      "species_common": "Leopard Shark",
-      "species_scientific": "Triakis semifasciata",
-      "observer": "Ocean Fleskes",
-      "observer_login": "oceanf",
-      "date": "2026/10/14 5:55 PM",
-      "location": "Santa Barbara County, CA, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/408443055",
-      "quality_grade": "research"
-    },
-    {
-      "id": 408121124,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/750133223/large.jpg",
-      "species_common": "Small-spotted Catshark",
-      "species_scientific": "Scyliorhinus canicula",
-      "observer": "Cooperahhh",
-      "observer_login": "cooperahhh",
-      "date": "2026-10-13 16:49:20",
-      "location": "Marine Parade, North Ayrshire, Scotland, GB",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/408121124",
       "quality_grade": "research"
     }
   ]
