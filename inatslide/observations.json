@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-10-30T12:02:56.070303",
+  "last_updated": "2026-10-31T11:37:32.844873",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 411884511,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/757789022/large.jpg",
+      "species_common": "Tawny Nurse Shark",
+      "species_scientific": "Nebrius ferrugineus",
+      "observer": "David White",
+      "observer_login": "davidgwhite",
+      "date": "2026/10/31 12:00 AM",
+      "location": "Mowbray QLD, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/411884511",
+      "quality_grade": "research"
+    },
+    {
+      "id": 411773310,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/757562288/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/10/30 9:42 AM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/411773310",
+      "quality_grade": "research"
+    },
     {
       "id": 411573623,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/757142692/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/409410859",
-      "quality_grade": "research"
-    },
-    {
-      "id": 409410819,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/752757226/large.jpg",
-      "species_common": "Blacktip Reef Shark",
-      "species_scientific": "Carcharhinus melanopterus",
-      "observer": "Gwena\u00ebl Magne",
-      "observer_login": "gwenaelmagne",
-      "date": "2026/09/15 11:40",
-      "location": "\u00celes Sous-le-Vent, PF",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/409410819",
-      "quality_grade": "research"
-    },
-    {
-      "id": 409159867,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/752252240/large.jpg",
-      "species_common": "Whitetip Reef Shark",
-      "species_scientific": "Triaenodon obesus",
-      "observer": "Sean S",
-      "observer_login": "sparrowoutbound",
-      "date": "2018/12/12 10:06 AM",
-      "location": "Carrillo, CR-GU, CR",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/409159867",
       "quality_grade": "research"
     }
   ]
