@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-11-02T14:39:36.033430",
+  "last_updated": "2026-11-03T13:31:55.504948",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 412500101,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759035822/large.jpg",
+      "species_common": "Port Jackson Shark",
+      "species_scientific": "Heterodontus portusjacksoni",
+      "observer": "Tom McMahon",
+      "observer_login": "macka87",
+      "date": "2026-11-03 08:31:05",
+      "location": "Stop 85 Esplanade St - West side, Seaford SA 5169, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/412500101",
+      "quality_grade": "research"
+    },
+    {
+      "id": 412496134,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759020422/large.jpg",
+      "species_common": "Blacktip Reef Shark",
+      "species_scientific": "Carcharhinus melanopterus",
+      "observer": "Roxanne Lazarus",
+      "observer_login": "roxylaz",
+      "date": "2026/10/29 12:30 PM",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/412496134",
+      "quality_grade": "research"
+    },
     {
       "id": 412363405,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758758739/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/410571799",
-      "quality_grade": "research"
-    },
-    {
-      "id": 410562738,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/755111785/large.jpg",
-      "species_common": "Swellshark",
-      "species_scientific": "Cephaloscyllium ventriosum",
-      "observer": "Melanie Moreno",
-      "observer_login": "aplysialover",
-      "date": "2026/10/22 12:48 PM",
-      "location": "Monterey, CA, USA",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/410562738",
-      "quality_grade": "research"
-    },
-    {
-      "id": 410343767,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/754660222/large.jpg",
-      "species_common": "Nurse Shark",
-      "species_scientific": "Ginglymostoma cirratum",
-      "observer": "",
-      "observer_login": "shreddywa",
-      "date": "2024-08-26 13:44:24-04:00",
-      "location": "Key Largo, Key Largo, FL, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/410343767",
       "quality_grade": "research"
     }
   ]
