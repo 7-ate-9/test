@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-11-03T13:31:55.504948",
+  "last_updated": "2026-11-04T13:42:48.256275",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 412747983,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759523218/large.jpg",
+      "species_common": "Whitetip Reef Shark",
+      "species_scientific": "Triaenodon obesus",
+      "observer": null,
+      "observer_login": "benmrg",
+      "date": "2026/07/05 6:38 AM",
+      "location": "Location obscured",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/412747983",
+      "quality_grade": "research"
+    },
+    {
+      "id": 412633655,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759307308/large.jpg",
+      "species_common": "Pelagic Thresher Shark",
+      "species_scientific": "Alopias pelagicus",
+      "observer": "ICHOR x",
+      "observer_login": "lorriesteven",
+      "date": "2026-10-15T08:00",
+      "location": "Cebu, PH",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/412633655",
+      "quality_grade": "research"
+    },
     {
       "id": 412500101,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/759035822/large.jpg",
@@ -422,36 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/410571817",
-      "quality_grade": "research"
-    },
-    {
-      "id": 410571803,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/755130091/large.jpg",
-      "species_common": "Gulf Wobbegong",
-      "species_scientific": "Orectolobus halei",
-      "observer": "Chris Miles",
-      "observer_login": "milesuw",
-      "date": "2026/10/09 9:30 AM",
-      "location": "Kempsey, New South Wales, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/410571803",
-      "quality_grade": "research"
-    },
-    {
-      "id": 410571799,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/755130092/large.jpg",
-      "species_common": "Spotted Wobbegong",
-      "species_scientific": "Orectolobus maculatus",
-      "observer": "Chris Miles",
-      "observer_login": "milesuw",
-      "date": "2026/10/09 9:22 AM",
-      "location": "Kempsey, New South Wales, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/410571799",
       "quality_grade": "research"
     }
   ]
