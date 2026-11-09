@@ -1,9 +1,54 @@
 {
-  "last_updated": "2026-11-08T12:40:52.388855",
+  "last_updated": "2026-11-09T15:01:10.668403",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 413691204,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761443327/large.jpg",
+      "species_common": "Sand Tiger Shark",
+      "species_scientific": "Carcharias taurus",
+      "observer": null,
+      "observer_login": "divercraig",
+      "date": "2026/11/07 9:15 AM",
+      "location": "South Solitary Island, New South Wales, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/413691204",
+      "quality_grade": "research"
+    },
+    {
+      "id": 413690429,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761440955/large.jpg",
+      "species_common": "Sand Tiger Shark",
+      "species_scientific": "Carcharias taurus",
+      "observer": null,
+      "observer_login": "divercraig",
+      "date": "2026/11/07 9:00 AM",
+      "location": "South Solitary Island, New South Wales, Australia",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/413690429",
+      "quality_grade": "research"
+    },
+    {
+      "id": 413656791,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761496067/large.jpg",
+      "species_common": "Leopard Shark",
+      "species_scientific": "Triakis semifasciata",
+      "observer": "Katherina Koriabine",
+      "observer_login": "singowl1",
+      "date": "2026-11-08 13:57:21",
+      "location": "Aquatic Park Trail, Berkeley, CA, US",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/413656791",
+      "quality_grade": "research"
+    },
     {
       "id": 413528872,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/761117664/large.jpg",
@@ -52,8 +97,8 @@
     {
       "id": 413469459,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/760990434/large.jpg",
-      "species_common": "Typical Requiem Sharks",
-      "species_scientific": "Carcharhinus",
+      "species_common": "Spinner Shark",
+      "species_scientific": "Carcharhinus brevipinna",
       "observer": "June Howard Barr",
       "observer_login": "junebug1000",
       "date": "2026-11-07 19:30:31",
@@ -62,7 +107,7 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/413469459",
-      "quality_grade": "needs_id"
+      "quality_grade": "research"
     },
     {
       "id": 413276816,
@@ -407,51 +452,6 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/411531702",
-      "quality_grade": "research"
-    },
-    {
-      "id": 411478889,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756976841/large.jpg",
-      "species_common": "Whale Shark",
-      "species_scientific": "Rhincodon typus",
-      "observer": "Simon Uygongco",
-      "observer_login": "gooseclues",
-      "date": "2018-03-19T11:16",
-      "location": "Philippines",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/411478889",
-      "quality_grade": "research"
-    },
-    {
-      "id": 411432737,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756881483/large.jpg",
-      "species_common": "Oceanic Whitetip Shark",
-      "species_scientific": "Carcharhinus longimanus",
-      "observer": null,
-      "observer_login": "keiranwilliams",
-      "date": "2014/11/04 9:19 AM",
-      "location": "Safaja, EG-BA, EG",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/411432737",
-      "quality_grade": "research"
-    },
-    {
-      "id": 411432728,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756881162/large.jpg",
-      "species_common": "Oceanic Whitetip Shark",
-      "species_scientific": "Carcharhinus longimanus",
-      "observer": null,
-      "observer_login": "keiranwilliams",
-      "date": "2014/11/03 1:45 PM",
-      "location": "Safaja, EG-BA, EG",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/411432728",
       "quality_grade": "research"
     }
   ]
