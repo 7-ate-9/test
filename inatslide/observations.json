@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-13T13:51:18.081975",
+  "last_updated": "2026-11-14T12:54:30.777117",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
@@ -81,7 +81,7 @@
     },
     {
       "id": 414255599,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762614305/large.jpg",
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/763381667/large.jpg",
       "species_common": "Longfin Mako",
       "species_scientific": "Isurus paucus",
       "observer": "Philippa Gordon",
