@@ -1,9 +1,39 @@
 {
-  "last_updated": "2026-11-22T13:58:24.719668",
+  "last_updated": "2026-11-23T17:15:30.705253",
   "source": "iNaturalist",
   "taxon_id": "551307",
   "count": 30,
   "observations": [
+    {
+      "id": 416491060,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/767042390/large.jpg",
+      "species_common": "Common Blacktip Shark",
+      "species_scientific": "Carcharhinus limbatus",
+      "observer": "Sam Kieschnick",
+      "observer_login": "sambiology",
+      "date": "2026/11/22 1:25 PM",
+      "location": "United States",
+      "license_code": "cc-by",
+      "license_name": "CC BY",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/416491060",
+      "quality_grade": "research"
+    },
+    {
+      "id": 416359946,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/766782030/large.jpg",
+      "species_common": "Angelshark",
+      "species_scientific": "Squatina squatina",
+      "observer": "Dennis Rabeling",
+      "observer_login": "dennisthediver",
+      "date": "2026/11/21 8:55 PM",
+      "location": "Las Palmas, ES-CN, ES",
+      "license_code": "cc-by-nc-nd",
+      "license_name": "CC BY-NC-ND",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/416359946",
+      "quality_grade": "research"
+    },
     {
       "id": 416211940,
       "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/766483028/large.jpg",
@@ -17,6 +47,21 @@
       "license_name": "CC BY-NC",
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/416211940",
+      "quality_grade": "research"
+    },
+    {
+      "id": 416151684,
+      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/766363937/large.jpg",
+      "species_common": "Small-spotted Catshark",
+      "species_scientific": "Scyliorhinus canicula",
+      "observer": "SweptDiamond349",
+      "observer_login": "sweptdiamond349",
+      "date": "2024-08-25 12:07:09",
+      "location": "Arun Way, Littlehampton, England, GB",
+      "license_code": "cc-by-nc",
+      "license_name": "CC BY-NC",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "obs_url": "https://www.inaturalist.org/observations/416151684",
       "quality_grade": "research"
     },
     {
@@ -408,51 +453,6 @@
       "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
       "obs_url": "https://www.inaturalist.org/observations/414329069",
       "quality_grade": "research"
-    },
-    {
-      "id": 414283332,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762633801/large.jpg",
-      "species_common": "Horn Shark",
-      "species_scientific": "Heterodontus francisci",
-      "observer": null,
-      "observer_login": "jmongoose",
-      "date": "2026-11-11 11:34:08",
-      "location": "Coleman Dr, Morro Bay, CA, US",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/414283332",
-      "quality_grade": "research"
-    },
-    {
-      "id": 414273688,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/762613469/large.jpg",
-      "species_common": "Sand Tiger Shark",
-      "species_scientific": "Carcharias taurus",
-      "observer": "Peter",
-      "observer_login": "fiftygrit",
-      "date": "2026/11/07 7:55 AM",
-      "location": "South Solitary Island, New South Wales, Australia",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/414273688",
-      "quality_grade": "research"
-    },
-    {
-      "id": 414255599,
-      "image_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/763381667/large.jpg",
-      "species_common": "Mako Sharks",
-      "species_scientific": "Isurus",
-      "observer": "Philippa Gordon",
-      "observer_login": "flipperg",
-      "date": "2026-11-05",
-      "location": "Location obscured",
-      "license_code": "cc-by-nc",
-      "license_name": "CC BY-NC",
-      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "obs_url": "https://www.inaturalist.org/observations/414255599",
-      "quality_grade": "needs_id"
     }
   ]
 }
